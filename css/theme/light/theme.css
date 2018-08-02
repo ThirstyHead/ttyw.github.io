@@ -1,0 +1,12 @@
+:root {
+  /* Color Palette */
+  --primary-color: white;
+  --secondary-color: black;
+  --ternary-color: gray;
+  --accent-color: red;
+
+  /* Theme Styles */
+  --page-header-background-color: var(--primary-color);
+  --page-header-color: var(--secondary-color);
+  --divider-color: var(--ternary-color);
+}
