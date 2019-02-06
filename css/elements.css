@@ -3,6 +3,11 @@ body{
   padding: 0;
   color: var(--body-color);
   background-color: var(--body-background-color);
+  font-family: sans-serif;
+}
+
+h1{
+  font-family: monospace;
 }
 
 main{
