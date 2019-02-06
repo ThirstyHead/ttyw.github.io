@@ -9,4 +9,7 @@
   --page-header-background-color: var(--primary-color);
   --page-header-color: var(--secondary-color);
   --divider-color: var(--ternary-color);
+
+  --body-background-color: var(--primary-color);
+  --body-color: var(--secondary-color);
 }
