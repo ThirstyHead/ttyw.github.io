@@ -8,48 +8,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
 
-    <!-- CS theme + components -->
-    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
-    <script src="/__cs/component/cs-tabs/index.js"></script>
-    <script src="/__cs/component/cs-citation/index.js"></script>
-
-    <!-- CS-DS theme + components -->
-    <link rel="stylesheet" href="/__csds/css/index.css">
-    <script src="/__csds/component/csds-header/index.js"></script>
-    <script src="/__csds/component/csds-footer/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
 
     <!-- Can I Use component -->
     <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
   </head>
   <body>
-    <csds-header></csds-header>
+    <ttyw-header></ttyw-header>
 
     <main class="site">
-      <cs-tabs>
-        <cs-tab role="heading" slot="tab">Info</cs-tab>
-        <cs-panel role="region" slot="panel">
           <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/nav">&lt;nav&gt;</a></h2>
     			<p>The HTML <code>&lt;nav&gt;</code> element (HTML Navigation Element) represents a section of a page that links to other pages or to parts within the page: a section with navigation links.</p>
     			<p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/nav">https://developer.mozilla.org/en/docs/Web/HTML/Element/nav</a></p>
-        </cs-panel>
 
-        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
-        <cs-panel role="region" slot="panel">
           <h2>Can I Use &lt;nav&gt;?</h2>
           <p class="ciu_embed" data-feature="html5semantic" data-periods="future_1,current,past_1,past_2">
             <a href="http://caniuse.com/#feat=html5semantic">Can I Use nav?</a> Data on support for the nav element across the major browsers from caniuse.com.
           </p>
-          <cs-citation src="http://caniuse.com/#feat=html5semantic"></cs-citation>
-        </cs-panel>
 
-        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
-        <cs-panel role="region" slot="panel">
           <h2>Sandbox</h2>
-        </cs-panel>
-      </cs-tabs>
-
     </main>
 
-    <csds-footer></csds-footer>
   </body>
 </html>
