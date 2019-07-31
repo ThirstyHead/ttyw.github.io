@@ -8,46 +8,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
 
-    <!-- CS theme + components -->
-    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
-    <script src="/__cs/component/cs-tabs/index.js"></script>
-    <script src="/__cs/component/cs-citation/index.js"></script>
-
-    <!-- CS-DS theme + components -->
-    <link rel="stylesheet" href="/__csds/css/index.css">
-    <script src="/__csds/component/csds-header/index.js"></script>
-    <script src="/__csds/component/csds-footer/index.js"></script>
-    <script src="/__csds/component/csds-caniuse-html4/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
 
     <!-- Can I Use component -->
     <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
 </head>
   <body>
-    <csds-header></csds-header>
+    <ttyw-header></ttyw-header>
 
     <main class="site">
-      <cs-tabs>
-        <cs-tab role="heading" slot="tab">Info</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/body">&lt;body&gt;</a></h2>
-          <p>The HTML <code>&lt;body&gt;</code> Element represents the content of an HTML document. There can be only one <body> element in a document.</p>
-          <p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/body">https://developer.mozilla.org/en/docs/Web/HTML/Element/body</a></p>
-        </cs-panel>
+      <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/body">&lt;body&gt;</a></h2>
+      <p>The HTML <code>&lt;body&gt;</code> Element represents the content of an HTML document. There can be only one <body> element in a document.</p>
+      <p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/body">https://developer.mozilla.org/en/docs/Web/HTML/Element/body</a></p>
 
-        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2>Can I Use &lt;body&gt;?</h2>
-          <csds-caniuse-html4></csds-caniuse-html4>
-          <cs-citation src="http://caniuse.com/"></cs-citation>
-        </cs-panel>
+      <h2>Can I Use &lt;body&gt;?</h2>
 
-        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2>Sandbox</h2>
-        </cs-panel>
-      </cs-tabs>
+      <h2>Sandbox</h2>
     </main>
 
-    <csds-footer></csds-footer>
   </body>
 </html>
