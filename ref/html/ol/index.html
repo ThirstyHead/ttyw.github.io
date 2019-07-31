@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ol | Elements | CS-DS</title>
+    <meta name="name" content="Scott Davis <sdavis@thoughtworks.com">
+    <meta name="description" content="Documentation for ol element">
+    <meta name="keywords" content="csds,html,css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- CS theme + components -->
+    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
+    <script src="/__cs/component/cs-tabs/index.js"></script>
+    <script src="/__cs/component/cs-citation/index.js"></script>
+
+    <!-- CS-DS theme + components -->
+    <link rel="stylesheet" href="/__csds/css/index.css">
+    <script src="/__csds/component/csds-header/index.js"></script>
+    <script src="/__csds/component/csds-footer/index.js"></script>
+    <script src="/__csds/component/csds-caniuse-html4/index.js"></script>
+
+    <!-- Can I Use component -->
+    <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  </head>
+  <body>
+    <csds-header></csds-header>
+
+    <main class="site">
+      <cs-tabs>
+        <cs-tab role="heading" slot="tab">Info</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/ol">&lt;ol&gt;</a></h2>
+    			<p>The HTML <code>&lt;ol&gt;</code> Element (or HTML Ordered List Element) represents an ordered list of items. Typically, ordered-list items are displayed with a preceding numbering, which can be of any form, like numerals, letters or Romans numerals or even simple bullets. This numbered style is not defined in the HTML description of the page, but in its associated CSS, using the list-style-type property.</p>
+    			<p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/ol">https://developer.mozilla.org/en/docs/Web/HTML/Element/ol</a></p>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Can I Use &lt;ol&gt;?</h2>
+          <csds-caniuse-html4></csds-caniuse-html4>
+          <cs-citation src="http://caniuse.com/"></cs-citation>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Sandbox</h2>
+        </cs-panel>
+      </cs-tabs>
+
+    </main>
+
+    <csds-footer></csds-footer>
+  </body>
+</html>

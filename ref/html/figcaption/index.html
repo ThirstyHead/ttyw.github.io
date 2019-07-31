@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>figcaption | Elements | CS-DS</title>
+    <meta name="name" content="Scott Davis <sdavis@thoughtworks.com">
+    <meta name="description" content="Documentation for figcaption element">
+    <meta name="keywords" content="csds,html,css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- CS theme + components -->
+    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
+    <script src="/__cs/component/cs-tabs/index.js"></script>
+    <script src="/__cs/component/cs-citation/index.js"></script>
+
+    <!-- CS-DS theme + components -->
+    <link rel="stylesheet" href="/__csds/css/index.css">
+    <script src="/__csds/component/csds-header/index.js"></script>
+    <script src="/__csds/component/csds-footer/index.js"></script>
+
+    <!-- Can I Use component -->
+    <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  </head>
+  <body>
+    <csds-header></csds-header>
+
+    <main class="site">
+      <cs-tabs>
+        <cs-tab role="heading" slot="tab">Info</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/figcaption">&lt;figcaption&gt;</a></h2>
+    			<p>The HTML <code>&lt;figcaption&gt;</code> element represents a caption or a legend associated with a figure or an illustration described by the rest of the data of the <code>&lt;figure&gt;</code> element which is its immediate ancestor which means <code>&lt;figcaption&gt;</code> can be the first or last element inside a <code>&lt;figure&gt;</code> block. Also, the HTML Figcaption Element is optional; if not provided, then the parent figure element will have no caption.</p>
+    			<p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/figcaption">https://developer.mozilla.org/en/docs/Web/HTML/Element/figcaption</a></p>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Can I Use &lt;figcaption&gt;?</h2>
+          <p class="ciu_embed" data-feature="html5semantic" data-periods="future_1,current,past_1,past_2">
+            <a href="http://caniuse.com/#feat=html5semantic">Can I Use figcaption?</a> Data on support for the figcaption element across the major browsers from caniuse.com.
+          </p>
+          <cs-citation src="http://caniuse.com/#feat=html5semantic"></cs-citation>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Sandbox</h2>
+        </cs-panel>
+      </cs-tabs>
+    </main>
+
+    <csds-footer></csds-footer>
+  </body>
+</html>

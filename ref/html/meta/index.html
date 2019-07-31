@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>meta | Elements | CS-DS</title>
+    <meta name="name" content="Scott Davis <sdavis@thoughtworks.com">
+    <meta name="description" content="Documentation for meta element">
+    <meta name="keywords" content="csds,html,css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- CS theme + components -->
+    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
+    <script src="/__cs/component/cs-tabs/index.js"></script>
+    <script src="/__cs/component/cs-citation/index.js"></script>
+
+    <!-- CS-DS theme + components -->
+    <link rel="stylesheet" href="/__csds/css/index.css">
+    <script src="/__csds/component/csds-header/index.js"></script>
+    <script src="/__csds/component/csds-footer/index.js"></script>
+    <script src="/__csds/component/csds-caniuse-html4/index.js"></script>
+
+    <!-- Can I Use component -->
+    <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  </head>
+  <body>
+    <csds-header></csds-header>
+
+    <main class="site">
+      <cs-tabs>
+        <cs-tab role="heading" slot="tab">Info</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/meta">&lt;meta&gt;</a></h2>
+          <p>The HTML <code>&lt;meta&gt;</code> element represents metadata that cannot be represented by other HTML meta-related elements, like <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> or <code>&lt;title&gt;</code>.</p>
+          <cs-citation src="https://developer.mozilla.org/en/docs/Web/HTML/Element/meta"></cs-citation>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Can I Use &lt;meta&gt;?</h2>
+          <csds-caniuse-html4></csds-caniuse-html4>
+          <cs-citation src="http://caniuse.com/"></cs-citation>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Sandbox</h2>
+        </cs-panel>
+      </cs-tabs>
+    </main>
+
+    <csds-footer></csds-footer>
+  </body>
+</html>

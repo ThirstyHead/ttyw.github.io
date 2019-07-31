@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>main | Elements | CS-DS</title>
+    <meta name="name" content="Scott Davis <sdavis@thoughtworks.com">
+    <meta name="description" content="Documentation for main element">
+    <meta name="keywords" content="csds,html,css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- CS theme + components -->
+    <link rel="stylesheet" href="/__cs/component/cs-tabs/index.css">
+    <script src="/__cs/component/cs-tabs/index.js"></script>
+    <script src="/__cs/component/cs-citation/index.js"></script>
+
+    <!-- CS-DS theme + components -->
+    <link rel="stylesheet" href="/__csds/css/index.css">
+    <script src="/__csds/component/csds-header/index.js"></script>
+    <script src="/__csds/component/csds-footer/index.js"></script>
+
+    <!-- Can I Use component -->
+    <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  </head>
+  <body>
+    <csds-header></csds-header>
+
+    <main class="site">
+      <cs-tabs>
+        <cs-tab role="heading" slot="tab">Info</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/main">&lt;main&gt;</a></h2>
+  				<p>The HTML <code>&lt;main&gt;</code> element represents the main content of  the <code>&lt;body&gt;</code> of a document or application. The main content area consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application. This content should be unique to the document, excluding any content that is repeated across a set of documents such as sidebars, navigation links, copyright information, site logos, and search forms (unless the document's main function is as a search form).</p>
+  				<p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/main">https://developer.mozilla.org/en/docs/Web/HTML/Element/main</a></p>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Can I Use &lt;main&gt;?</h2>
+          <p class="ciu_embed" data-feature="html5semantic" data-periods="future_1,current,past_1,past_2">
+            <a href="http://caniuse.com/#feat=html5semantic">Can I Use main?</a> Data on support for the main element across the major browsers from caniuse.com.
+          </p>
+          <cs-citation src="http://caniuse.com/#feat=html5semantic"></cs-citation>
+        </cs-panel>
+
+        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
+        <cs-panel role="region" slot="panel">
+          <h2>Sandbox</h2>
+        </cs-panel>
+      </cs-tabs>
+    </main>
+
+    <csds-footer></csds-footer>
+  </body>
+</html>

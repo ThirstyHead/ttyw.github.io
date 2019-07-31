@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elements | TTYW</title>
+    <meta name="name" content="Scott Davis <scott@thirstyhead.com">
+    <meta name="description" content="Documentation for HTML Elements">
+    <meta name="keywords" content="html,elements">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
+
+    <style media="screen">
+      .elements{
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .elements li{
+        list-style: none;
+        padding-right: 1em;
+      }
+
+      fieldset{
+        background-color: var(--accent);
+        margin-bottom: 1em;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <ttyw-header></ttyw-header>
+
+    <main>
+        <div class="sidebar">
+          <p class="sidebar-section medium-text">Element Categories</p>
+          <ul>
+            <li><a href="#document">Document</a></li>
+            <li><a href="#section">Section</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#action">Action</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#semantics">Semantics</a></li>
+            <li><a href="#editing">Editing</a></li>
+            <li><a href="#graphics">Graphics</a></li>
+            <li><a href="#media">Media</a></li>
+          </ul>
+        </div>
+
+        <div class="sections">
+          <section id="introduction">
+            <h2>Elements</h2>
+            <p>HTML Elements are the basic building blocks of any web page.</p> 
+          </section>
+
+          <section id="document">
+            <fieldset>
+              <legend>Document</legend>
+              <p>Document elements describe the high-level parts of the page. The <csds-element>html</csds-element> element is the root element of the page. Non-visible elements like <csds-element>style</csds-element> and <csds-element>script</csds-element> are defined in the <csds-element>head</csds-element> section. All viewable content is defined in the <csds-element>body</csds-element> section.</p>
+
+              <ul class="elements">
+                <li>html</li>
+                <li>body</li>
+                <li>head</li>
+                <li>title</li>
+                <li>meta</li>
+                <li>style</li>
+                <li>link</li>
+                <li>base</li>
+                <li>script</li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="section">
+            <fieldset>
+              <legend>Section</legend>
+
+              <p>Section elements were introduced in HTML5 to help the developer semantically describe the basic parts of a document. The <csds-element>main</csds-element> is where the <em>primary information</em> of the page should live. <csds-element>main</csds-element> can optionally be surrounded by <csds-element>header</csds-element> and <csds-element>footer</csds-element>.</p>
+
+              <ul class="elements">
+                <li><cs-button>main</cs-button></li>
+                <li><cs-button>header</cs-button></li>
+                <li><cs-button>footer</cs-button></li>
+                <li><cs-button>nav</cs-button></li>
+                <li><cs-button>section</cs-button></li>
+                <li><cs-button>article</cs-button></li>
+                <li><cs-button>aside</cs-button></li>
+                <li><cs-button>div</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="content">
+            <fieldset>
+              <legend>Content</legend>
+
+              <p>Content elements describe the basic hierarchy of the page. Think of them as elements that might appear in a Table of Contents.</p>
+
+              <p><csds-element>h1</csds-element> is the primary heading. There should only be one per page. <csds-element>h2</csds-element> sections are subtopics. If you need to further subdivide the sections, use <csds-element>h3</csds-element> - <csds-element>h6</csds-element>.</p>
+
+              <ul class="elements">
+                <li><cs-button>h1</cs-button></li>
+                <li><cs-button>h2</cs-button></li>
+                <li><cs-button>h3</cs-button></li>
+                <li><cs-button>h4</cs-button></li>
+                <li><cs-button>h5</cs-button></li>
+                <li><cs-button>h6</cs-button></li>
+                <li><cs-button>p</cs-button></li>
+                <li><cs-button styleless>br</cs-button></li>
+                <li><cs-button>hr</cs-button></li>
+                <li><cs-button>figure</cs-button></li>
+                <li><cs-button>figcaption</cs-button></li>
+                <li><cs-button>span</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="action">
+            <fieldset>
+              <legend>Action</legend>
+
+              <p>Action elements are the primary way that users interact with the page. <csds-element>a</csds-element> is for creating hyperlinks. <csds-element>button</csds-element> provides a larger, more obvious enticement for the user to interact with the page.</p>
+
+              <ul class="elements">
+                <li><cs-button>a</cs-button></li>
+                <li><cs-button>button</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="list">
+            <fieldset>
+              <legend>List</legend>
+
+              <p>List elements allow you to present the user with a collection of <csds-element>li</csds-element> <em>list items</em>. <csds-element>ul</csds-element> is an <em>unordered list</em>, or bullet list. <csds-element>ol</csds-element> is an <em>ordered list</em>, or numbered list.</p>
+
+              <ul class="elements">
+                <li><cs-button>ul</cs-button></li>
+                <li><cs-button>ol</cs-button></li>
+                <li><cs-button>li</cs-button></li>
+                <li><cs-button>dl</cs-button></li>
+                <li><cs-button>dt</cs-button></li>
+                <li><cs-button>dd</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="form">
+            <fieldset>
+              <legend>Form</legend>
+
+              <p>Form elements allow the user to submit information, upload files, and search. HTML5 introduced a number of new <csds-element>input</csds-element> types, like <code>type="email"</code>, <code>type="range"</code>, and <code>type="date"</code>.</p>
+
+              <p>Be sure to use the <csds-element>label</csds-element> element to associate the text with the <csds-element>input</csds-element> field. Similarly, use an associated <csds-element>output</csds-element> field to display calculated output.</p>
+
+              <ul class="elements">
+                <li><cs-button>form</cs-button></li>
+                <li><cs-button>label</cs-button></li>
+                <li><cs-button>input</cs-button></li>
+                <li><cs-button>output</cs-button></li>
+                <li><cs-button>textarea</cs-button></li>
+                <li><cs-button>fieldset</cs-button></li>
+                <li><cs-button>legend</cs-button></li>
+                <li><cs-button>select</cs-button></li>
+                <li><cs-button>option</cs-button></li>
+                <li><cs-button>optgroup</cs-button></li>
+                <li><cs-button>datalist</cs-button></li>
+                <li><cs-button>progress</cs-button></li>
+                <li><cs-button>meter</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="table">
+            <fieldset>
+              <legend>Table</legend>
+
+              <p>Table elements are ideal for displaying spreadsheet-like information. If your data can be logically grouped by columns, rows, or both, use a <csds-element>table</csds-element>.</p>
+
+              <ul class="elements">
+                <li><cs-button>table</cs-button></li>
+                <li><cs-button>caption</cs-button></li>
+                <li><cs-button>tr</cs-button></li>
+                <li><cs-button>thead</cs-button></li>
+                <li><cs-button>th</cs-button></li>
+                <li><cs-button>tbody</cs-button></li>
+                <li><cs-button>td</cs-button></li>
+                <li><cs-button>tfoot</cs-button></li>
+                <li><cs-button>col</cs-button></li>
+                <li><cs-button>colgroup</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="semantics">
+            <fieldset>
+              <legend>Semantics</legend>
+
+              <p>Semantic elements should be used to <em>describe</em> or <em>clarify</em> the meaning of the text. The way the text appears is far less important than providing the meaning or significance of the text.</p>
+
+              <ul class="elements">
+                <li><cs-button>b</cs-button></li>
+                <li><cs-button>strong</cs-button></li>
+                <li><cs-button>i</cs-button></li>
+                <li><cs-button>em</cs-button></li>
+                <li><cs-button>u</cs-button></li>
+                <li><cs-button>abbr</cs-button></li>
+                <li><cs-button>dfn</cs-button></li>
+                <li><cs-button>address</cs-button></li>
+                <li><cs-button>sub</cs-button></li>
+                <li><cs-button>sup</cs-button></li>
+                <li><cs-button>small</cs-button></li>
+                <li><cs-button>q</cs-button></li>
+                <li><cs-button>blockquote</cs-button></li>
+                <li><cs-button>cite</cs-button></li>
+                <li><cs-button>code</cs-button></li>
+                <li><cs-button>var</cs-button></li>
+                <li><cs-button>kbd</cs-button></li>
+                <li><cs-button>samp</cs-button></li>
+                <li><cs-button>pre</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="editing">
+            <fieldset>
+              <legend>Editing</legend>
+
+              <p>Editing elements provide visual indicators for the changes made to the document. Use <csds-element>mark</csds-element> to highlight changes. Use <csds-element>del</csds-element> to indicate deleted text.</p>
+
+              <ul class="elements">
+                <li><cs-button>mark</cs-button></li>
+                <li><cs-button>s</cs-button></li>
+                <li><cs-button>del</cs-button></li>
+                <li><cs-button>ins</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="graphics">
+            <fieldset>
+              <legend>Graphics</legend>
+
+              <p>Graphic elements show non-text information. Use <csds-element>img</csds-element> to display <em>raster</em> or photographic images. <csds-element>picture</csds-element> and <csds-element>source</csds-element> are modern additions to HTML that give the developer fine-grained control for providing a list of potential images, each one optimized for a specific viewport size and resolution.</p>
+
+              <p>Use <csds-element>svg</csds-element> to display (as the name implies) Scalable <em>Vector</em> Graphics &ndash; things like icons and charts that automatically scale to the proper size for the device they are being viewed on.</p>
+
+              <ul class="elements">
+                <li><cs-button>img</cs-button></li>
+                <li><cs-button disabled>picture</cs-button></li>
+                <li><cs-button disabled styleless>source</cs-button></li>
+                <li><cs-button disabled>svg</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="media">
+            <fieldset>
+              <legend>Media</legend>
+
+              <p>Media elements allow you to add <csds-element>audio</csds-element> and <csds-element>video</csds-element> to the page.</p>
+
+              <ul class="elements">
+                <li><cs-button disabled>audio</cs-button></li>
+                <li><cs-button disabled>video</cs-button></li>
+                <li><cs-button disabled styleless>track</cs-button></li>
+              </ul>
+            </fieldset>
+          </section>
+        </div>
+    </main>
+
+  </body>
+</html>
