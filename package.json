@@ -1,0 +1,27 @@
+{
+  "name": "ttyw",
+  "version": "0.1.0",
+  "description": "The Thousand Year Web",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThirstyHead/ttyw.github.io.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "js",
+    "accessibility",
+    "a11y"
+  ],
+  "author": "Scott Davis <scott@thirstyhead.com>",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/ThirstyHead/ttyw.github.io/issues"
+  },
+  "homepage": "https://github.com/ThirstyHead/ttyw.github.io#readme"
+}

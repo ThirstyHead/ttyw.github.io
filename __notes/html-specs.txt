@@ -1,0 +1,67 @@
+5.2
+Dec 14, 2017
+https://www.w3.org/TR/html52/
+https://www.w3.org/TR/2017/REC-html52-20171214/
+https://www.w3.org/TR/html52/changes.html
+
+
+
+5.1
+Nov 1, 2016
+https://www.w3.org/TR/html51/
+https://www.w3.org/TR/2016/REC-html51-20161101/
+https://www.w3.org/TR/html51/changes.html
+
+
+5.0
+Oct 28, 2014
+https://www.w3.org/TR/2014/REC-html5-20141028/
+https://www.w3.org/TR/2014/REC-html5-20141028/obsolete.html
+
+
+
+4.01
+Dec 24, 1999
+https://www.w3.org/TR/html401/
+https://www.w3.org/TR/html401/appendix/changes.html
+
+
+4.0
+Dec 18, 1997
+https://www.w3.org/TR/REC-html40-971218/
+https://www.w3.org/TR/REC-html40-971218/appendix/changes.html
+
+
+
+3.2
+Jan 14, 1997
+https://www.w3.org/TR/REC-html32
+
+
+
+
+2.0
+Nov 24, 1995
+IETF
+RFC 1866
+https://tools.ietf.org/html/rfc1866
+
+Form-based file uploads
+Nov 25, 1995
+RFC 1867
+https://tools.ietf.org/html/rfc1867
+
+Tables
+May 1996
+RFC 1942
+https://tools.ietf.org/html/rfc1942
+
+Client-side Image Maps
+Aug 1996
+RFC 1980
+https://tools.ietf.org/html/rfc1980
+
+Internationalization
+Jan 1997
+RFC 2070
+https://tools.ietf.org/html/rfc2070
