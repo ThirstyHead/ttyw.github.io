@@ -8,35 +8,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="/__csds/css/index.css">
-    <script src="/__csds/component/csds-header/index.js"></script>
-    <script src="/__csds/component/csds-footer/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
+
+    <!-- Can I Use component -->
+    <script defer src="//cdn.jsdelivr.net/caniuse-embed/1.1.0/caniuse-embed.min.js"></script>
+  
   </head>
   <body>
-    <csds-header></csds-header>
+    <ttyw-header></ttyw-header>
 
     <main class="site">
-      <cs-tabs>
-        <cs-tab role="heading" slot="tab">Info</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/audio">&lt;audio&gt;</a></h2>
-          <p>The HTML <code>&lt;audio&gt;</code> element is used to embed sound content in documents. It may contain several audio sources, represented using the src attribute or the <code>&lt;source&gt;</code> element; the browser will choose the most suitable one.</p>
-          <p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/audio">https://developer.mozilla.org/en/docs/Web/HTML/Element/audio</a></p>
-        </cs-panel>
+      <h2><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/audio">&lt;audio&gt;</a></h2>
+      <p>The HTML <code>&lt;audio&gt;</code> element is used to embed sound content in documents. It may contain several audio sources, represented using the src attribute or the <code>&lt;source&gt;</code> element; the browser will choose the most suitable one.</p>
+      <p><a class="moz-link" href="https://developer.mozilla.org/en/docs/Web/HTML/Element/audio">https://developer.mozilla.org/en/docs/Web/HTML/Element/audio</a></p>
 
-        <cs-tab role="heading" slot="tab">Can I Use?</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2>Can I Use &lt;audio&gt;?</h2>
-          <csds-caniuse-html4></csds-caniuse-html4>
-          <cs-citation src="http://caniuse.com/"></cs-citation>
-        </cs-panel>
+      <h2>Can I Use &lt;audio&gt;?</h2>
+      <p class="ciu_embed" data-feature="audio" data-periods="future_1,current,past_1,past_2">
+        <a href="http://caniuse.com/#feat=audio">Can I Use audio?</a> Data on support for the audio element across the major browsers from caniuse.com.
+      </p>
 
-        <cs-tab role="heading" slot="tab">Sandbox</cs-tab>
-        <cs-panel role="region" slot="panel">
-          <h2>Sandbox</h2>
-        </cs-panel>
-      </cs-tabs>
+
+      <h2>Sandbox</h2>
     </main>
-    <csds-footer></csds-footer>
   </body>
 </html>
