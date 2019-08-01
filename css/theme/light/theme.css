@@ -6,7 +6,10 @@
   --accent-color: red;
 
   /* Theme Styles */
-  --page-header-background-color: var(--primary-color);
-  --page-header-color: var(--secondary-color);
+  --page-header-background-color: var(--secondary-color);
+  --page-header-color: var(--primary-color);
   --divider-color: var(--ternary-color);
+
+  --body-background-color: var(--primary-color);
+  --body-color: var(--secondary-color);
 }

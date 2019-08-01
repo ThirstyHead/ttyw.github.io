@@ -14,7 +14,10 @@ window.customElements.define('ttyw-header',
       let style = document.createElement('style');
       style.innerHTML = `
         header{
-          padding: 1em 1em 0.25em 1em;
+          display: flex;
+          flex-flow: row wrap;
+          align-items: flex-end;
+          padding: 1em;
           background-color: var(--page-header-background-color);
           color: var(--page-header-color);
           border-bottom: 1px solid var(--divider-color);
@@ -29,28 +32,31 @@ window.customElements.define('ttyw-header',
           border-bottom: 2px solid var(--accent-color);
         }
 
-        h1{
-          display: inline-block;
-          margin: 0;
-          font-family: sans-serif;
-        }
-
         nav{
-          display: inline-block;
+          margin-left: auto;
         }
 
         ul{
           list-style-type: none;
+          margin: 0;
         }
 
         li{
           display: inline-block;
           padding-left: 3em;
           font-family: sans-serif;
+          font-size: 1em;
+          text-transform: lowercase;
         }
 
         .accent{
           color: var(--accent-color);
+        }
+
+        .brand{
+          font-family: sans-serif;
+          font-size: 1em;
+          text-transform: lowercase;
         }
       `;
       return style;
@@ -59,15 +65,16 @@ window.customElements.define('ttyw-header',
     get content(){
       let header = document.createElement('header');
       header.innerHTML = `
-        <a href="/"><h1><span class="accent">&asymp;</span> The Thousand Year Web</h1></a>
+        <div class="brand">
+          <a href="/"><span class="accent">&asymp;</span> The Thousand Year Web</a>
+        </div>
 
         <nav>
           <ul>
-            <li><a href="/html">HTML</a></li>
-            <li><a href="/css">CSS</a></li>
-            <li><a href="/javascript">JavaScript</a></li>
-            <li><a href="/examples">Examples</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/ref/html">HTML</a></li>
+            <li><a href="/ref/css">CSS</a></li>
+            <li><a href="/ref/javascript">JavaScript</a></li>
+            <li><a href="/ref/a11y">a11y</a></li>
           </ul>
         </nav>
       `;
