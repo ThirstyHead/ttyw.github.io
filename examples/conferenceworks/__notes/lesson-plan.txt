@@ -1,0 +1,93 @@
+# ConferenceWorks Lesson Plan
+2019-10-02
+
+
+## Introduction
+
+We are building a website for a fictional software conference called ConferenceWorks.
+
+Domain:
+
+* Speakers
+* Talks
+* Rooms
+* Sessions
+* Schedule
+
+Plan:
+
+* Mobile-first / Responsive
+* Accessibility
+* Offline / PWA
+
+User Journeys:
+* Looking at schedule for sessions
+** Offline support, while at conference with sketchy Wifi. 
+* Registering for conference
+
+
+
+
+
+
+## Sections and Web Components
+
+In this section, we'll explore the semantic sectioning elements introduced in HTML5 like main, header, footer, and nav. 
+
+We'll also learn about Web Components, which will allow us to refactor out common elements to be shared/reused across pages.
+
+To test basic navigation, we'll install Gauge and Taiko.
+
+
+
+
+
+
+## Content and Responsive Web Design
+
+In this section, we'll build out a basic page for Speaker information. We'll both see and hear the page hierarchy using h1-h6 sectioning elements. We'll add an image, and discuss both alt text and the more robust figure/figcaption combination. We'll also discuss the merits of using the picture element instead of the img element. Finally, we'll use the details element to leverage the browser-native accordian widget.
+
+list + details pattern
+
+
+
+
+
+
+## Tables and Dates
+
+In this section, we'll use an HTML table to lay out the main conference calendar of talks. We'll also discuss JavaScript Dates and use the Intl.DateTimeFormat object to format the dates and times.
+
+
+
+
+
+
+
+## Forms and Validation
+
+In this section, we'll explore HTML5 forms, with an emphasis on the new input elements like tel (for telephone numbers) and email (for email addresses). We'll also discuss using CSS for declarative visual form validation. 
+
+
+
+
+
+## Progressive Web Apps (PWAs) and the Offline / "Airplane Mode" Experience
+
+In this section, we'll bundle up our application for installation on a mobile device (both iOS and Android) as a Progressive Web App (PWA). We'll also discuss other aspects of supporting the Offline / "Airplane Mode" experience. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
