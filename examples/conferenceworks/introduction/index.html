@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Introduction | ConferenceWorks | TTYW</title>
+   <title>Introduction | ConferenceWorks | TTYW</title>
     <meta name="name" content="Scott Davis <scott@thirstyhead.com">
     <meta name="description" content="ConferenceWorks: A Real Website for a Fictional Software Conference">
     <meta name="keywords" content="html,css">
@@ -26,7 +26,28 @@
       <ttyw-conferenceworks-sidebar open="1"></ttyw-conferenceworks-sidebar>
       <main>
         <h1>Introduction</h1>
-    
+        <p>Let's build a website for a fictional software conference called ConferenceWorks.</p>    
+
+        <h2>Domain</h2>
+        <p>There are a few key ideas in the domain that we'll be modeling. This is our Ubiquitous Language.</p>
+        <dl>
+          <dt>Speaker</dt>
+          <dd>Speakers are invited to give Talks at the software conference. Speakers have a <code>name</code> and a <code>bio</code> that is one or more paragraphs long. A Speaker also has a <code>photo</code>.</dd>
+
+          <dt>Talk</dt>
+          <dd>A Talk has a <code>title</code> and a <code>description</code>. When a Talk is scheduled for a specific Room and Timeslot, you have a Session. If a Talk spans multiple Timeslots, it is considered a <i>Workshop</i>. A <i>Keynote</i> is a Talk that everyone attends, so it appears on the Schedule as a Talk that spans all of the rooms.</dd>
+          <dt>Room</dt>
+          <dd>A Room has a <code>name</code> and a <code>number</code>. A Room has several Timeslots.</dd>
+
+          <dt>Timeslot</dt>
+          <dd>A Timeslot has a <code>start time</code> and a <code>duration</code>. A Timeslot is associated with a specific Room.</dd>
+
+          <dt>Session</dt>
+          <dd>A Session is a Talk that is scheduled in a specific Room during a specific Timeslot. The Schedule is a collection of Sessions.</dd>
+
+          <dt>Schedule</dt>
+          <dd>The Schedule shows all of the Sessions at the conference, which is a Talk that is scheduled for a specific Room during a specific Timeslot.</dd>
+        </dl>
       </main>
     </div>
 
