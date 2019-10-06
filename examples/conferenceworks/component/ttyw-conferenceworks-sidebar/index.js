@@ -102,7 +102,7 @@ window.customElements.define('ttyw-conferenceworks-sidebar',
 
           <li>
             <details>
-              <summary>Progressive Web Apps (PWAs) and the Offline / "Airplane Mode" Experience</summary>
+              <summary>Progressive Web Apps (PWAs)</summary>
                 <div class="lesson">
                   <a href="${this.baseUrl}/pwas/">Explanation</a><br>
                   <a href="${this.baseUrl}/pwas/exercise">Exercise</a>
