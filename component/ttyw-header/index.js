@@ -75,6 +75,7 @@ window.customElements.define('ttyw-header',
             <li><a href="/ref/css">CSS</a></li>
             <li><a href="/ref/javascript">JavaScript</a></li>
             <li><a href="/ref/a11y">a11y</a></li>
+            <li><a href="/examples">examples</a></li>
           </ul>
         </nav>
       `;

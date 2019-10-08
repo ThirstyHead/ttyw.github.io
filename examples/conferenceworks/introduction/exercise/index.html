@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Introduction Exercise | ConferenceWorks | TTYW</title>
+    <meta name="name" content="Scott Davis <scott@thirstyhead.com">
+    <meta name="description" content="ConferenceWorks: A Real Website for a Fictional Software Conference">
+    <meta name="keywords" content="html,css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
+    <script src="/examples/conferenceworks/component/ttyw-conferenceworks-sidebar/index.js"></script>
+  </head>
+  <body>
+    <ttyw-header></ttyw-header>
+    <p class="breadcrumbs">
+      <a href="/">Home</a> &gt; 
+      <a href="/examples">Examples</a> &gt; 
+      <a href="/examples/conferenceworks">ConferenceWorks</a> &gt; 
+      <a href="/examples/conferenceworks/introduction">Introduction</a> &gt;
+      Exercise
+    </p>
+
+    <div class="page-layout">
+      <ttyw-conferenceworks-sidebar open="1"></ttyw-conferenceworks-sidebar>
+      <main>
+        <h1>Exercise: Introduction</h1>
+        <p>In this exercise, you'll install various bits of software, download several base projects (one for the website and another for the tests), and generally get your development environment set up and configured.</p>    
+
+        <h2>Software</h2>
+        <p>Here is the software you should have installed to complete the exercises.</p>
+        <table>
+          <tr>
+            <th>Software</th>
+            <th>URL</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>Node/NPM</td>
+            <td><a href="https://nodejs.org">https://nodejs.org</a></td>
+            <td>You'll be asked to <code>npm install</code> software, as well as run tasks like <code>npm test</code>. Version 10.x LTS or later.</td>
+          </tr>
+          <tr>
+            <td>Gauge</td>
+            <td><a href="https://gauge.org">https://gauge.org</a></td>
+            <td>Gauge is a free and open source test runner for the User Journey tests we'll be writing.</td>
+          </tr>
+          <tr>
+            <td>Taiko</td>
+            <td><a href="https://taiko.gauge.org">https://taiko.gauge.org</a></td>
+            <td>Taiko is a free and open source browser automation tool we'll be using in conjunction with Gauge.</td>
+          </tr>
+          <tr>
+            <td>Tota11y</td>
+            <td><a href="https://khan.github.io/tota11y/">https://khan.github.io/tota11y/</a></td>
+            <td>Tota11y is a bookmarklet (or browser extension) that allows you to easily find Accessibility errors on the current web page.</td>
+          </tr>
+          <tr>
+            <td>VS Code</td>
+            <td><a href="https://code.visualstudio.com">https://code.visualstudio.com</a></td>
+            <td>(OPTIONAL) You can use the text editor or IDE of your choice for these exercises. If you don't have one already installed, VS Code is a free and open source IDE.</td>
+          </tr>
+          <tr>
+            <td>Git</td>
+            <td><a href="https://git-scm.com">https://git-scm.com</a></td>
+            <td>(OPTIONAL) There are several projects that you'll be asked to <code>git clone</code>.  However, you can also simply download the ZIP file without cloning the repos.</td>
+          </tr>
+          <tr>
+            <td>Caddy</td>
+            <td><a href="https://caddyserver.com">https://caddyserver.com</a></td>
+            <td>(OPTIONAL) These exercises will run from any standard web server. If you don't have a web server already installed, Caddy is a nice, reliable HTTP/2 server that is easy to install.</td>
+          </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Steps</h2>
+
+        <h3>Install the ConferenceWorks-Starter Project</h3>
+        <ol class="steps">
+          <li>
+            Download the <a href="https://github.com/thirstyhead/conferenceworks-starter">ConferenceWorks starter project</a>.<br>This is a barebones website that you will build up over a series of several exercises.
+          </li>
+
+          <li>
+            Start the webserver in the <code>conferenceworks-starter</code> directory.<br>If you have Caddy installed, you can type <code>caddy</code>.
+          </li>
+
+          <li>Visit <a href="http://localhost:8888">http://localhost:8888</a>.<br>You should see the welcome screen for the ConferenceWorks-Starter project.</li>
+        </ol>
+
+
+
+        <h3>Install the ConferenceWorks-Test Project</h3>
+        <ol class="steps">
+          <li>
+            Download the <a href="https://github.com/thirstyhead/conferenceworks-tests">ConferenceWorks tests project</a>.<br>This is a Gauge/Taiko test suite for the ConferenceWorks website.
+          </li>
+
+          <li>
+            Run the tests for 01-Instructions.<br>Type <code>gauge run specs/01-instructions</code>.
+          </li>
+
+          <li>
+            To verify that all tests passed, view the report.<br>Type <code>open reports/html-report/index.html</code>.
+          </li>
+        </ol>
+
+
+      </main>
+
+    </div>
+
+  </body>
+</html>
