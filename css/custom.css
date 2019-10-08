@@ -2,6 +2,13 @@
   padding-left: 1em;
 }
 
+ol.steps li{
+  padding-bottom: 1em;
+}
+
+/*******************
+ * page layout
+ ******************/
 .page-layout{
   display: grid;
   grid-template-columns: 25% 75%;
