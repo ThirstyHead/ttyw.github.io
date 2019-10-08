@@ -1,0 +1,54 @@
+$ gauge init js
+Downloading js.zip
+.
+Copying Gauge template js to current directory ...
+
+> taiko@1.0.2 install /Users/scott/tmp/gauge-init/node_modules/taiko
+> node lib/install.js
+
+Downloading Chromium r662092 - 88.3 Mb [====================] 100% 0.0s 
+Chromium downloaded to /Users/scott/tmp/gauge-init/node_modules/taiko/.local-chromium/mac-662092
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN gauge-taiko-template@0.0.1 No repository field.
+npm WARN gauge-taiko-template@0.0.1 No license field.
+
+added 44 packages from 64 contributors and audited 48 packages in 40.002s
+found 0 vulnerabilities
+
+Successfully initialized the project. Run specifications with "npm test" in project root.
+
+===========
+
+$ npm test
+
+> gauge-taiko-template@0.0.1 test /Users/scott/tmp/gauge-init
+> gauge run specs/
+
+(node:22048) DeprecationWarning: grpc.load: Use the @grpc/proto-loader module with grpc.loadPackageDefinition instead
+# Getting Started with Gauge
+  ## Search Taiko Repository	 ✔ ✔ ✔
+
+Successfully generated html-report to => /Users/scott/tmp/gauge-init/reports/html-report/index.html
+Specifications:	1 executed	1 passed	0 failed	0 skipped
+Scenarios:	1 executed	1 passed	0 failed	0 skipped
+
+Total time taken: 8.239s
+Updates are available. Run `gauge update -c` for more info.
+
+
+===========
+
+$ npm install
+
+> taiko@1.0.2 install /Users/scott/code/local/conferenceworks-tests/node_modules/taiko
+> node lib/install.js
+
+Downloading Chromium r662092 - 88.3 Mb [====================] 100% 0.0s 
+Chromium downloaded to /Users/scott/code/local/conferenceworks-tests/node_modules/taiko/.local-chromium/mac-662092
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN gauge-taiko-template@0.0.1 No repository field.
+npm WARN gauge-taiko-template@0.0.1 No license field.
+
+added 44 packages from 64 contributors and audited 48 packages in 40.147s
+found 0 vulnerabilities
+
