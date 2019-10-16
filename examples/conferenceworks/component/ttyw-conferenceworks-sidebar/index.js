@@ -82,7 +82,7 @@ window.customElements.define('ttyw-conferenceworks-sidebar',
 
           <li>
             <details>
-              <summary>Tables and Dates</summary>
+              <summary>Tables and LocalStorage</summary>
                 <div class="lesson">
                   <a href="${this.baseUrl}/tables/">Explanation</a><br>
                   <a href="${this.baseUrl}/tables/exercise">Exercise</a>
