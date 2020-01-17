@@ -54,12 +54,12 @@ window.customElements.define('ttyw-refactoring-sidebar',
             <details>
               <summary>Introduction</summary>
                 <div class="lesson">
-                  <a href='${this.baseUrl}/introduction/'>Explanation</a><br>
-                  <a href='${this.baseUrl}/introduction/exercise'>Exercise</a>
+                  <a href='${this.baseUrl}/introduction/'>Slides</a><br>
                 </div>
               </details>
           </li>
-          
+
+<!--
           <li>
             <details>
               <summary>Conclusion</summary>
@@ -69,7 +69,7 @@ window.customElements.define('ttyw-refactoring-sidebar',
                 </div>
             </details>
           </li>
-
+-->
         </ol>
 
       `;
