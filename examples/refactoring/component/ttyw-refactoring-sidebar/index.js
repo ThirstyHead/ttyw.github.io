@@ -59,6 +59,16 @@ window.customElements.define('ttyw-refactoring-sidebar',
               </details>
           </li>
 
+          <li>
+            <details>
+              <summary>Web Browsers</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/browsers/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
+
 <!--
           <li>
             <details>
