@@ -68,6 +68,24 @@ window.customElements.define('ttyw-refactoring-sidebar',
               </details>
           </li>
 
+          <li>
+            <details>
+              <summary>Web Servers</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/servers/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Browser-Native Tech</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/browser-native/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
 
 <!--
           <li>
