@@ -1,5 +1,5 @@
-window.customElements.define('ttyw-refactoring-sidebar',
-  class TtywRefactoringSidebar extends HTMLElement{
+window.customElements.define('ttyw-multisensory-sidebar',
+  class TtywMultisensorySidebar extends HTMLElement{
     constructor(){
       super();
     }
@@ -16,7 +16,7 @@ window.customElements.define('ttyw-refactoring-sidebar',
     }
 
     get baseUrl(){
-      return '/examples/refactoring';
+      return '/examples/multisensory';
     }
 
     get open(){
@@ -61,43 +61,58 @@ window.customElements.define('ttyw-refactoring-sidebar',
 
           <li>
             <details>
-              <summary>Web Browsers</summary>
+              <summary>Semantics and Accessibility</summary>
                 <div class="lesson">
-                  <a href='${this.baseUrl}/browsers/'>Slides</a><br>
+                  <a href='${this.baseUrl}/semantics/'>Slides</a><br>
                 </div>
               </details>
           </li>
 
           <li>
             <details>
-              <summary>Web Servers</summary>
+              <summary>Speech Synthesis</summary>
                 <div class="lesson">
-                  <a href='${this.baseUrl}/servers/'>Slides</a><br>
+                  <a href='${this.baseUrl}/speech-synthesis/'>Slides</a><br>
                 </div>
               </details>
           </li>
 
           <li>
             <details>
-              <summary>Browser-Native Tech</summary>
+              <summary>SSML</summary>
                 <div class="lesson">
-                  <a href='${this.baseUrl}/browser-native/'>Slides</a><br>
+                  <a href='${this.baseUrl}/ssml/'>Slides</a><br>
                 </div>
               </details>
           </li>
 
+          <li>
+            <details>
+              <summary>Speech Recognition</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/speech-recognition/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
 
-<!--
+          <li>
+            <details>
+              <summary>WebVTT</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/webvtt/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
           <li>
             <details>
               <summary>Conclusion</summary>
                 <div class="lesson">
-                  <a href="${this.baseUrl}/conclusion/">Explanation</a><br>
-                  <a href="${this.baseUrl}/conclusion/exercise">Exercise</a>
+                  <a href='${this.baseUrl}/conclusion/'>Slides</a><br>
                 </div>
-            </details>
+              </details>
           </li>
--->
+
         </ol>
 
       `;
