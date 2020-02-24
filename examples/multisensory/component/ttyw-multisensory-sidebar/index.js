@@ -61,6 +61,35 @@ window.customElements.define('ttyw-multisensory-sidebar',
 
           <li>
             <details>
+              <summary>Diversity</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/diversity/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Exclusion</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/exclusion/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>Everyone</summary>
+                <div class="lesson">
+                  <a href='${this.baseUrl}/everyone/'>Slides</a><br>
+                </div>
+              </details>
+          </li>
+
+
+
+          <li>
+            <details>
               <summary>Semantics and Accessibility</summary>
                 <div class="lesson">
                   <a href='${this.baseUrl}/semantics/'>Slides</a><br>
