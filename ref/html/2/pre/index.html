@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott.davis@grainger.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Pre</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.5.2. Preformatted Text: PRE</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+The &lt;PRE&gt; element represents a character cell block of text and is
+   suitable for text that has been formatted for a monospaced font.
+    </p>
+
+    <p>
+The &lt;PRE&gt; tag may be used with the optional WIDTH attribute. The
+   WIDTH attribute specifies the maximum number of characters for a line
+   and allows the HTML user agent to select a suitable font and
+   indentation.
+    </p>
+
+    <p>Within preformatted text:</p>
+
+    <ul>
+      <li>Line breaks within the text are rendered as a move to the
+        beginning of the next line.
+
+        <p>NOTE - References to the "beginning of a new line"
+            do not imply that the renderer is forbidden from
+            using a constant left indent for rendering
+            preformatted text. The left indent may be
+            constrained by the width required.</p>
+      </li>
+
+      <li>Anchor elements and phrase markup may be used.
+
+        <p>
+        NOTE - Constraints on the processing of &lt;PRE&gt;
+            content may limit or prevent the ability of the HTML
+            user agent to faithfully render phrase markup.</p>
+      </li>
+
+      <li>Elements that define paragraph formatting (headings,
+        address, etc.) must not be used.
+
+        <p>
+NOTE - Some historical documents contain &lt;P&gt; tags in
+            &lt;PRE&gt; elements. User agents are encouraged to treat
+            this as a line break. A &lt;P&gt; tag followed by a
+            newline character should produce only one line
+            break, not a line break plus a blank line.
+        </p>
+      </li>
+
+      <li>The horizontal tab character (code position 9 in the HTML
+        document character set) must be interpreted as the smallest
+        positive nonzero number of spaces which will leave the
+        number of characters so far on the line as a multiple of 8.
+        Documents should not contain tab characters, as they are not
+        supported consistently.
+      </li>
+    </ul>
+
+    <p>Example of use:</p>
+
+    <pre><code>
+    &lt;PRE&gt;
+    Line 1.
+           Line 2 is to the right of line 1.     &lt;a href="abc"&gt;abc&lt;/a&gt;
+           Line 3 aligns with line 2.            &lt;a href="def"&gt;def&lt;/a&gt;
+    &lt;/PRE&gt;
+    </code></pre>
+
+  </body>
+</html>
