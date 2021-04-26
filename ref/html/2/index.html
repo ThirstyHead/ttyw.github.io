@@ -14,7 +14,7 @@
       <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5. Document Structure</a></h2>
       <p>An HTML document is a tree of elements, including a head and body,
    headings, paragraphs, lists, etc.</p>
-      <p>[source: RFC 1866 <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+      <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
 
       <h2>Elements</h2>
       <p>HTML Elements are the basic building blocks of any web page.</p>
@@ -22,10 +22,16 @@
         <h3>Document</h3> 
         <p>Document elements describe the high-level parts of the page. The <code>&lt;html&gt;</code> element is the root element of the page. Non-visible elements like <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> are defined in the <code>&lt;head&gt;</code> section. All viewable content is defined in the <code>&lt;body&gt;</code> section.</p>
 
-        <h3>Section</h3> 
         <h3>Content</h3> 
-        <h3>Action</h3> 
-        <h3>List</h3> 
+        <p>Content elements describe the basic hierarchy of the page. Each heading (<code>&lt;h1&gt;</code>..<code>&lt;h6&gt;</code>) creates its own implicit section. Think of headings as entries in a table of contents.</p>
+        <p><code>&lt;h1&gt;</code> is the primary heading/section. There should only be one per page. <code>&lt;h2&gt;</code> sections are subtopics. If you need to further subdivide the sections, use <code>&lt;h3&gt;</code> - <code>&lt;h6&gt;</code>.</p>
+
+        <h3>Action</h3>
+        <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks to <i>other web pages</i>. <code>&lt;button&gt;</code> provides a larger, more obvious enticement for the user to interact with the <i>current page</i>.  
+        </p>  
+
+        <h3>List</h3>
+        <p>List elements allow you to present the user with a collection of <code>&lt;li&gt;</code> list items. <code>&lt;ul&gt;</code> is an unordered list, or a list of bulleted items. <code>&lt;ol&gt;</code> is an ordered list, or a list of numbered items.</p>
         <h3>Form</h3> 
         <h3>Table</h3> 
         <h3>Semantics</h3> 
