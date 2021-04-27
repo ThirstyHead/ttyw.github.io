@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Xmp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Xmp</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.5.2.1. Example and Listing: XMP, LISTING</a></h2>
+    <p>[DEPRECATED]</p>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+The &lt;XMP&gt; and &lt;LISTING&gt; elements are similar to the &lt;PRE&gt; element,
+   but they have a different syntax. Their content is declared as CDATA,
+   which means that no markup except the end-tag open delimiter-in-
+   context is recognized (see 9.6 "Delimiter Recognition" of [SGML]).
+    </p>
+
+    <p>
+    NOTE - In a previous draft of the HTML specification, the syntax
+      of &lt;XMP&gt; and &lt;LISTING&gt; elements allowed closing tags to be treated
+      as data characters, as long as the tag name was not &lt;XMP&gt; or
+      &lt;LISTING&gt;, respectively.
+    </p>
+
+    <p>
+Since CDATA declared content has a number of unfortunate interactions
+   with processing techniques and tends to be used and implemented
+   inconsistently, HTML documents should not contain &lt;XMP&gt; nor &lt;LISTING&gt;
+   elements -- the &lt;PRE&gt; tag is more expressive and more consistently
+   supported.
+    </p>
+
+    <p>
+    The &lt;LISTING&gt; element should be rendered so that at least 132
+   characters fit on a line. The &lt;XMP&gt; element should be rendered so
+   that at least 80 characters fit on a line but is otherwise identical
+   to the &lt;LISTING&gt; element.
+    </p>
+
+    <p>
+NOTE - In a previous draft, HTML included a &lt;PLAINTEXT&gt; element
+      that is similar to the &lt;LISTING&gt; element, except that there is no
+      closing tag: all characters after the &lt;PLAINTEXT&gt; start-tag are
+      data.
+    </p>
+
+  </body>
+</html>
