@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>A</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.7.3. Anchor: A
+</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+ The &lt;A&gt; element indicates a hyperlink anchor (see 7, "Hyperlinks").
+   At least one of the NAME and HREF attributes should be present.
+   Attributes of the &lt;A&gt; element:
+    </p>
+
+    <dl>
+      <dt>HREF</dt>
+      <dd>gives the URI of the head anchor of a hyperlink.</dd>
+
+      <dt>NAME</dt>
+      <dd>gives the name of the anchor, and makes it available as
+            a head of a hyperlink.</dd>
+
+      <dt>TITLE</dt>
+      <dd>suggests a title for the destination resource --
+            advisory only. The TITLE attribute may be used:
+            <ul>
+              <li>for display prior to accessing the destination
+                resource, for example, as a margin note or on a
+                small box while the mouse is over the anchor, or
+                while the document is being loaded;</li>
+              <li>for resources that do not include a title, such as
+                graphics, plain text and Gopher menus, for use as a
+                window title.</li>
+            </ul>
+      </dd>
+
+      <dt>REL</dt>
+      <dd>The REL attribute gives the relationship(s) described by
+            the hyperlink. The value is a whitespace separated list
+            of relationship names. The semantics of link
+            relationships are not specified in this document.</dd>
+
+      <dt>REV</dt>
+      <dd>same as the REL attribute, but the semantics of the
+            relationship are in the reverse direction. A link from A
+            to B with REL="X" expresses the same relationship as a
+            link from B to A with REV="X". An anchor may have both
+            REL and REV attributes.</dd>
+
+      <dt>URN</dt>
+      <dd>specifies a preferred, more persistent identifier for
+            the head anchor of the hyperlink. The syntax and 
+            semantics of the URN attribute are not yet specified.
+      </dd>
+
+      <dt>METHODS</dt>
+      <dd>specifies methods to be used in accessing the
+            destination, as a whitespace-separated list of names.
+            The set of applicable names is a function of the scheme
+            of the URI in the HREF attribute. For similar reasons as
+            for the TITLE attribute, it may be useful to include the
+            information in advance in the link. For example, the
+            HTML user agent may chose a different rendering as a
+            function of the methods allowed; for example, something
+            that is searchable may get a different icon.</dd>
+    </dl>
+
+  </body>
+</html>

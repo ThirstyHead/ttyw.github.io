@@ -24,7 +24,7 @@
       <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
 
       <h2>Elements</h2>
-      <p>HTML Elements are the basic building blocks of any web page.</p>
+      <p>HTML Elements are the basic building blocks of any web page. There are 40 elements defined in the HTML 2.0 RFC, and 3 deprecated elements.</p>
 
         <h3>Document</h3> 
         <p>Document elements describe the high-level parts of the page. The <code>&lt;html&gt;</code> element is the root element of the page. The <code>&lt;head&gt;</code> element is for hidden, browser-focused metadata. All viewable content is defined in the <code>&lt;body&gt;</code> section.</p>
@@ -54,21 +54,32 @@
           <li><a href="h5/">h5</a></li>
           <li><a href="h6/">h6</a></li>
           <li><a href="p/">p</a></li>
+          <li><a href="br/">br</a></li>
+          <li><a href="hr/">hr</a></li>
         </ul>
 
         <h3>Action</h3>
-        <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks to <i>other web pages</i>. <code>&lt;button&gt;</code> provides a larger, more obvious enticement for the user to interact with the <i>current page</i>.  
+        <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks to <i>other web pages</i>.
         </p>  
+
+        <ul class="elements">
+          <li><a href="a/">a</a></li>
+        </ul>
 
         <h3>List</h3>
         <p>List elements allow you to present the user with a collection of <code>&lt;li&gt;</code> list items. <code>&lt;ul&gt;</code> is an unordered list, or a list of bulleted items. <code>&lt;ol&gt;</code> is an ordered list, or a list of numbered items.</p>
 
-        <h3>Form</h3> 
-        <p>Form elements allow the user to submit information, upload files, and search.</p>
-        <p>Be sure to always use the <code>&lt;label&gt;</code> element to semantically associate text with an <code>&lt;input&gt;</code> field. Similarly, use an associated <code>&lt;output&gt;</code> field to display calculated output.</p>
+        <ul class="elements">
+          <li><a href="ul/">ul</a></li>
+          <li><a href="li/">li</a></li>
+          <li><a href="ol/">ol</a></li>
+          <li><a href="dir/">dir</a></li>
+          <li><a href="dir/">menu</a></li>
+          <li><a href="dl/">dl</a></li>
+          <li><a href="dt/">dt</a></li>
+          <li><a href="dd/">dd</a></li>
+        </ul>
 
-        <h3>Table</h3> 
-        <p>Table elements are ideal for displaying spreadsheet-like information. If your data can be logically grouped by columns, rows, or both, use a <code>&lt;table&gt;</code>.</p>
 
         <h3>Semantics</h3> 
         <p>Semantic elements should be used to <i>describe</i> or <i>clarify</i> the meaning of the text. The way the text appears is far less important than providing the meaning or significance of the text.</p>
@@ -77,14 +88,27 @@
           <li><a href="pre/">pre</a></li>
           <li><a href="xmp/" class="deprecated">xmp</a></li>
           <li><a href="listing/" class="deprecated">listing</a></li>
+          <li><a href="address/">address</a></li>
+          <li><a href="blockquote/">blockquote</a></li>
+          <li><a href="cite/">cite</a></li>
+          <li><a href="code/">code</a></li>
+          <li><a href="em/">em</a></li>
+          <li><a href="kbd/">kbd</a></li>
+          <li><a href="samp/">samp</a></li>
+          <li><a href="strong/">strong</a></li>
+          <li><a href="var/">var</a></li>
+          <li><a href="b/">b</a></li>
+          <li><a href="i/">i</a></li>
+          <li><a href="tt/">tt</a></li>
         </ul>
 
-        <h3>Editing</h3> 
-        <p>Editing elements provide visual indicators for the changes made to the document. Use <code>&lt;mark&gt;</code> to highlight changes. Use <code>&lt;del&gt;</code> to indicate deleted text.</p>
 
         <h3>Graphics</h3> 
         <p>Graphic elements show non-text information. Use <code>&lt;img&gt;</code> to display <i>raster</i> or photographic images.<p>
 
+        <ul class="elements">
+          <li><a href="img/">img</a></li>
+        </ul>
 
   </body>
 </html>
