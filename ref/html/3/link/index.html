@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LINK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>LINK</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#link">LINK</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>
+LINK provides a media independent method for defining relationships with other documents and resources. LINK has been part of HTML since the very early days, although few browsers as yet take advantage of it (most still ignore LINK elements). 
+    </p>
+
+    <p>
+LINK elements can be used in principle: 
+    </p>
+
+    <ul>
+      <li>for document specific navigation toolbars or menus </li>
+      <li>to control how collections of HTML files are rendered into printed documents </li>
+      <li>for linking associated resources such as style sheets and scripts</li>
+      <li>to provide alternative forms of the current document </li>
+    </ul>
+
+    <pre><code>
+    &lt;!ELEMENT LINK - O EMPTY&gt;
+    &lt;!ATTLIST LINK
+        href    %URL    #IMPLIED    -- URL for linked resource --
+        rel     CDATA   #IMPLIED    -- forward link types --
+        rev     CDATA   #IMPLIED    -- reverse link types --
+        title   CDATA   #IMPLIED    -- advisory title string --
+        &gt;
+    </code></pre>
+
+    <dl>
+      <dt>href</dt>
+      <dd>Specifies a URL designating the linked resource. </dd>
+
+      <dt>rel</dt>
+      <dd>    The forward relationship also known as the "link type". It specifies a named relationship from the enclosing document to the resource specified by the HREF attribute. HTML link relationships are as yet unstandardized, although some conventions have been established. </dd>
+
+      <dt>rev</dt>
+      <dd>This defines a reverse relationship. A link from document A to document B with REV=relation expresses the same relationship as a link from B to A with REL=relation. REV=made is sometimes used to identify the document author, either the author's email address with a mailto URL, or a link to the author's home page. </dd>
+
+      <dt>title</dt>
+      <dd>    An advisory title for the linked resource. </dd>
+    </dl>
+
+    <p>Here are some proposed relationship values: </p>
+
+    <dl>
+      <dt>rel=top</dt>
+      <dd>    The link references the top of a hierarchy, e.g. the first or cover page in a collection. </dd>
+
+      <dt>rel=contents</dt>
+      <dd>    The link references a document serving as a table of contents. </dd>
+
+      <dt>rel=index</dt>
+      <dd>    The link references a document providing an index for the current document. </dd>
+
+      <dt>rel=glossary</dt>
+      <dd>    The link references a document providing a glossary of terms that are relevant to the current document. </dd>
+
+      <dt>rel=copyright</dt>
+      <dd>    The link references a copyright statement for the current document. </dd>
+
+      <dt>rel=next</dt>
+      <dd>    The link references the next document to visit in a guided tour. It can be used, for example, to preload the next page. </dd>
+
+      <dt>rel=previous</dt>
+      <dd>    The link references the previous document in a guided tour. </dd>
+
+      <dt>rel=help</dt>
+      <dd>    The link references a document offering help, e.g. describing the wider context and offering further links to relevant documents. This is aimed at reorienting users who have lost their way. </dd>
+
+      <dt>rel=search</dt>
+      <dd>    The link references a page for searching material related to a collection of pages </dd>
+    </dl>
+
+    <p>
+Example LINK elements: 
+    </p>
+
+    <pre><code>
+    &lt;LINK REL=Contents HREF=toc.html&gt;
+    &lt;LINK REL=Previous HREF=doc31.html&gt;
+    &lt;LINK REL=Next HREF=doc33.html&gt;
+
+    &lt;LINK REL=Chapter REV=Contents HREF=chapter2.html&gt;
+    </code></pre>
+  </body>
+</html>
