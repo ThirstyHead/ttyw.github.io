@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>UL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>UL</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#ul">Unordered Lists</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+    &lt;!ELEMENT UL - -  (LI)+&gt;
+    &lt;!ENTITY % ULStyle "disc|square|circle"&gt;
+
+    &lt;!ATTLIST UL -- unordered lists --
+        type    (%ULStyle)   #IMPLIED   -- bullet style --
+        compact (compact)    #IMPLIED   -- reduced interitem spacing --
+        &gt;
+
+    &lt;!ELEMENT LI - O %flow -- list item --&gt;
+    &lt;!ATTLIST LI
+        type   (%LIStyle)    #IMPLIED   -- list item style --
+        &gt;
+    </code></pre>
+
+    <p>Unordered lists take the form:</p>
+
+    <pre><code>
+    &lt;UL&gt;
+      &lt;LI&gt; ... first list item
+      &lt;LI&gt; ... second list item
+      ...
+    &lt;/UL&gt;
+    </code></pre>
+
+    <p>
+The UL element is used for unordered lists. Both start and end tags are always needed. The LI element is used for individual list items. The end tag for LI elements can always be omitted. Note that LI elements can contain nested lists. The COMPACT attribute can be used as a hint to the user agent to render lists in a more compact style. 
+    </p>
+
+    <p>
+The TYPE attribute can be used to set the bullet style on UL and LI elements. The permitted values are "disc", "square" or "circle". The default generally depends on the level of nesting for lists. 
+    </p>
+
+    
+    <ul>
+      <li type="disc">with <samp>&lt;li type=disc&gt;</samp></li>
+      <li type="square">with <samp>&lt;li type=square&gt;</samp></li>
+      <li type="circle">with <samp>&lt;li type=circle&gt;</samp></li>
+    </ul>
+
+    <p>This list was chosen to cater for the original bullet shapes used by Mosaic in 1993. </p>
+  </body>
+</html>
