@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CENTER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>CENTER</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#center">DIV and CENTER</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT DIV - - %body.content&gt;
+&lt;!ATTLIST DIV
+        align   (left|center|right) #IMPLIED -- alignment of following text --
+        &gt;
+
+&lt;!-- CENTER is a shorthand for DIV with ALIGN=CENTER --&gt;
+&lt;!ELEMENT center - - %body.content&gt;
+    </code></pre>
+
+    <p>
+DIV elements can be used to structure HTML documents as a hierarchy of divisions. The ALIGN attribute can be used to set the default horizontal alignment for elements within the content of the DIV element. Its value is restricted to LEFT, CENTER or RIGHT, and is defined in the same way as for the paragraph element &lt;P&gt;. 
+    </p>
+
+    <p>Note that because DIV is a block-like element it will terminate an open P element. Other than this, user agents are not expected to render paragraph breaks before and after DIV elements. CENTER is directly equivalent to DIV with ALIGN=CENTER. Both DIV and CENTER require start and end tags. </p>
+
+    <p>CENTER was introduced by Netscape before they added support for the HTML 3.0 DIV element. It is retained in HTML 3.2 on account of its widespread deployment. </p>
+
+  </body>
+</html>
