@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>DD</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#dl">Definition Lists</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!-- definition lists - DT for term, DD for its definition --&gt;
+
+&lt;!ELEMENT DL    - -  (DT|DD)+&gt;
+&lt;!ATTLIST DL
+        compact (compact) #IMPLIED -- more compact style --
+        &gt;
+
+&lt;!ELEMENT DT - O  (%text)*&gt;
+&lt;!ELEMENT DD - O  %flow;&gt;
+    </code></pre>
+
+    <p>Definition lists take the form:</p>
+
+    <pre><code>
+    &lt;DL&gt;
+    &lt;DT&gt; term name
+    &lt;DD&gt; term definition
+    ...
+    &lt;/DL&gt;
+    </code></pre>
+
+    <p>DT elements can only act as containers for text level elements, while DD elements can hold block level elements as well, excluding headings and address elements. </p>
+
+    <p>For example:</p>
+
+    <pre><code>
+    &lt;DL&gt;
+    &lt;DT&gt;Term 1&lt;dd&gt;This is the definition of the first term.
+    &lt;DT&gt;Term 2&lt;dd&gt;This is the definition of the second term.
+    &lt;/DL&gt;
+    </code></pre>
+
+    <p>which could be rendered as:</p>
+
+    <dl>
+      <dt>Term 1</dt>
+      <dd>This is the definition of the first term.</dd>
+
+      <dt>Term 2</dt>
+      <dd>This is the definition of the second term.</dd>
+    </dl>
+
+    <p>The COMPACT attribute can be used with the DL element as a hint to the user agent to render lists in a more compact style. </p>
+
+  </body>
+</html>
