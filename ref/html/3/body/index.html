@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BODY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>BODY</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#body">BODY</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>
+This contains the document body. Both start and end tags for BODY may be omitted. The body can contain a wide range of elements: 
+    </p>
+
+    <ul>
+      <li>Headings (H1 - H6)</li>
+      <li>The ADDRESS element</li>
+      <li>Block level elements</li>
+      <li>Text level elements</li>
+    </ul>
+
+    <p>
+The key attributes are: BACKGROUND, BGCOLOR, TEXT, LINK, VLINK and ALINK. These can be used to set a repeating background image, plus background and foreground colors for normal text and hypertext links. 
+    </p>
+
+    <pre><code>
+&lt;!ENTITY % body.content "(%heading | %text | %block | ADDRESS)*"&gt;
+
+&lt;!ENTITY % color "CDATA" -- a color specification: #HHHHHH @@ details? --&gt;
+
+&lt;!ENTITY % body-color-attrs "
+        bgcolor %color #IMPLIED
+        text %color #IMPLIED
+        link %color #IMPLIED
+        vlink %color #IMPLIED
+        alink %color #IMPLIED
+        "&gt;
+
+&lt;!ELEMENT BODY O O  %body.content&gt;
+&lt;!ATTLIST BODY
+        background %URL #IMPLIED  -- texture tile for document background --
+        %body-color-attrs;  -- bgcolor, text, link, vlink, alink --
+        &gt;
+    </code></pre>
+
+    <p>Example:</p>
+
+    <dl>
+      <dt>bgcolor</dt>
+      <dd>    Specifies the background color for the document body. See below for the syntax of color values. </dd>
+
+      <dt>text</dt>
+      <dd>    Specifies the color used to stroke the document's text. This is generally used when you have changed the background color with the BGCOLOR or BACKGROUND attributes. </dd>
+
+      <dt>link</dt>
+      <dd>    Specifies the color used to stroke the text for unvisited hypertext links. </dd>
+
+      <dt>vlink</dt>
+      <dd>    Specifies the color used to stroke the text for visited hypertext links. </dd>
+
+      <dt>alink</dt>
+      <dd>    Specifies the highlight color used to stroke the text for hypertext links at the moment the user clicks on the link. </dd>
+
+      <dt>background</dt>
+      <dd>    Specifies a URL for an image that will be used to tile the document background. </dd>
+    </dl>
+
+    <p>
+Colors are given in the sRGB color space as hexadecimal numbers (e.g. COLOR="#C0FFC0"), or as one of 16 widely understood color names. These colors were originally picked as being the standard 16 colors supported with the Windows VGA palette.
+    </p>
+
+<table width="80%" cellspacing="10" cellpadding="0" border="0" align="center">
+<caption><b>Color names and sRGB values</b><br></caption>
+<tbody><tr><td width="16"><img src="images/black.gif"></td><td>Black  = "#000000"
+</td><td width="16"><img src="images/green.gif"></td><td>Green  = "#008000"<br></td></tr>
+<tr><td width="16"><img src="images/silver.gif"></td><td>Silver = "#C0C0C0"
+</td><td width="16"><img src="images/lime.gif"></td><td>Lime   = "#00FF00"<br></td></tr>
+<tr><td width="16"><img src="images/gray.gif"></td><td>Gray   = "#808080"
+</td><td width="16"><img src="images/olive.gif"></td><td>Olive  = "#808000"<br></td></tr>
+<tr><td width="16"><img src="images/white.gif"></td><td>White  = "#FFFFFF"
+</td><td width="16"><img src="images/yellow.gif"></td><td>Yellow = "#FFFF00"<br></td></tr>
+<tr><td width="16"><img src="images/maroon.gif"></td><td>Maroon = "#800000"
+</td><td width="16"><img src="images/navy.gif"></td><td>Navy   = "#000080"<br></td></tr>
+<tr><td width="16"><img src="images/red.gif"></td><td>Red    = "#FF0000"
+</td><td width="16"><img src="images/blue.gif"></td><td>Blue   = "#0000FF"<br></td></tr>
+<tr><td width="16"><img src="images/purple.gif"></td><td>Purple = "#800080"
+</td><td width="16"><img src="images/teal.gif"></td><td>Teal   = "#008080"<br></td></tr>
+<tr><td width="16"><img src="images/fuchsia.gif"></td><td>Fuchsia  = "#FF00FF"
+</td><td width="16"><img src="images/aqua.gif"></td><td>Aqua   = "#00FFFF"<br></td></tr>
+</tbody></table>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
