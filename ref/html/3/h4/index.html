@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>H4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>H4</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#headings">HEADINGS</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!--
+  There are six levels of headers from H1 (the most important)
+  to H6 (the least important).
+--&gt;
+
+&lt;!ELEMENT ( %heading )  - -  (%text;)*&gt;
+&lt;!ATTLIST ( %heading )
+        align  (left|center|right) #IMPLIED
+        &gt;
+    </code></pre>
+
+    <p>
+H1, H2, H3, H4, H5 and H6 are used for document headings. You always need the start and end tags. H1 elements are more important than H2 elements and so on, so that H6 elements define the least important level of headings. More important headings are generally rendered in a larger font than less important ones. Use the optional ALIGN attribute to set the text alignment within a heading, e.g. 
+    </p>
+
+    <pre><code>
+    &lt;H1 ALIGN=CENTER&gt; ... centered heading ... &lt;/H1&gt;
+    </code></pre>
+
+    <p>
+The default is left alignment, but this can be overridden by an enclosing DIV or CENTER element. 
+    </p>
+
+
+
+  </body>
+</html>
