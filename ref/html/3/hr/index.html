@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>HR</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#hr">HR - horizontal rules</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>Horizontal rules may be used to indicate a change in topic. In a speech based user agent, the rule could be rendered as a pause. </p>
+
+    <pre><code>
+    &lt;!ELEMENT HR    - O EMPTY&gt;
+    &lt;!ATTLIST HR
+        align (left|right|center) #IMPLIED
+        noshade (noshade) #IMPLIED
+        size  %Pixels #IMPLIED
+        width %Length #IMPLIED
+        &gt;
+    </code></pre>
+
+    <p>HR elements are not containers so the end tag is forbidden. The attributes are: ALIGN, NOSHADE, SIZE and WIDTH. </p>
+
+    <dl>
+      <dt>align</dt>
+      <dd>    This determines whether the rule is placed at the left, center or right of the space between the current left and right margins for align=left, align=center or align=right respectively. By default, the rule is centered. </dd>
+    
+      <dt>noshade</dt>
+      <dd>    This attribute requests the user agent to render the rule in a solid color rather than as the traditional two colour "groove". </dd>
+
+      <dt>size</dt>
+      <dd>    This can be used to set the height of the rule in pixels. </dd>
+
+      <dt>width</dt>
+      <dd>    This can be used to set the width of the rule in pixels (e.g. width=100) or as the percentage between the current left and right margins (e.g. width="50%"). The default is 100%. </dd>
+
+    </dl>
+
+  </body>
+</html>
