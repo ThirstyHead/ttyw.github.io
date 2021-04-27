@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>HTML</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">The Structure of HTML documents</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>
+    HTML 3.2 Documents start with a &lt;!DOCTYPE&gt; declaration followed by an HTML element containing a HEAD and then a BODY element: 
+    </p>
+
+    <pre><code>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+  &lt;HTML&gt;
+  &lt;HEAD&gt;
+  &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+  ... other head elements
+  &lt;/HEAD&gt;
+  &lt;BODY&gt;
+  ... document body
+  &lt;/BODY&gt;
+  &lt;/HTML&gt;
+    </code></pre>
+
+    <p>
+In practice, the HTML, HEAD and BODY start and end tags can be omitted from the markup as these can be inferred in all cases by parsers conforming to the HTML 3.2 DTD. 
+    </p>
+
+    <p>
+Every conforming HTML 3.2 document must start with the &lt;!DOCTYPE&gt; declaration that is needed to distinguish HTML 3.2 documents from other versions of HTML. The HTML specification is not concerned with storage entities. As a result, it is not required that the document type declaration reside in the same storage entity (i.e. file). A Web site may choose to dynamically prepend HTML files with the document type declaration if it is known that all such HTML files conform to the HTML 3.2 specification. 
+    </p>
+
+    <p>
+Every HTML 3.2 document must also include the descriptive title element. A minimal HTML 3.2 document thus looks like: 
+    </p>
+
+    <pre><code>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;
+  &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+    </code></pre>
+
+    <p>Note: the word "Final" replaces "Draft" now that the HTML 3.2 specification has been ratified by the W3C member organizations.</p>
+
+
+  </body>
+</html>
