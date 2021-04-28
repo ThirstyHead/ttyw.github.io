@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>STRONG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      dl.compact dt{
+        display: inline-block;
+        min-width: 4em;
+      }
+
+      dl.compact dd{
+        display: inline;
+      }
+
+      dl.compact dd:after{
+        display: block;
+        content: '';
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>STRONG</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#phrase">Phrase Elements</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>These all require start and end tags, e.g. </p>
+
+    <pre><code>
+    This has some &lt;EM&gt;emphasized text&lt;/EM&gt;.
+    </code></pre>
+
+    <dl class="compact">
+      <dt>EM</dt>
+      <dd>basic emphasis typically rendered in an italic font</dd>
+
+      <dt>STRONG</dt>
+      <dd>strong emphasis typically rendered in a bold font</dd>
+
+      <dt>DFN</dt>
+      <dd>defining instance of the enclosed term</dd>
+
+      <dt>CODE</dt>
+      <dd>used for extracts from program code</dd>
+
+      <dt>SAMP</dt>
+      <dd>used for sample output from programs, scripts, etc.</dd>
+
+      <dt>KBD</dt>
+      <dd>used for text to be typed by the user</dd>
+
+      <dt>VAR</dt>
+      <dd>use for variables or arguments to commands</dd>
+
+      <dt>CITE</dt>
+      <dd>use for citations or references to other sources</dd>
+    </dl>
+  </body>
+</html>
