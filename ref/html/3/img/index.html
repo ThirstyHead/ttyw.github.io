@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IMG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>IMG</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#img">IMG - inline images</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % IAlign "(top|middle|bottom|left|right)"&gt;
+
+&lt;!ELEMENT IMG    - O EMPTY --  Embedded image --&gt;
+&lt;!ATTLIST IMG
+        src     %URL     #REQUIRED  -- URL of image to embed --
+        alt     CDATA    #IMPLIED   -- for display in place of image --
+        align   %IAlign  #IMPLIED   -- vertical or horizontal alignment --
+        height  %Pixels  #IMPLIED   -- suggested height in pixels --
+        width   %Pixels  #IMPLIED   -- suggested width in pixels --
+        border  %Pixels  #IMPLIED   -- suggested link border width --
+        hspace  %Pixels  #IMPLIED   -- suggested horizontal gutter --
+        vspace  %Pixels  #IMPLIED   -- suggested vertical gutter --
+        usemap  %URL     #IMPLIED   -- use client-side image map --
+        ismap   (ismap)  #IMPLIED   -- use server image map --
+        &gt;    
+    </code></pre>
+
+    <p>Used to insert images. IMG is an empty element and so the end tag is forbidden. Images can be positioned vertically relative to the current textline or floated to the left or right. See BR with the CLEAR attribute for control over textflow. </p>
+
+    <pre><code>
+    e.g.  &lt;IMG SRC="../../canyon.gif" ALT="Grand Canyon"&gt;
+    </code></pre>
+
+    <p>IMG elements support the following attributes: </p>
+
+    <dl>
+      <dt>src</dt>
+      <dd>    This attribute is required for every IMG element. It specifies a URL for the image resource, for instance a GIF, JPEG or PNG image file. </dd>
+
+      <dt>alt</dt>
+      <dd>    This is used to provide a text description of the image and is vital for interoperability with speech-based and text only user agents. </dd>
+
+      <dt>align</dt>
+      <dd>
+This specifies how the image is positioned relative to the current textline in which it occurs: 
+        <dl>
+          <dt>align=top</dt>
+          <dd>    positions the top of the image with the top of the current text line. User agents vary in how they interpret this. Some only take into account what has occurred on the text line prior to the IMG element and ignore what happens after it. </dd>
+
+          <dt>align=middle</dt>
+          <dd>    aligns the middle of the image with the baseline for the current textline. </dd>
+
+          <dt>align=bottom</dt>
+          <dd>    is the default and aligns the bottom of the image with the baseline. </dd>
+
+          <dt>align=left</dt>
+          <dd>    floats the image to the current left margin, temporarily changing this margin, so that subsequent text is flowed along the image's righthand side. The rendering depends on whether there is any left aligned text or images that appear earlier than the current image in the markup. Such text (but not images) generally forces left aligned images to wrap to a new line, with the subsequent text continuing on the former line. </dd>
+
+          <dt>align=right</dt>
+          <dd>    floats the image to the current right margin, temporarily changing this margin, so that subsequent text is flowed along the image's lefthand side. The rendering depends on whether there is any right aligned text or images that appear earlier than the current image in the markup. Such text (but not images) generally forces right aligned images to wrap to a new line, with the subsequent text continuing on the former line. </dd>
+        </dl>
+
+        <p>Note that some browsers introduce spurious spacing with multiple left or right aligned images. As a result authors can't depend on this being the same for browsers from different vendors. See BR for ways to control text flow. </p>
+      </dd>
+
+      <dt>width</dt>
+      <dd>    Specifies the intended width of the image in pixels. When given together with the height, this allows user agents to reserve screen space for the image before the image data has arrived over the network. </dd>
+
+      <dt>height</dt>
+      <dd>    Specifies the intended height of the image in pixels. When given together with the width, this allows user agents to reserve screen space for the image before the image data has arrived over the network. </dd>
+
+      <dt>border</dt>
+      <dd>    When the IMG element appears as part of a hypertext link, the user agent will generally indicate this by drawing a colored border (typically blue) around the image. This attribute can be used to set the width of this border in pixels. Use border=0 to suppress the border altogether. User agents are recommended to provide additional cues that the image is clickable, e.g. by changing the mouse pointer. </dd>
+
+      <dt>hspace</dt>
+      <dd>    This can be used to provide white space to the immediate left and right of the image. The HSPACE attribute sets the width of this white space in pixels. By default HSPACE is a small non-zero number. </dd>
+
+      <dt>vspace</dt>
+      <dd>    This can be used to provide white space above and below the image The VSPACE attribute sets the height of this white space in pixels. By default VSPACE is a small non-zero number. </dd>
+
+      <dt>usemap</dt>
+      <dd>    This can be used to give a URL fragment identifier for a client-side image map defined with the MAP element. </dd>
+
+      <dt>ismap</dt>
+      <dd>    When the IMG element is part of a hypertext link, and the user clicks on the image, the ISMAP attribute causes the location to be passed to the server. This mechanism causes problems for text-only and speech-based user agents. Whenever its possible to do so use the MAP element instead. </dd>
+    </dl>
+
+    <p>Here is an example of how you use ISMAP: </p>
+
+    <pre><code>
+    &lt;a href="/cgibin/navbar.map"&gt;&lt;img src=navbar.gif ismap border=0&gt;&lt;/a&gt;
+    </code></pre>
+
+    <p>The location clicked is passed to the server as follows. The user agent derives a new URL from the URL specified by the HREF attribute by appending `?' the x coordinate `,' and the y coordinate of the location in pixels. The link is then followed using the new URL. For instance, if the user clicked at at the location x=10, y=27 then the derived URL will be: "/cgibin/navbar.map?10,27". It is generally a good idea to suppress the border and use graphical idioms to indicate that the image is clickable. </p>
+
+    <p>Note that pixel values refer to screen pixels, and should be multiplied by an appropriate factor when rendering to very high resolution devices such as laser printers. For instance if a user agent has a display with 75 pixels per inch and is rendering to a laser printer with 600 dots per inch, then the pixel values given in HTML attributes should be multiplied by a factor of 8. </p>
+  </body>
+</html>
