@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CAPTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>CAPTION</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#table">Tables</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>HTML 3.2 includes a widely deployed subset of the specification given in RFC 1942 and can be used to markup tabular material or for layout purposes. Note that the latter role typically causes problems when rending to speech or to text only user agents. </p>
+
+    <pre><code>
+&lt;!-- horizontal placement of table relative to window --&gt;
+&lt;!ENTITY % Where "(left|center|right)"&gt;
+
+&lt;!-- horizontal alignment attributes for cell contents --&gt;
+&lt;!ENTITY % cell.halign
+        "align  (left|center|right) #IMPLIED"
+        &gt;
+
+&lt;!-- vertical alignment attributes for cell contents --&gt;
+&lt;!ENTITY % cell.valign
+        "valign  (top|middle|bottom)  #IMPLIED"
+        &gt;
+
+&lt;!ELEMENT table - - (caption?, tr+)&gt;
+&lt;!ELEMENT tr - O (th|td)*&gt;
+&lt;!ELEMENT (th|td) - O %body.content&gt;
+
+&lt;!ATTLIST table                       -- table element --
+        align     %Where;   #IMPLIED  -- table position relative to window --
+        width     %Length   #IMPLIED  -- table width relative to window --
+        border    %Pixels   #IMPLIED  -- controls frame width around table --
+        cellspacing %Pixels #IMPLIED  -- spacing between cells --
+        cellpadding %Pixels #IMPLIED  -- spacing within cells --
+        &gt;
+
+&lt;!ELEMENT CAPTION - - (%text;)* -- table or figure caption --&gt;
+&lt;!ATTLIST CAPTION
+        align (top|bottom) #IMPLIED
+        &gt;
+
+&lt;!ATTLIST tr                       -- table row --
+        %cell.halign;              -- horizontal alignment in cells --
+        %cell.valign;              -- vertical alignment in cells --
+        &gt;
+
+&lt;!ATTLIST (th|td)                  -- header or data cell --
+        nowrap (nowrap)  #IMPLIED  -- suppress word wrap --
+        rowspan NUMBER   1         -- number of rows spanned by cell --
+        colspan NUMBER   1         -- number of cols spanned by cell --
+        %cell.halign;              -- horizontal alignment in cells --
+        %cell.valign;              -- vertical alignment in cells --
+        width   %Pixels  #IMPLIED  -- suggested width for cell --
+        height  %Pixels  #IMPLIED  -- suggested height for cell --
+        &gt;
+    </code></pre>
+
+    <p>Tables take the general form:</p>
+
+    <pre><code>
+    &lt;TABLE BORDER=3 CELLSPACING=2 CELLPADDING=2 WIDTH="80%"&gt;
+      &lt;CAPTION&gt; ... table caption ... &lt;/CAPTION&gt;
+      &lt;TR&gt;&lt;TD&gt; first cell &lt;TD&gt; second cell
+      &lt;TR&gt; ...
+      ...
+    &lt;/TABLE&gt;
+    </code></pre>
+
+    <p>The attributes on TABLE are all optional. By default, the table is rendered without a surrounding border. The table is generally sized automatically to fit the contents, but you can also set the table width using the WIDTH attribute. BORDER, CELLSPACING and CELLPADDING provide further control over the table's appearence. Captions are rendered at the top or bottom of the table depending on the ALIGN attribute. </p>
+
+    <p>Each table row is contained in a TR element, although the end tag can always be omitted. Table cells are defined by TD elements for data and TH elements for headers. Like TR, these are containers and can be given without trailing end tags. TH and TD support several attributes: ALIGN and VALIGN for aligning cell content, ROWSPAN and COLSPAN for cells which span more than one row or column. A cell can contain a wide variety of other block and text level elements including form fields and other tables. </p>
+
+    <p>The TABLE element always requires both start and end tags. It supports the following attributes: </p>
+
+    <dl>
+      <dt>align</dt>
+      <dd>    This takes one of the case insensitive values: LEFT, CENTER or RIGHT. It specifies the horizontal placement of the table relative to the current left and right margins. It defaults to left alignment, but this can be overridden by an enclosing DIV or CENTER element. </dd>
+
+      <dt>width</dt>
+      <dd>    In the absence of this attribute the table width is automatically determined from the table contents. You can use the WIDTH attribute to set the table width to a fixed value in pixels (e.g. WIDTH=212) or as a percentage of the space between the current left and right margins (e.g. WIDTH="80%"). </dd>
+
+      <dt>border</dt>
+      <dd>    
+      This attribute can be used to specify the width of the outer border around the table to a given number of pixels (e.g. BORDER=4). The value can be set to zero to suppress the border altogether. In the absence of this attribute the border should be suppressed. Note that some browsers also accept &lt;TABLE BORDER&gt; with the same semantics as BORDER=1. 
+      </dd>      
+
+      <dt>cellspacing</dt>
+      <dd>    In traditional desktop publishing software, adjacent table cells share a common border. This is not the case in HTML. Each cell is given its own border which is separated from the borders around neighboring cells. This separation can be set in pixels using the CELLSPACING attribute, (e.g. CELLSPACING=10). The same value also determines the separation between the table border and the borders of the outermost cells. </dd>
+
+      <dt>cellpadding</dt>
+      <dd>    This sets the padding in pixels between the border around each cell and the cell's contents. </dd>
+
+    </dl>
+
+    <p>The CAPTION element has one attribute ALIGN which can be either ALIGN=TOP or ALIGN=BOTTOM. This can be used to force the caption to be placed above the top or below the bottom of the table respectively. Most user agents default to placing the caption above the table. CAPTION always requires both start and end tags. Captions are limited to plain text and text-level elements as defined by the %text entity. Block level elements are not permitted. </p>
+
+    <p>The TR or table row element requires a start tag, but the end tag can always be left out. TR acts as a container for table cells. It has two attributes: </p>
+
+    <dl>
+      <dt>align</dt>
+      <dd>    Sets the default horizontal alignment of cell contents. It takes one of the case insensitive values: LEFT, CENTER or RIGHT and plays the same role as the ALIGN attribute on paragraph elements. </dd>
+
+      <dt>valign</dt>
+      <dd>    This can be used to set the default vertical alignment of cell contents within each cell. It takes one of the case insensitive values: TOP, MIDDLE or BOTTOM to position the cell contents at the top, middle or bottom of the cell respectively. </dd>
+    </dl>
+
+    <p>There are two elements for defining table cells. TH is used for header cells and TD for data cells. This distinction allows user agents to render header and data cells in different fonts, and enables speech based browsers to do a better job. The start tags for TH and TD are always needed but the end tags can be left out. Table cells can have the following attributes: </p>
+
+    <dl>
+      <dt>nowrap</dt>
+      <dd>
+    The presence of this attribute disables automatic word wrap within the contents of this cell (e.g. &lt;TD NOWRAP&gt;). This is equivalent to using the &amp;nbsp; entity for non-breaking spaces within the content of the cell. 
+      </dd>
+
+      <dt>rowspan</dt>
+      <dd>    This takes a positive integer value specifying the number of rows spanned by this cell. It defaults to one. </dd>
+
+      <dt>colspan</dt>
+      <dd>    This takes a positive integer value specifying the number of columns spanned by this cell. It defaults to one. </dd>
+
+      <dt>align</dt>
+      <dd>
+    Specifies the default horizontal alignment of cell contents, and overrides the ALIGN attribute on the table row. It takes the same values: LEFT, CENTER and RIGHT. If you don't specify an ALIGN attribute value on the cell, the default is left alignment for &lt;td&gt; and center alignment for &lt;th&gt; although you can override this with an ALIGN attribute on the TR element. 
+      </dd>
+
+      <dt>valign</dt>
+      <dd>    Specifies the default vertical alignment of cell contents, overriding the VALIGN attribute on the table row. It takes the same values: TOP, MIDDLE and BOTTOM. If you don't specify a VALIGN attribute value on the cell, the default is middle although you can override this with a VALIGN attribute on the TR element. </dd>
+
+      <dt>width</dt>
+      <dd>    Specifies the suggested width for a cell content in pixels excluding the cell padding. This value will normally be used except when it conflicts with the width requirements for other cells in the same column. </dd>
+
+      <dt>height</dt>
+      <dd>    Specifies the suggested height for a cell content in pixels excluding the cell padding. This value will normally be used except when it conflicts with the height requirements for other cells in the same row. </dd>
+    </dl>
+
+    <p>
+    Tables are commonly rendered in bas-relief, raised up with the outer border as a bevel, and individual cells inset into this raised surface. Borders around individual cells are only drawn if the cell has explicit content. White space doesn't count for this purpose with the exception of &amp;nbsp;. 
+    </p>
+
+    <p>The algorithms used to automatically size tables should take into account the minimum and maximum width requirements for each cell. This is used to determine the minimum and maximum width requirements for each column and hence for the table itself. </p>
+
+    <p>Cells spanning more than one column contribute to the widths of each of the columns spanned. One approach is to evenly apportion the cell's minimum and maximum width between these columns, another is to weight the apportioning according to the contributions from cells that don't span multiple columns. </p>
+
+    <p>For some user agents it may be necessary or desirable to break text lines within words. In such cases a visual indication that this has occurred is advised. </p>
+
+    <p>The minimum and maximum width of nested tables contribute to the minimum and maximum width of the cell in which they occur. Once the width requirements are known for the top level table, the column widths for that table can be assigned. This allows the widths of nested tables to be assigned and hence in turn the column widths of such tables. If practical, all columns should be assigned at least their minimum widths. It is suggested that any surplus space is then shared out proportional to the difference between the minimum and maximum width requirements of each column. </p>
+
+    <p>Note that pixel values for width and height refer to screen pixels, and should be multiplied by an appropriate factor when rendering to very high resolution devices such as laser printers. For instance if a user agent has a display with 75 pixels per inch and is rendering to a laser printer with 600 dots per inch, then the pixel values given in HTML attributes should be multiplied by a factor of 8. </p>
+  </body>
+</html>
