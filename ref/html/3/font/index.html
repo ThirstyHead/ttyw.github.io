@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FONT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>FONT</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#font">FONT</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <pre><code>
+&lt;!ELEMENT FONT - - (%text)*     -- local change to font --&gt;
+&lt;!ATTLIST FONT
+    size    CDATA   #IMPLIED    -- [+]nn e.g. size="+1", size=4 --
+    color   CDATA   #IMPLIED    -- #RRGGBB in hex, e.g. red: color="#FF0000" --
+    &gt;    
+    </code></pre>
+
+    <p>Requires start and end tags. This allows you to change the font size and/or color for the enclosed text. The attributes are: SIZE and COLOR. Font sizes are given in terms of a scalar range defined by the user agent with no direct mapping to point sizes etc. The FONT element may be phased out in future revisions to HTML. </p>
+
+    <dl>
+      <dt>size</dt>
+      <dd>    This sets the font size for the contents of the font element. You can set size to an integer ranging from 1 to 7 for an absolute font size, or specify a relative font size with a signed integer value, e.g. size="+1" or size="-2". This is mapped to an absolute font size by adding the current base font size as set by the BASEFONT element (see below). </dd>
+
+      <dt>color</dt>
+      <dd>    Used to set the color to stroke the text. Colors are given as RGB in hexadecimal notation or as one of 16 widely understood color names defined as per the BGCOLOR attribute on the BODY element. </dd>
+
+    </dl>
+
+    <p>Some user agents also support a FACE attribute which accepts a comma separated list of font names in order of preference. This is used to search for an installed font with the corresponding name. FACE is not part of HTML 3.2. </p>
+
+    <p>The following shows the effects of setting font to absolute sizes: </p>
+
+    <pre><code>
+    size=1 size=2 size=3 size=4 size=5 size=6 size=7 
+    </code></pre>
+
+    <p>The following shows the effect of relative font sizes using a base font size of 3: </p>
+
+    <pre><code>
+     size=-4 size=-3 size=-2 size=-1 size=+1 size=+2 size=+3 size=+4 
+    </code></pre>
+
+    <p>The same thing with a base font size of 6: </p>
+
+    <pre><code>
+     size=-4 size=-3 size=-2 size=-1 size=+1 size=+2 size=+3 size=+4 
+    </code></pre>
+  </body>
+</html>
