@@ -27,6 +27,10 @@
       <p>The HyperText Markup Language (HTML) is a simple markup language used to create hypertext documents that are portable from one platform to another. HTML documents are SGML documents with generic semantics that are appropriate for representing information from a wide range of applications. This specification defines HTML version 3.2. HTML 3.2 aims to capture recommended practice as of early '96 and as such to be used as a replacement for <a href="https://www.ietf.org/rfc/rfc1866.txt">HTML 2.0 (RFC 1866)</a>.</p>
       <p>[source: HTML 3.2 Reference Specification, published January 1997, <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/SPSD-html32-20180315/</a>]</p>
 
+      <p>NOTE: <span class="deprecated">deprecated elements</span> are shown in red and italic. These elements should be not be used, since browser support for them will be removed in future releases.</p>
+
+      <p>NOTE: <span class="new">new elements</span> are shown in green and italic. When using these elements, be mindful of the need to polyfill support for these elements in older browsers.</p>  
+
 
       <h2>Elements</h2>
       <p>HTML Elements are the basic building blocks of any web page. There are XX elements defined in the HTML 3.x Specification, and XX deprecated elements.</p>
@@ -124,6 +128,14 @@
           <li><a href="plaintext/" class="deprecated">plaintext</a></li>
           <li><a href="blockquote/">blockquote</a></li>
           <li><a href="tt/">tt</a></li>
+          <li><a href="i/">i</a></li>
+          <li><a href="b/">b</a></li>
+          <li><a href="u/" class="new">u</a></li>
+          <li><a href="strike/" class="new">strike</a></li>
+          <li><a href="big/" class="new">big</a></li>
+          <li><a href="small/" class="new">small</a></li>
+          <li><a href="sub/" class="new">sub</a></li>
+          <li><a href="sup/" class="new">sup</a></li>
           <!--
           <li><a href="cite/">cite</a></li>
           <li><a href="code/">code</a></li>
@@ -132,8 +144,6 @@
           <li><a href="samp/">samp</a></li>
           <li><a href="strong/">strong</a></li>
           <li><a href="var/">var</a></li>
-          <li><a href="b/">b</a></li>
-          <li><a href="i/">i</a></li>
           -->
         </ul>
 
