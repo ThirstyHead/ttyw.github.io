@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Q</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Q</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/text.html#edef-BLOCKQUOTE">9.2.2 Quotations: The BLOCKQUOTE and Q elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BLOCKQUOTE - - (%block;|SCRIPT)+ -- long quotation --&gt;
+&lt;!ATTLIST BLOCKQUOTE
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  cite        %URI;          #IMPLIED  -- URI for source document or msg --
+  &gt;
+&lt;!ELEMENT Q - - (%inline;)*            -- short inline quotation --&gt;
+&lt;!ATTLIST Q
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  cite        %URI;          #IMPLIED  -- URI for source document or msg --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>cite=uri [CT]</dt>
+      <dd>    The value of this attribute is a URI that designates a source document or message. This attribute is intended to give information about the source from which the quotation was borrowed.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>These two elements designate quoted text. BLOCKQUOTE is for long quotations (block-level content) and Q is intended for short quotations (inline content) that don't require paragraph breaks.</p>
+
+    <p>This example formats an excerpt from "The Two Towers", by J.R.R. Tolkien, as a blockquote.</p>
+
+    <pre><code>
+&lt;BLOCKQUOTE cite="http://www.mycom.com/tolkien/twotowers.html"&gt;
+&lt;P&gt;They went in single file, running like hounds on a strong scent,
+and an eager light was in their eyes. Nearly due west the broad
+swath of the marching Orcs tramped its ugly slot; the sweet grass
+of Rohan had been bruised and blackened as they passed.&lt;/P&gt;
+&lt;/BLOCKQUOTE&gt;    
+    </code></pre>
+
+    <h3>Rendering quotations </h3>
+    <p>Visual user agents generally render BLOCKQUOTE as an indented block.</p>
+
+    <p>Visual user agents must ensure that the content of the Q element is rendered with delimiting quotation marks. Authors should not put quotation marks at the beginning and end of the content of a Q element.</p>
+
+    <p>User agents should render quotation marks in a language-sensitive manner (see the lang attribute). Many languages adopt different quotation styles for outer and inner (nested) quotations, which should be respected by user-agents.</p>
+
+    <p>The following example illustrates nested quotations with the Q element.</p>
+
+    <pre><code>
+John said, &lt;Q lang="en-us"&gt;I saw Lucy at lunch, she told me
+&lt;Q lang="en-us"&gt;Mary wants you
+to get some ice cream on your way home.&lt;/Q&gt; I think I will get
+some at Ben and Jerry's, on Gloucester Road.&lt;/Q&gt;    
+    </code></pre>
+
+    <p>Since the language of both quotations is American English, user agents should render them appropriately, for example with single quote marks around the inner quotation and double quote marks around the outer quotation:</p>
+
+    <pre><code>
+    John said, "I saw Lucy at lunch, she told me 'Mary wants you
+    to get some ice cream on your way home.' I think I will get some
+    at Ben and Jerry's, on Gloucester Road."
+    </code></pre>
+
+    <p>Note. We recommend that style sheet implementations provide a mechanism for inserting quotation marks before and after a quotation delimited by BLOCKQUOTE in a manner appropriate to the current language context and the degree of nesting of quotations.</p>
+
+    <p>However, as some authors have used BLOCKQUOTE merely as a mechanism to indent text, in order to preserve the intention of the authors, user agents should not insert quotation marks in the default style.</p>
+
+    <p>The usage of BLOCKQUOTE to indent text is deprecated in favor of style sheets.</p>
+  </body>
+</html>

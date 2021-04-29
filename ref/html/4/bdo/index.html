@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BDO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>BDO</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/dirlang.html#edef-BDO">8.2.4 Overriding the bidirectional algorithm: the BDO element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BDO - - (%inline;)*          -- I18N BiDi over-ride --&gt;
+&lt;!ATTLIST BDO
+  %coreattrs;                          -- id, class, style, title --
+  lang        %LanguageCode; #IMPLIED  -- language code --
+  dir         (ltr|rtl)      #REQUIRED -- directionality --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>dir=LTR | RTL [CI]</dt>
+      <dd>This mandatory attribute specifies the base direction of the element's text content. This direction overrides the inherent directionality of characters as defined in [UNICODE]. Possible values: 
+        <ul>
+          <li>LTR: Left-to-right text</li>
+          <li>RTL: Right-to-left text</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+    </ul>
+
+    <p>The bidirectional algorithm and the dir attribute generally suffice to manage embedded direction changes. However, some situations may arise when the bidirectional algorithm results in incorrect presentation. The BDO element allows authors to turn off the bidirectional algorithm for selected fragments of text.</p>
+
+    <p>Consider a document containing the same text as before:</p>
+
+    <pre><code>
+english1 HEBREW2 english3 HEBREW4 english5 HEBREW6    
+    </code></pre>
+
+    <p>but assume that this text has already been put in visual order. One reason for this may be that the MIME standard ([RFC2045], [RFC1556]) favors visual order, i.e., that right-to-left character sequences are inserted right-to-left in the byte stream. In an email, the above might be formatted, including line breaks, as:</p>
+
+    <pre><code>
+english1 2WERBEH english3
+4WERBEH english5 6WERBEH    
+    </code></pre>
+
+    <p>This conflicts with the [UNICODE] bidirectional algorithm, because that algorithm would invert 2WERBEH, 4WERBEH, and 6WERBEH a second time, displaying the Hebrew words left-to-right instead of right-to-left.</p>
+
+    <p>The solution in this case is to override the bidirectional algorithm by putting the Email excerpt in a PRE element (to conserve line breaks) and each line in a BDO element, whose dir attribute is set to LTR:</p>
+
+    <pre><code>
+&lt;PRE&gt;
+&lt;BDO dir="LTR"&gt;english1 2WERBEH english3&lt;/BDO&gt;
+&lt;BDO dir="LTR"&gt;4WERBEH english5 6WERBEH&lt;/BDO&gt;
+&lt;/PRE&gt;    
+    </code></pre>
+
+    <p>This tells the bidirectional algorithm "Leave me left-to-right!" and would produce the desired presentation:</p>
+
+    <pre><code>
+english1 2WERBEH english3
+4WERBEH english5 6WERBEH    
+    </code></pre>
+
+    <p>The BDO element should be used in scenarios where absolute control over sequence order is required (e.g., multi-language part numbers). The dir attribute is mandatory for this element.</p>
+
+    <p>Authors may also use special Unicode characters to override the bidirectional algorithm -- LEFT-TO-RIGHT OVERRIDE (202D) or RIGHT-TO-LEFT OVERRIDE (hexadecimal 202E). The POP DIRECTIONAL FORMATTING (hexadecimal 202C) character ends either bidirectional override.</p>
+
+
+  </body>
+</html>
