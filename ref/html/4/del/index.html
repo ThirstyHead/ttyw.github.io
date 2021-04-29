@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DEL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .illegal-example{
+        border: 3px solid red;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>DEL</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/text.html#edef-del">9.4 Marking document changes: The INS and DEL elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!-- INS/DEL are handled by inclusion on BODY --&gt;
+&lt;!ELEMENT (INS|DEL) - - (%flow;)*      -- inserted text, deleted text --&gt;
+&lt;!ATTLIST (INS|DEL)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  cite        %URI;          #IMPLIED  -- info on reason for change --
+  datetime    %Datetime;     #IMPLIED  -- date and time of change --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>cite=uri [CT]</dt>
+      <dd>    The value of this attribute is a URI that designates a source document or message. This attribute is intended to point to information explaining why a document was changed.</dd>
+
+      <dt>datetime=datetime [CS]</dt>
+      <dd>    The value of this attribute specifies the date and time when the change was made.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p> INS and DEL are used to markup sections of the document that have been inserted or deleted with respect to a different version of a document (e.g., in draft legislation where lawmakers need to view the changes).</p>
+
+    <p>These two elements are unusual for HTML in that they may serve as either block-level or inline elements (but not both). They may contain one or more words within a paragraph or contain one or more block-level elements such as paragraphs, lists and tables.</p>
+
+    <p>This example could be from a bill to change the legislation for how many deputies a County Sheriff can employ from 3 to 5.</p>
+
+    <pre><code>
+    &lt;P&gt;
+      A Sheriff can employ &lt;DEL&gt;3&lt;/DEL&gt;&lt;INS&gt;5&lt;/INS&gt; deputies.
+    &lt;/P&gt;
+    </code></pre>
+
+    <p>The INS and DEL elements must not contain block-level content when these elements behave as inline elements.</p>
+
+    <section class="illegal-example">
+      <h3>ILLEGAL EXAMPLE</h3>
+      <p> The following is not legal HTML.</p>
+      <pre><code>
+      &lt;P&gt;
+        &lt;INS&gt;&lt;DIV&gt;...block-level content...&lt;/DIV&gt;&lt;/INS&gt;
+      &lt;/P&gt;
+      </code></pre>
+    </section>
+
+    <p>User agents should render inserted and deleted text in ways that make the change obvious. For instance, inserted text may appear in a special font, deleted text may not be shown at all or be shown as struck-through or with special markings, etc.</p>
+
+    <p>Both of the following examples correspond to November 5, 1994, 8:15:30 am, US Eastern Standard Time.</p>
+
+    <pre><code>
+    1994-11-05T13:15:30Z
+    1994-11-05T08:15:30-05:00
+    </code></pre>
+
+    <p>Used with INS, this gives:</p>
+
+    <pre><code>
+    &lt;INS datetime="1994-11-05T08:15:30-05:00"
+        cite="http://www.foo.org/mydoc/comments.html"&gt;
+    Furthermore, the latest figures from the marketing department
+    suggest that such practice is on the rise.
+    &lt;/INS&gt;
+    </code></pre>
+
+    <p>The document "http://www.foo.org/mydoc/comments.html" would contain comments about why information was inserted into the document.</p>
+
+    <p>Authors may also make comments about inserted or deleted text by means of the title attribute for the INS and DEL elements. User agents may present this information to the user (e.g., as a popup note). For example:</p>
+
+    <pre><code>
+    &lt;INS datetime="1994-11-05T08:15:30-05:00"
+        title="Changed as a result of Steve B's comments in meeting."&gt;
+    Furthermore, the latest figures from the marketing department
+    suggest that such practice is on the rise.
+    &lt;/INS&gt;
+    </code></pre>
+
+
+
+  </body>
+</html>
