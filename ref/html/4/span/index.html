@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SPAN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>SPAN</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/global.html#edef-SPAN">7.5.4 Grouping elements: the DIV and SPAN elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT DIV - - (%flow;)*            -- generic language/style container --&gt;
+&lt;!ATTLIST DIV
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;
+&lt;!ELEMENT SPAN - - (%inline;)*         -- generic language/style container --&gt;
+&lt;!ATTLIST SPAN
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>align (alignment)</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The DIV and SPAN elements, in conjunction with the id and class attributes, offer a generic mechanism for adding structure to documents. These elements define content to be inline (SPAN) or block-level (DIV) but impose no other presentational idioms on the content. Thus, authors may use these elements in conjunction with style sheets, the lang attribute, etc., to tailor HTML to their own needs and tastes.</p>
+
+    <p>Suppose, for example, that we wanted to generate an HTML document based on a database of client information. Since HTML does not include elements that identify objects such as "client", "telephone number", "email address", etc., we use DIV and SPAN to achieve the desired structural and presentational effects. We might use the TABLE element as follows to structure the information:</p>
+
+    <pre><code>
+&lt;!-- Example of data from the client database: --&gt;
+&lt;!-- Name: Stephane Boyera, Tel: (212) 555-1212, Email: sb@foo.org --&gt;
+
+&lt;DIV id="client-boyera" class="client"&gt;
+&lt;P&gt;&lt;SPAN class="client-title"&gt;Client information:&lt;/SPAN&gt;
+&lt;TABLE class="client-data"&gt;
+&lt;TR&gt;&lt;TH&gt;Last name:&lt;TD&gt;Boyera&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;First name:&lt;TD&gt;Stephane&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;Tel:&lt;TD&gt;(212) 555-1212&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;Email:&lt;TD&gt;sb@foo.org&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/DIV&gt;
+
+&lt;DIV id="client-lafon" class="client"&gt;
+&lt;P&gt;&lt;SPAN class="client-title"&gt;Client information:&lt;/SPAN&gt;
+&lt;TABLE class="client-data"&gt;
+&lt;TR&gt;&lt;TH&gt;Last name:&lt;TD&gt;Lafon&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;First name:&lt;TD&gt;Yves&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;Tel:&lt;TD&gt;(617) 555-1212&lt;/TR&gt;
+&lt;TR&gt;&lt;TH&gt;Email:&lt;TD&gt;yves@coucou.com&lt;/TR&gt;
+&lt;/TABLE&gt;
+&lt;/DIV&gt;    
+    </code></pre>
+
+    <p>Later, we may easily add style sheet declarations to fine tune the presentation of these database entries.</p>
+
+    <p>For another example of usage, please consult the example in the section on the class and id attributes.</p>
+
+    <p>Visual user agents generally place a line break before and after DIV elements, for instance:</p>
+
+    <pre><code>
+&lt;P&gt;aaaaaaaaa&lt;DIV&gt;bbbbbbbbb&lt;/DIV&gt;&lt;DIV&gt;ccccc&lt;P&gt;ccccc&lt;/DIV&gt;    
+    </code></pre>
+
+    <p>which is typically rendered as:</p>
+
+    <pre><code>
+aaaaaaaaa
+bbbbbbbbb
+ccccc
+
+ccccc    
+    </code></pre>
+
+
+
+  </body>
+</html>
