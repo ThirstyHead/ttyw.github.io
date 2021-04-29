@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BASE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>BASE</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/links.html#edef-BASE">12.4 Path information: the BASE element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BASE - O EMPTY               -- document base URI --&gt;
+&lt;!ATTLIST BASE
+  href        %URI;          #REQUIRED -- URI that acts as base URI --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attributes definitions</p>
+
+    <dl>
+      <dt>href-uri [CT]</dt>
+      <dd>    This attribute specifies an absolute URI that acts as the base URI for resolving relative URIs.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>
+      <li>target (target frame information)</li>
+    </ul>
+
+    <p>In HTML, links and references to external images, applets, form-processing programs, style sheets, etc. are always specified by a URI. Relative URIs are resolved according to a base URI, which may come from a variety of sources. The BASE element allows authors to specify a document's base URI explicitly.</p>
+
+    <p>When present, the BASE element must appear in the HEAD section of an HTML document, before any element that refers to an external source. The path information specified by the BASE element only affects URIs in the document where the element appears.</p>
+
+    <p>For example, given the following BASE declaration and A declaration:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+ &lt;HEAD&gt;
+   &lt;TITLE&gt;Our Products&lt;/TITLE&gt;
+   &lt;BASE href="http://www.aviary.com/products/intro.html"&gt;
+ &lt;/HEAD&gt;
+
+ &lt;BODY&gt;
+   &lt;P&gt;Have you seen our &lt;A href="../cages/birds.gif"&gt;Bird Cages&lt;/A&gt;?
+ &lt;/BODY&gt;
+&lt;/HTML&gt;    
+    </code></pre>
+
+    <p>the relative URI "../cages/birds.gif" would resolve to:</p>
+
+    <pre><code>
+    http://www.aviary.com/cages/birds.gif
+    </code></pre>
+
+
+  </body>
+</html>
