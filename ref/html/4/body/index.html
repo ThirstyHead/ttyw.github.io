@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BODY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .deprecated-example{
+        border: 3px solid orange;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>BODY</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/global.html#edef-BODY">7.5.1 The BODY element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BODY O O (%block;|SCRIPT)+ +(INS|DEL) -- document body --&gt;
+&lt;!ATTLIST BODY
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  onload          %Script;   #IMPLIED  -- the document has been loaded --
+  onunload        %Script;   #IMPLIED  -- the document has been removed --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: optional, End tag: optional</p>
+    
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>background=uri [CT]</dt>
+      <dd>    Deprecated. The value of this attribute is a URI that designates an image resource. The image generally tiles the background (for visual browsers).</dd>
+
+      <dt>text=color [CI]</dt>
+      <dd>    Deprecated. This attribute sets the foreground color for text (for visual browsers).</dd>
+
+      <dt>link=color [CI]</dt>
+      <dd>    Deprecated. This attribute sets the color of text marking unvisited hypertext links (for visual browsers).</dd>
+
+      <dt>vlink=color [CI]</dt>
+      <dd>    Deprecated. This attribute sets the color of text marking visited hypertext links (for visual browsers).</dd>
+
+      <dt>alink=color [CI]</dt>
+      <dd>    Deprecated. This attribute sets the color of text marking hypertext links when selected by the user (for visual browsers).</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>bgcolor (background color)</li>
+      <li>onload, onunload (intrinsic events)</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The body of a document contains the document's content. The content may be presented by a user agent in a variety of ways. For example, for visual browsers, you can think of the body as a canvas where the content appears: text, images, colors, graphics, etc. For audio user agents, the same content may be spoken. Since style sheets are now the preferred way to specify a document's presentation, the presentational attributes of BODY have been deprecated.</p>
+
+    <section class="deprecated-example">
+      <h3>DEPRECATED EXAMPLE</h3>
+      <p> The following HTML fragment illustrates the use of the deprecated attributes. It sets the background color of the canvas to white, the text foreground color to black, and the color of hyperlinks to red initially, fuchsia when activated, and maroon once visited.</p>
+
+      <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+ &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY bgcolor="white" text="black"
+  link="red" alink="fuchsia" vlink="maroon"&gt;
+  ... document body...
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+      </code></pre>
+    </section>
+
+    <p>Using style sheets, the same effect could be accomplished as follows:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+ &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+ &lt;STYLE type="text/css"&gt;
+  BODY { background: white; color: black}
+  A:link { color: red }
+  A:visited { color: maroon }
+  A:active { color: fuchsia }
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+  ... document body...
+&lt;/BODY&gt;
+&lt;/HTML&gt;    
+    </code></pre>
+
+    <p>Using external (linked) style sheets gives you the flexibility to change the presentation without revising the source HTML document:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+ &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+ &lt;LINK rel="stylesheet" type="text/css" href="smartstyle.css"&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+  ... document body...
+&lt;/BODY&gt;
+&lt;/HTML&gt;    
+    </code></pre>
+
+    <p>Framesets and HTML bodies. Documents that contain framesets replace the BODY element by the FRAMESET element. Please consult the section on frames for more information.
+</p>
+  </body>
+</html>

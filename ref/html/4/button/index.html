@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BUTTON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .illegal-example{
+        border: 3px solid red;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>BUTTON</h1>
+    <h2><a href="https://www.w3.org/TR/html4/interact/forms.html#edef-BUTTON">17.5 The BUTTON element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BUTTON - -
+     (%flow;)* -(A|%formctrl;|FORM|FIELDSET)
+     -- push button --&gt;
+&lt;!ATTLIST BUTTON
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  name        CDATA          #IMPLIED
+  value       CDATA          #IMPLIED  -- sent to server when submitted --
+  type        (button|submit|reset) submit -- for use as form button --
+  disabled    (disabled)     #IMPLIED  -- unavailable in this context --
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  accesskey   %Character;    #IMPLIED  -- accessibility key character --
+  onfocus     %Script;       #IMPLIED  -- the element got the focus --
+  onblur      %Script;       #IMPLIED  -- the element lost the focus --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns the control name.</dd>
+
+      <dt>value=cdata [CS]</dt>
+      <dd>    This attribute assigns the initial value to the button.</dd>
+
+      <dt>type=submit|button|reset [CI]</dt>
+      <dd>This attribute declares the type of the button. Possible values: 
+      <ul>
+        <li>submit: Creates a submit button. This is the default value.</li>
+        <li>reset: Creates a reset button.</li>
+        <li>button: Creates a push button.</li>
+      </ul>
+      </dd>
+
+    </dl>
+
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>disabled (disabled input control)</li>
+      <li>accesskey (access keys)</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>onfocus, onblur, onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Buttons created with the BUTTON element function just like buttons created with the INPUT element, but they offer richer rendering possibilities: the BUTTON element may have content. For example, a BUTTON element that contains an image functions like and may resemble an INPUT element whose type is set to "image", but the BUTTON element type allows content.</p>
+
+    <p>Visual user agents may render BUTTON buttons with relief and an up/down motion when clicked, while they may render INPUT buttons as "flat" images.</p>
+
+    <p>The following example expands a previous example, but creates submit and reset buttons with BUTTON instead of INPUT. The buttons contain images by way of the IMG element.</p>
+
+    <pre><code>
+    &lt;FORM action="http://somesite.com/prog/adduser" method="post"&gt;
+      &lt;P&gt;
+      First name: &lt;INPUT type="text" name="firstname"&gt;&lt;BR&gt;
+      Last name: &lt;INPUT type="text" name="lastname"&gt;&lt;BR&gt;
+      email: &lt;INPUT type="text" name="email"&gt;&lt;BR&gt;
+      &lt;INPUT type="radio" name="sex" value="Male"&gt; Male&lt;BR&gt;
+      &lt;INPUT type="radio" name="sex" value="Female"&gt; Female&lt;BR&gt;
+      &lt;BUTTON name="submit" value="submit" type="submit"&gt;
+      Send&lt;IMG src="/icons/wow.gif" alt="wow"&gt;&lt;/BUTTON&gt;
+      &lt;BUTTON name="reset" type="reset"&gt;
+      Reset&lt;IMG src="/icons/oops.gif" alt="oops"&gt;&lt;/BUTTON&gt;
+      &lt;/P&gt;
+    &lt;/FORM&gt;    
+    </code></pre>
+
+    <p>Recall that authors must provide alternate text for an IMG element.</p>
+
+    <p>It is illegal to associate an image map with an IMG that appears as the contents of a BUTTON element.</p>
+
+    <section class="illegal-example">
+      <h3>ILLEGAL EXAMPLE</h3>
+      <p> The following is not legal HTML.</p>
+
+      <pre><code>
+&lt;BUTTON&gt;
+&lt;IMG src="foo.gif" usemap="..."&gt;
+&lt;/BUTTON&gt;      
+      </code></pre>
+    </section>
+
+
+  </body>
+</html>
