@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>DD</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/lists.html#edef-DD">10.3 Definition lists: the DL, DT, and DD elements</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!-- definition lists - DT for term, DD for its definition --&gt;
+
+&lt;!ELEMENT DL - - (DT|DD)+              -- definition list --&gt;
+&lt;!ATTLIST DL
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <pre><code>
+&lt;!ELEMENT DT - O (%inline;)*           -- definition term --&gt;
+&lt;!ELEMENT DD - O (%flow;)*             -- definition description --&gt;
+&lt;!ATTLIST (DT|DD)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+
+    <p>Start tag: required, End tag: optional</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Definition lists vary only slightly from other types of lists in that list items consist of two parts: a term and a description. The term is given by the DT element and is restricted to inline content. The description is given with a DD element that contains block-level content.</p>
+
+    <p>Here is an example:</p>
+
+    <pre><code>
+    &lt;DL&gt;
+      &lt;DT&gt;Dweeb
+      &lt;DD&gt;young excitable person who may mature
+        into a &lt;EM&gt;Nerd&lt;/EM&gt; or &lt;EM&gt;Geek&lt;/EM&gt;
+
+      &lt;DT&gt;Hacker
+      &lt;DD&gt;a clever programmer
+
+      &lt;DT&gt;Nerd
+      &lt;DD&gt;technically bright but socially inept person
+
+    &lt;/DL&gt;
+    </code></pre>
+
+    <p>Here is an example with multiple terms and descriptions:</p>
+
+    <pre><code>
+    &lt;DL&gt;
+       &lt;DT&gt;Center
+       &lt;DT&gt;Centre
+       &lt;DD&gt; A point equidistant from all points
+                  on the surface of a sphere.
+       &lt;DD&gt; In some field sports, the player who
+                  holds the middle position on the field, court,
+                  or forward line.
+    &lt;/DL&gt;
+    </code></pre>
+
+    <p>Another application of DL, for example, is for marking up dialogues, with each DT naming a speaker, and each DD containing his or her words.</p>
+
+
+
+  </body>
+</html>
