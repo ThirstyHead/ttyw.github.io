@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AREA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>AREA</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/objects.html#edef-AREA">13.6.1 Client-side image maps: the MAP and AREA elements</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT MAP - - ((%block;) | AREA)+ -- client-side image map --&gt;
+&lt;!ATTLIST MAP
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  name        CDATA          #REQUIRED -- for reference by usemap --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <pre><code>
+&lt;!ELEMENT AREA - O EMPTY               -- client-side image map area --&gt;
+&lt;!ATTLIST AREA
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  shape       %Shape;        rect      -- controls interpretation of coords --
+  coords      %Coords;       #IMPLIED  -- comma-separated list of lengths --
+  href        %URI;          #IMPLIED  -- URI for linked resource --
+  nohref      (nohref)       #IMPLIED  -- this region has no action --
+  alt         %Text;         #REQUIRED -- short description --
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  accesskey   %Character;    #IMPLIED  -- accessibility key character --
+  onfocus     %Script;       #IMPLIED  -- the element got the focus --
+  onblur      %Script;       #IMPLIED  -- the element lost the focus --
+  &gt;    
+    </code></pre>
+
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>MAP attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns a name to the image map defined by a MAP element.</dd>
+    </dl>
+
+    <p>AREA attribute definitions</p>
+
+    <dl>
+      <dt>shape=default|rect|circle|poly [CI]</dt>
+      <dd>This attribute specifies the shape of a region. Possible values:
+        <ul>
+          <li>default: Specifies the entire region</li>
+          <li>rect: Define a rectangular region</li>
+          <li>circle: Define a circular region</li>
+          <li>poly: Define a polygonal region</li>
+        </ul>
+      </dd>
+
+      <dt>coords=coordinates [CN]</dt>
+      <dd>This attribute specifies the position and shape on the screen. The number and order of values depends on the shape being defined. Possible combinations: 
+        <ul>
+          <li>rect: left-x, top-y, right-x, bottom-y</li>
+          <li>circle: center-x, center-y, radius. Note. When the radius value is a percentage value, user agents should calculate the final radius value based on the associated object's width and height. The radius should be the smaller value of the two.</li>
+          <li>poly: x1, y1, x2, y2, ..., xN, yN. The first x and y coordinate pair and the last should be the same to close the polygon. When these coordinate values are not the same, user agents should infer an additional coordinate pair to close the polygon.</li>
+        </ul>
+        <p>Coordinates are relative to the top, left corner of the object. All values are lengths. All values are separated by commas.</p>
+      </dd>
+    
+      <dt>nohref [CI]</dt>
+      <dd>    When set, this boolean attribute specifies that a region has no associated link.</dd>
+    </dl>
+
+    <p>Attribute to associate an image map with an element</p>
+
+    <dl>
+      <dt>usemap=uri [CT]</dt>
+      <dd>    This attribute associates an image map with an element. The image map is defined by a MAP element. The value of usemap must match the value of the name attribute of the associated MAP element.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information)</li>
+      <li>name (submitting objects with forms)</li>
+      <li>alt (alternate text)</li>
+      <li>href (anchor reference) target (frame target information)</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>accesskey (access keys)</li>
+      <li>shape (image maps)</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup, onfocus, onblur (intrinsic events )</li>
+    </ul>
+
+    <p>The MAP element specifies a client-side image map (or other navigation mechanism) that may be associated with another elements (IMG, OBJECT, or INPUT). An image map is associated with an element via the element's usemap attribute. The MAP element may be used without an associated image for general navigation mechanisms.</p>
+
+    <p>The presence of the usemap attribute for an OBJECT implies that the object being included is an image. Furthermore, when the OBJECT element has an associated client-side image map, user agents may implement user interaction with the OBJECT solely in terms of the client-side image map. This allows user agents (such as an audio browser or robot) to interact with the OBJECT without having to process it; the user agent may even elect not to retrieve (or process) the object. When an OBJECT has an associated image map, authors should not expect that the object will be retrieved or processed by every user agent.</p>
+
+    <p>The MAP element content model allows authors to combine the following:</p>
+
+    <ol>
+      <li>One or more AREA elements. These elements have no content but specify the geometric regions of the image map and the link associated with each region. Note that user agents do not generally render AREA elements. Therefore, authors must provide alternate text for each AREA with the alt attribute (see below for information on how to specify alternate text).</li>
+      <li>Block-level content. This content should include A elements that specify the geometric regions of the image map and the link associated with each region. Note that the user agent should render block-level content of a MAP element. Authors should use this method to create more accessible documents.</li>
+    </ol>
+
+    <p>When a MAP element contains mixed content (both AREA elements and block-level content), user agents must ignore the AREA elements.</p>
+
+    <p>Authors should specify an image maps's geometry completely with AREA elements, or completely with A elements, or completely with both if content is mixed. Authors may wish to mix content so that older user agents will handle map geometries specified by AREA elements and new user agents will take advantage of richer block content.</p>
+
+    <p>If two or more defined regions overlap, the region-defining element that appears earliest in the document takes precedence (i.e., responds to user input).</p>
+
+    <p>User agents and authors should offer textual alternates to graphical image maps for cases when graphics are not available or the user cannot access them. For example, user agents may use alt text to create textual links in place of a graphical image map. Such links may be activated in a variety of ways (keyboard, voice activation, etc.).</p>
+
+    <p>
+Note. MAP is not backwards compatible with HTML 2.0 user agents.
+</p>
+
+  </body>
+</html>
