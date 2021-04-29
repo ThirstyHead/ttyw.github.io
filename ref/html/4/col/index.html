@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>COL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>COL</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/tables.html#edef-COL">The COL element </a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT COL      - O EMPTY           -- table column --&gt;
+&lt;!ATTLIST COL                          -- column groups and properties --
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  span        NUMBER         1         -- COL attributes affect N columns --
+  width       %MultiLength;  #IMPLIED  -- column width specification --
+  %cellhalign;                         -- horizontal alignment in cells --
+  %cellvalign;                         -- vertical alignment in cells --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attribute definition</p>
+
+    <dl>
+      <dt>span=number [CN]</dt>
+      <dd>
+    This attribute, whose value must be an integer &gt; 0, specifies the number of columns "spanned" by the COL element; the COL element shares its attributes with all the columns it spans. The default value for this attribute is 1 (i.e., the COL element refers to a single column). If the span attribute is set to N &gt; 1, the current COL element shares its attributes with the next N-1 columns.
+      </dd>
+
+      <dt>width=multi-length [CN]</dt>
+      <dd>    This attribute specifies a default width for each column spanned by the current COL element. It has the same meaning as the width attribute for the COLGROUP element and overrides it.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>align, char, charoff, valign (cell alignment)</li>
+    </ul>
+
+    <p>The COL element allows authors to group together attribute specifications for table columns. The COL does not group columns together structurally -- that is the role of the COLGROUP element. COL elements are empty and serve only as a support for attributes. They may appear inside or outside an explicit column group (i.e., COLGROUP element).</p>
+
+    <p>The width attribute for COL refers to the width of each column in the element's span.</p>
+  </body>
+</html>
