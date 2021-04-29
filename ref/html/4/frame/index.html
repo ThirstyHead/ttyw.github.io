@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FRAME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>FRAME</h1>
+    <h2><a href="https://www.w3.org/TR/html4/present/frames.html#edef-FRAME">16.2.2 The FRAME element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;![ %HTML.Frameset; [
+&lt;!-- reserved frame names start with "_" otherwise starts with letter --&gt;
+&lt;!ELEMENT FRAME - O EMPTY              -- subwindow --&gt;
+&lt;!ATTLIST FRAME
+  %coreattrs;                          -- id, class, style, title --
+  longdesc    %URI;          #IMPLIED  -- link to long description
+                                          (complements title) --
+  name        CDATA          #IMPLIED  -- name of frame for targetting --
+  src         %URI;          #IMPLIED  -- source of frame content --
+  frameborder (1|0)          1         -- request frame borders? --
+  marginwidth %Pixels;       #IMPLIED  -- margin widths in pixels --
+  marginheight %Pixels;      #IMPLIED  -- margin height in pixels --
+  noresize    (noresize)     #IMPLIED  -- allow users to resize frames? --
+  scrolling   (yes|no|auto)  auto      -- scrollbar or none --
+  &gt;
+]]&gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns a name to the current frame. This name may be used as the target of subsequent links.</dd>
+
+      <dt>longdesc=uri [CT]</dt>
+      <dd>    This attribute specifies a link to a long description of the frame. This description should supplement the short description provided using the title attribute, and may be particularly useful for non-visual user agents.</dd>
+
+      <dt>src=uri [CT]</dt>
+      <dd>    This attribute specifies the location of the initial contents to be contained in the frame.</dd>
+
+      <dt>noresize [CI]</dt>
+      <dd>    When present, this boolean attribute tells the user agent that the frame window must not be resizeable.</dd>
+
+      <dt>scrolling=auto|yes|no [CI]</dt>
+      <dd>This attribute specifies scroll information for the frame window. Possible values: 
+      <ul>
+        <li>auto: This value tells the user agent to provide scrolling devices for the frame window when necessary. This is the default value.</li>
+        <li>yes: This value tells the user agent to always provide scrolling devices for the frame window.</li>
+        <li>no: This value tells the user agent not to provide scrolling devices for the frame window.</li>
+      </ul>
+      </dd>
+
+      <dt>frameborder=1|0 [CN]</dt>
+      <dd>This attribute provides the user agent with information about the frame border. Possible values: 
+      <ul>
+        <li>1: This value tells the user agent to draw a separator between this frame and every adjoining frame. This is the default value.</li>
+        <li>0: This value tells the user agent not to draw a separator between this frame and every adjoining frame. Note that separators may be drawn next to this frame nonetheless if specified by other frames.</li>
+      </ul>
+      </dd>
+
+      <dt>marginwidth=pixels [CN]</dt>
+      <dd>    This attribute specifies the amount of space to be left between the frame's contents in its left and right margins. The value must be greater than zero (pixels). The default value depends on the user agent.</dd>
+
+      <dt>marginheight=pixels [CN]</dt>
+      <dd>    This attribute specifies the amount of space to be left between the frame's contents in its top and bottom margins. The value must be greater than zero (pixels). The default value depends on the user agent.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+    </ul>
+
+    <p>The FRAME element defines the contents and appearance of a single frame.</p>
+
+    <h3>Setting the initial contents of a frame </h3>
+
+    <p>The src attribute specifies the initial document the frame will contain.</p>
+
+    <p>The following example HTML document:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;A frameset document&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;FRAMESET cols="33%,33%,33%"&gt;
+  &lt;FRAMESET rows="*,200"&gt;
+      &lt;FRAME src="contents_of_frame1.html"&gt;
+      &lt;FRAME src="contents_of_frame2.gif"&gt;
+  &lt;/FRAMESET&gt;
+  &lt;FRAME src="contents_of_frame3.html"&gt;
+  &lt;FRAME src="contents_of_frame4.html"&gt;
+&lt;/FRAMESET&gt;
+&lt;/HTML&gt;    
+    </code></pre>
+
+    <p>should create a frame layout something like this:</p>
+
+    <pre><code>
+ ------------------------------------------
+|Frame 1     |Frame 3       |Frame 4       |
+|            |              |              |
+|            |              |              |
+|            |              |              |
+|            |              |              |
+|            |              |              |
+|            |              |              |
+|            |              |              |
+-------------|              |              |
+|Frame 2     |              |              |
+|            |              |              |
+|            |              |              |
+ ------------------------------------------    
+    </code></pre>
+
+    <p>and cause the user agent to load each file into a separate view.</p>
+
+    <p>The contents of a frame must not be in the same document as the frame's definition.</p>
+
+
+
+
+
+
+  </body>
+</html>

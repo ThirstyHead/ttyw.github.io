@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FRAMESET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>FRAMESET</h1>
+    <h2><a href="https://www.w3.org/TR/html4/present/frames.html#edef-FRAMESET">16.2.1 The FRAMESET element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;![ %HTML.Frameset; [
+&lt;!ELEMENT FRAMESET - - ((FRAMESET|FRAME)+ &amp; NOFRAMES?) -- window subdivision--&gt;
+&lt;!ATTLIST FRAMESET
+  %coreattrs;                          -- id, class, style, title --
+  rows        %MultiLengths; #IMPLIED  -- list of lengths,
+                                          default: 100% (1 row) --
+  cols        %MultiLengths; #IMPLIED  -- list of lengths,
+                                          default: 100% (1 col) --
+  onload      %Script;       #IMPLIED  -- all the frames have been loaded  -- 
+  onunload    %Script;       #IMPLIED  -- all the frames have been removed -- 
+  &gt;
+]]&gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>rows=multi-length-list [CN]</dt>
+      <dd>    This attribute specifies the layout of horizontal frames. It is a comma-separated list of pixels, percentages, and relative lengths. The default value is 100%, meaning one row.</dd>
+
+      <dt>cols=multi-length-list [CN]</dt>
+      <dd>    This attribute specifies the layout of vertical frames. It is a comma-separated list of pixels, percentages, and relative lengths. The default value is 100%, meaning one column.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onload, onunload (intrinsic events )</li>
+    </ul>
+
+    <p>The FRAMESET element specifies the layout of the main user window in terms of rectangular subspaces.</p>
+
+    <h3>Rows and columns </h3>
+    <p>Setting the rows attribute defines the number of horizontal subspaces in a frameset. Setting the cols attribute defines the number of vertical subspaces. Both attributes may be set simultaneously to create a grid.</p>
+
+    <p>If the rows attribute is not set, each column extends the entire length of the page. If the cols attribute is not set, each row extends the entire width of the page. If neither attribute is set, the frame takes up exactly the size of the page.</p>
+
+    <p>Frames are created left-to-right for columns and top-to-bottom for rows. When both attributes are specified, views are created left-to-right in the top row, left-to-right in the second row, etc.</p>
+
+    <p>The first example divides the screen vertically in two (i.e., creates a top half and a bottom half).</p>
+
+    <pre><code>
+&lt;FRAMESET rows="50%, 50%"&gt;
+...the rest of the definition...
+&lt;/FRAMESET&gt;    
+    </code></pre>
+
+    <p>The next example creates three columns: the second has a fixed width of 250 pixels (useful, for example, to hold an image with a known size). The first receives 25% of the remaining space and the third 75% of the remaining space.</p>
+
+    <pre><code>
+&lt;FRAMESET cols="1*,250,3*"&gt;
+...the rest of the definition...
+&lt;/FRAMESET&gt;    
+    </code></pre>
+
+    <p>The next example creates a 2x3 grid of subspaces.</p>
+
+    <pre><code>
+&lt;FRAMESET rows="30%,70%" cols="33%,34%,33%"&gt;
+...the rest of the definition...
+&lt;/FRAMESET&gt;    
+    </code></pre>
+
+    <p>For the next example, suppose the browser window is currently 1000 pixels high. The first view is allotted 30% of the total height (300 pixels). The second view is specified to be exactly 400 pixels high. This leaves 300 pixels to be divided between the other two frames. The fourth frame's height is specified as "2*", so it is twice as high as the third frame, whose height is only "*" (equivalent to 1*). Therefore the third frame will be 100 pixels high and the fourth will be 200 pixels high.</p>
+
+    <pre><code>
+&lt;FRAMESET rows="30%,400,*,2*"&gt;
+...the rest of the definition...
+&lt;/FRAMESET&gt;    
+    </code></pre>
+
+    <p>Absolute lengths that do not sum to 100% of the real available space should be adjusted by the user agent. When underspecified, remaining space should be allotted proportionally to each view. When overspecified, each view should be reduced according to its specified proportion of the total space.</p>
+  </body>
+</html>
