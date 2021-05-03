@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TD</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/tables.html#edef-TD">11.2.6 Table cells: The TH and TD elements</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT (TH|TD)  - O (%flow;)*       -- table header cell, table data cell--&gt;
+
+&lt;!-- Scope is simpler than headers attribute for common tables --&gt;
+&lt;!ENTITY % Scope "(row|col|rowgroup|colgroup)"&gt;
+
+&lt;!-- TH is for headers, TD for data, but for cells acting as both use TD --&gt;
+&lt;!ATTLIST (TH|TD)                      -- header or data cell --
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  abbr        %Text;         #IMPLIED  -- abbreviation for header cell --
+  axis        CDATA          #IMPLIED  -- comma-separated list of related headers--
+  headers     IDREFS         #IMPLIED  -- list of id's for header cells --
+  scope       %Scope;        #IMPLIED  -- scope covered by header cells --
+  rowspan     NUMBER         1         -- number of rows spanned by cell --
+  colspan     NUMBER         1         -- number of cols spanned by cell --
+  %cellhalign;                         -- horizontal alignment in cells --
+  %cellvalign;                         -- vertical alignment in cells --
+  &gt;    
+    </code></pre>
+   
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>headers=idrefs [CS]</dt>
+      <dd>    This attribute specifies the list of header cells that provide header information for the current data cell. The value of this attribute is a space-separated list of cell names; those cells must be named by setting their id attribute. Authors generally use the headers attribute to help non-visual user agents render header information about data cells (e.g., header information is spoken prior to the cell data), but the attribute may also be used in conjunction with style sheets. See also the scope attribute.</dd>
+
+      <dt>scope=scope-name [CI]</dt>
+      <dd>This attribute specifies the set of data cells for which the current header cell provides header information. This attribute may be used in place of the headers attribute, particularly for simple tables. When specified, this attribute must have one of the following values: 
+      <ul>
+        <li>row: The current cell provides header information for the rest of the row that contains it (see also the section on table directionality).</li>
+        <li>col: The current cell provides header information for the rest of the column that contains it.</li>
+        <li>rowgroup: The header cell provides header information for the rest of the row group that contains it.</li>
+        <li>colgroup: The header cell provides header information for the rest of the column group that contains it.</li>
+      </ul>
+      </dd>
+
+      <dt>abbr=text [CS]</dt>
+      <dd>    This attribute should be used to provide an abbreviated form of the cell's content, and may be rendered by user agents when appropriate in place of the cell's content. Abbreviated names should be short since user agents may render them repeatedly. For instance, speech synthesizers may render the abbreviated headers relating to a particular cell before rendering that cell's content.</dd>
+
+      <dt>axis=cdata [CI]</dt>
+      <dd>    This attribute may be used to place a cell into conceptual categories that can be considered to form axes in an n-dimensional space. User agents may give users access to these categories (e.g., the user may query the user agent for all cells that belong to certain categories, the user agent may present a table in the form of a table of contents, etc.). Please consult the section on categorizing cells for more information. The value of this attribute is a comma-separated list of category names.</dd>
+
+      <dt>rowspan=number [CN]</dt>
+      <dd>    This attribute specifies the number of rows spanned by the current cell. The default value of this attribute is one ("1"). The value zero ("0") means that the cell spans all rows from the current row to the last row of the table section (THEAD, TBODY, or TFOOT) in which the cell is defined.</dd>
+
+      <dt>colspan=number [CN]</dt>
+      <dd>    This attribute specifies the number of columns spanned by the current cell. The default value of this attribute is one ("1"). The value zero ("0") means that the cell spans all columns from the current column to the last column of the column group (COLGROUP) in which the cell is defined.</dd>
+
+      <dt>nowrap [CI]</dt>
+      <dd>    Deprecated. When present, this boolean attribute tells visual user agents to disable automatic text wrapping for this cell. Style sheets should be used instead of this attribute to achieve wrapping effects. Note. if used carelessly, this attribute may result in excessively wide cells.</dd>
+
+      <dt>width=length [CN]</dt>
+      <dd>    Deprecated. This attribute supplies user agents with a recommended cell width.</dd>
+
+      <dt>height=length [CN]</dt>
+      <dd>    Deprecated. This attribute supplies user agents with a recommended cell height.</dd>
+
+    </dl>
+
+    <p>Start tag: required, End tag: optional</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>bgcolor (background color)</li>
+      <li>align, char, charoff, valign (cell alignment)</li>
+    </ul>
+
+    <p>Table cells may contain two types of information: header information and data. This distinction enables user agents to render header and data cells distinctly, even in the absence of style sheets. For example, visual user agents may present header cell text with a bold font. Speech synthesizers may render header information with a distinct voice inflection.</p>
+
+    <p>The TH element defines a cell that contains header information. User agents have two pieces of header information available: the contents of the TH element and the value of the abbr attribute. User agents must render either the contents of the cell or the value of the abbr attribute. For visual media, the latter may be appropriate when there is insufficient space to render the full contents of the cell. For non-visual media abbr may be used as an abbreviation for table headers when these are rendered along with the contents of the cells to which they apply.</p>
+
+    <p>The headers and scope attributes also allow authors to help non-visual user agents process header information. Please consult the section on labeling cells for non-visual user agents for information and examples.</p>
+
+    <p>The TD element defines a cell that contains data.</p>
+
+    <p>Cells may be empty (i.e., contain no data).</p>
+
+    <p>For example, the following table contains four columns of data, each headed by a column description.</p>
+
+    <pre><code>
+&lt;TABLE summary="This table charts the number of cups
+                   of coffee consumed by each senator, the type 
+                   of coffee (decaf or regular), and whether 
+                   taken with sugar."&gt;
+&lt;CAPTION&gt;Cups of coffee consumed by each senator&lt;/CAPTION&gt;
+&lt;TR&gt;
+   &lt;TH&gt;Name&lt;/TH&gt;
+   &lt;TH&gt;Cups&lt;/TH&gt;
+   &lt;TH&gt;Type of Coffee&lt;/TH&gt;
+   &lt;TH&gt;Sugar?&lt;/TH&gt;
+&lt;TR&gt;
+   &lt;TD&gt;T. Sexton&lt;/TD&gt;
+   &lt;TD&gt;10&lt;/TD&gt;
+   &lt;TD&gt;Espresso&lt;/TD&gt;
+   &lt;TD&gt;No&lt;/TD&gt;
+&lt;TR&gt;
+   &lt;TD&gt;J. Dinnen&lt;/TD&gt;
+   &lt;TD&gt;5&lt;/TD&gt;
+   &lt;TD&gt;Decaf&lt;/TD&gt;
+   &lt;TD&gt;Yes&lt;/TD&gt;
+&lt;/TABLE&gt;    
+    </code></pre>
+
+    <p>A user agent rendering to a tty device might display this as follows:</p>
+
+    <pre><code>
+Name         Cups       Type of Coffee   Sugar?
+T. Sexton    10         Espresso         No
+J. Dinnen    5          Decaf            Yes    
+    </code></pre>
+
+
+  </body>
+</html>

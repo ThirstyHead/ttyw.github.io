@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TEXTAREA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TEXTAREA</h1>
+    <h2><a href="https://www.w3.org/TR/html401/interact/forms.html#edef-TEXTAREA">17.7 The TEXTAREA element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT TEXTAREA - - (#PCDATA)       -- multi-line text field --&gt;
+&lt;!ATTLIST TEXTAREA
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  name        CDATA          #IMPLIED
+  rows        NUMBER         #REQUIRED
+  cols        NUMBER         #REQUIRED
+  disabled    (disabled)     #IMPLIED  -- unavailable in this context --
+  readonly    (readonly)     #IMPLIED
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  accesskey   %Character;    #IMPLIED  -- accessibility key character --
+  onfocus     %Script;       #IMPLIED  -- the element got the focus --
+  onblur      %Script;       #IMPLIED  -- the element lost the focus --
+  onselect    %Script;       #IMPLIED  -- some text was selected --
+  onchange    %Script;       #IMPLIED  -- the element value was changed --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns the control name.</dd>
+
+      <dt>rows=number [CN]</dt>
+      <dd>    This attribute specifies the number of visible text lines. Users should be able to enter more lines than this, so user agents should provide some means to scroll through the contents of the control when the contents extend beyond the visible area.</dd>
+
+      <dt>cols=number [CN]</dt>
+      <dd>    This attribute specifies the visible width in average character widths. Users should be able to enter longer lines than this, so user agents should provide some means to scroll through the contents of the control when the contents extend beyond the visible area. User agents may wrap visible text lines to keep long lines visible without the need for scrolling.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>readonly (read-only input controls)</li>
+      <li>disabled (disabled input controls)</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>onfocus, onblur, onselect, onchange, onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The TEXTAREA element creates a multi-line text input control. User agents should use the contents of this element as the initial value of the control and should render this text initially.</p>
+
+    <p>This example creates a TEXTAREA control that is 20 rows by 80 columns and contains two lines of text initially. The TEXTAREA is followed by submit and reset buttons.</p>
+
+    <pre><code>
+&lt;FORM action="http://somesite.com/prog/text-read" method="post"&gt;
+   &lt;P&gt;
+   &lt;TEXTAREA name="thetext" rows="20" cols="80"&gt;
+   First line of initial text.
+   Second line of initial text.
+   &lt;/TEXTAREA&gt;
+   &lt;INPUT type="submit" value="Send"&gt;&lt;INPUT type="reset"&gt;
+   &lt;/P&gt;
+&lt;/FORM&gt;    
+    </code></pre>
+
+    <p>Setting the readonly attribute allows authors to display unmodifiable text in a TEXTAREA. This differs from using standard marked-up text in a document because the value of TEXTAREA is submitted with the form.</p>
+  </body>
+</html>

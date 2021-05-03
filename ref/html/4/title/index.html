@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TITLE</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/global.html#edef-TITLE">7.4.2 The TITLE element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!-- The TITLE element is not considered part of the flow of text.
+       It should be displayed, for example as the page header or
+       window title. Exactly one title is required per document.
+    --&gt;
+&lt;!ELEMENT TITLE - - (#PCDATA) -(%head.misc;) -- document title --&gt;
+&lt;!ATTLIST TITLE %i18n&gt;
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+    </ul>
+
+    <p>Every HTML document must have a TITLE element in the HEAD section.</p>
+
+    <p>Authors should use the TITLE element to identify the contents of a document. Since users often consult documents out of context, authors should provide context-rich titles. Thus, instead of a title such as "Introduction", which doesn't provide much contextual background, authors should supply a title such as "Introduction to Medieval Bee-Keeping" instead.</p>
+
+    <p>For reasons of accessibility, user agents must always make the content of the TITLE element available to users (including TITLE elements that occur in frames). The mechanism for doing so depends on the user agent (e.g., as a caption, spoken).</p>
+
+    <p>Titles may contain character entities (for accented characters, special characters, etc.), but may not contain other markup (including comments). Here is a sample document title:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+... other head elements...
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+... document body...
+&lt;/BODY&gt;
+&lt;/HTML&gt;    
+    </code></pre>
+  </body>
+</html>
