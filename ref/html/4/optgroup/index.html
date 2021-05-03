@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OPTGROUP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>OPTGROUP</h1>
+    <h2><a href="https://www.w3.org/TR/html401/interact/forms.html#edef-OPTGROUP">17.6 The SELECT, OPTGROUP, and OPTION elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT SELECT - - (OPTGROUP|OPTION)+ -- option selector --&gt;
+&lt;!ATTLIST SELECT
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  name        CDATA          #IMPLIED  -- field name --
+  size        NUMBER         #IMPLIED  -- rows visible --
+  multiple    (multiple)     #IMPLIED  -- default is single selection --
+  disabled    (disabled)     #IMPLIED  -- unavailable in this context --
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  onfocus     %Script;       #IMPLIED  -- the element got the focus --
+  onblur      %Script;       #IMPLIED  -- the element lost the focus --
+  onchange    %Script;       #IMPLIED  -- the element value was changed --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>SELECT Attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns the control name.</dd>
+
+      <dt>size=number [CN]</dt>
+      <dd>    If a SELECT element is presented as a scrolled list box, this attribute specifies the number of rows in the list that should be visible at the same time. Visual user agents are not required to present a SELECT element as a list box; they may use any other mechanism, such as a drop-down menu.</dd>
+
+      <dt>multiple [CI]</dt>
+      <dd>    If set, this boolean attribute allows multiple selections. If not set, the SELECT element only permits single selections.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>disabled (disabled input controls)</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The SELECT element creates a menu. Each choice offered by the menu is represented by an OPTION element. A SELECT element must contain at least one OPTION element.</p>
+
+    <p>The OPTGROUP element allows authors to group choices logically. This is particularly helpful when the user must choose from a long list of options; groups of related choices are easier to grasp and remember than a single long list of options. In HTML 4, all OPTGROUP elements must be specified directly within a SELECT element (i.e., groups may not be nested).</p>
+  </body>
+</html>
