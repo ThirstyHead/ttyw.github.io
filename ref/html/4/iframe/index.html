@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IFRAME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>IFRAME</h1>
+    <h2><a href="https://www.w3.org/TR/html401/present/frames.html#edef-IFRAME">16.5 Inline frames: the IFRAME element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT IFRAME - - (%flow;)*         -- inline subwindow --&gt;
+&lt;!ATTLIST IFRAME
+  %coreattrs;                          -- id, class, style, title --
+  longdesc    %URI;          #IMPLIED  -- link to long description
+                                          (complements title) --
+  name        CDATA          #IMPLIED  -- name of frame for targetting --
+  src         %URI;          #IMPLIED  -- source of frame content --
+  frameborder (1|0)          1         -- request frame borders? --
+  marginwidth %Pixels;       #IMPLIED  -- margin widths in pixels --
+  marginheight %Pixels;      #IMPLIED  -- margin height in pixels --
+  scrolling   (yes|no|auto)  auto      -- scrollbar or none --
+  align       %IAlign;       #IMPLIED  -- vertical or horizontal alignment --
+  height      %Length;       #IMPLIED  -- frame height --
+  width       %Length;       #IMPLIED  -- frame width --
+  &gt;    
+    </code></pre>
+   
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>longdesc=uri [CT]</dt>
+      <dd>    This attribute specifies a link to a long description of the frame. This description should supplement the short description provided using the title attribute, and is particularly useful for non-visual user agents.</dd>
+
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute assigns a name to the current frame. This name may be used as the target of subsequent links.</dd>
+
+      <dt>width=length [CN]</dt>
+      <dd>    The width of the inline frame.</dd>
+
+      <dt>height=length [CN]</dt>
+      <dd>    The height of the inline frame.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>name, src, frameborder, marginwidth, marginheight, scrolling (frame controls and decoration)</li>
+      <li>align (alignment)</li>
+    </ul>
+
+    <p> The IFRAME element allows authors to insert a frame within a block of text. Inserting an inline frame within a section of text is much like inserting an object via the OBJECT element: they both allow you to insert an HTML document in the middle of another, they may both be aligned with surrounding text, etc. </p>
+
+    <p>The information to be inserted inline is designated by the src attribute of this element. The contents of the IFRAME element, on the other hand, should only be displayed by user agents that do not support frames or are configured not to display frames.</p>
+
+    <p>For user agents that support frames, the following example will place an inline frame surrounded by a border in the middle of the text.</p>
+
+    <pre><code>
+  &lt;IFRAME src="foo.html" width="400" height="500"
+             scrolling="auto" frameborder="1"&gt;
+  [Your user agent does not support frames or is currently configured
+  not to display frames. However, you may visit
+  &lt;A href="foo.html"&gt;the related document.&lt;/A&gt;]
+  &lt;/IFRAME&gt;    
+    </code></pre>
+
+    <p>Inline frames may not be resized (and thus, they do not take the noresize attribute).</p>
+
+    <p>Note. HTML documents may also be embedded in other HTML documents with the OBJECT element. See the section on embedded documents for details.
+</p>
+  </body>
+</html>

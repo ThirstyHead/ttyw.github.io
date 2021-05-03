@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>IMG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>IMG</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/objects.html#edef-IMG">13.2 Including an image: the IMG element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!-- To avoid problems with text-only UAs as well as 
+   to make image content understandable and navigable 
+   to users of non-visual UAs, you need to provide
+   a description with ALT, and avoid server-side image maps --&gt;
+&lt;!ELEMENT IMG - O EMPTY                -- Embedded image --&gt;
+&lt;!ATTLIST IMG
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  src         %URI;          #REQUIRED -- URI of image to embed --
+  alt         %Text;         #REQUIRED -- short description --
+  longdesc    %URI;          #IMPLIED  -- link to long description
+                                          (complements alt) --
+  name        CDATA          #IMPLIED  -- name of image for scripting --
+  height      %Length;       #IMPLIED  -- override height --
+  width       %Length;       #IMPLIED  -- override width --
+  usemap      %URI;          #IMPLIED  -- use client-side image map --
+  ismap       (ismap)        #IMPLIED  -- use server-side image map --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>src=uri [CT]</dt>
+      <dd>    This attribute specifies the location of the image resource. Examples of widely recognized image formats include GIF, JPEG, and PNG.</dd>
+
+      <dt>longdesc=uri [CT]</dt>
+      <dd>    This attribute specifies a link to a long description of the image. This description should supplement the short description provided using the alt attribute. When the image has an associated image map, this attribute should provide information about the image map's contents. This is particularly important for server-side image maps. Since an IMG element may be within the content of an A element, the user agent's mechanism in the user interface for accessing the "longdesc" resource of the former must be different than the mechanism for accessing the href resource of the latter.</dd>
+
+      <dt>name=cdata [CI]</dt>
+      <dd>    This attribute names the element so that it may be referred to from style sheets or scripts. Note. This attribute has been included for backwards compatibility. Applications should use the id attribute to identify elements.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>alt (alternate text)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>ismap, usemap (client side image maps)</li>
+      <li>align, width, height, border, hspace, vspace (visual presentation of objects, images, and applets)</li>
+    </ul>
+
+    <p>The IMG element embeds an image in the current document at the location of the element's definition. The IMG element has no content; it is usually replaced inline by the image designated by the src attribute, the exception being for left or right-aligned images that are "floated" out of line.</p>
+
+    <p>In an earlier example, we defined a link to a family photo. Here, we insert the photo directly into the current document:</p>
+
+    <pre><code>
+&lt;BODY&gt;
+&lt;P&gt;I just returned from vacation! Here's a photo of my family at the lake:
+&lt;IMG src="http://www.somecompany.com/People/Ian/vacation/family.png"
+     alt="A photo of my family at the lake."&gt;
+&lt;/BODY&gt;    
+    </code></pre>
+
+    <p>This inclusion may also be achieved with the OBJECT element as follows:</p>
+
+    <pre><code>
+&lt;BODY&gt;
+&lt;P&gt;I just returned from vacation! Here's a photo of my family at the lake:
+&lt;OBJECT data="http://www.somecompany.com/People/Ian/vacation/family.png"
+        type="image/png"&gt;
+A photo of my family at the lake.
+&lt;/OBJECT&gt;
+&lt;/BODY&gt;    
+    </code></pre>
+
+    <p>The alt attribute specifies alternate text that is rendered when the image cannot be displayed (see below for information on how to specify alternate text ). User agents must render alternate text when they cannot support images, they cannot support a certain image type or when they are configured not to display images.</p>
+
+    <p>The following example shows how the longdesc attribute can be used to link to a richer description:</p>
+
+    <pre><code>
+&lt;BODY&gt;
+&lt;P&gt;
+&lt;IMG src="sitemap.gif"
+     alt="HP Labs Site Map"
+     longdesc="sitemap.html"&gt;
+&lt;/BODY&gt;    
+    </code></pre>
+
+    <p>The alt attribute provides a short description of the image. This should be sufficient to allow users to decide whether they want to follow the link given by the longdesc attribute to the longer description, here "sitemap.html".</p>
+
+    <p>Please consult the section on the visual presentation of objects, images, and applets for information about image size, alignment, and borders.</p>
+
+  </body>
+</html>
