@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NOFRAMES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>NOFRAMES</h1>
+    <h2><a href="https://www.w3.org/TR/html401/present/frames.html#edef-NOFRAMES">16.4.1 The NOFRAMES element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;![ %HTML.Frameset; [
+&lt;!ENTITY % noframes.content "(BODY) -(NOFRAMES)"&gt;
+]]&gt;
+
+&lt;!ENTITY % noframes.content "(%flow;)*"&gt;
+
+&lt;!ELEMENT NOFRAMES - - %noframes.content;
+ -- alternate content container for non frame-based rendering --&gt;
+&lt;!ATTLIST NOFRAMES
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The NOFRAMES element specifies content that should be displayed only by user agents that do not support frames or are configured not to display frames. User agents that support frames must only display the contents of a NOFRAMES declaration when configured not to display frames. User agents that do not support frames must display the contents of NOFRAMES in any case.</p>
+
+    <p>The NOFRAMES element is part of both the transitional and frameset DTDs. In a document that uses the frameset DTD, NOFRAMES may be used at the end of the FRAMESET section of the document.</p>
+
+    <p>For example:</p>
+
+    <pre><code>
+  &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+     "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+  &lt;HTML&gt;
+  &lt;HEAD&gt;
+  &lt;TITLE&gt;A frameset document with NOFRAMES&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+  &lt;FRAMESET cols="50%, 50%"&gt;
+     &lt;FRAME src="main.html"&gt;
+     &lt;FRAME src="table_of_contents.html"&gt;
+     &lt;NOFRAMES&gt;
+     &lt;P&gt;Here is the &lt;A href="main-noframes.html"&gt;
+              non-frame based version of the document.&lt;/A&gt; 
+     &lt;/NOFRAMES&gt;
+  &lt;/FRAMESET&gt;
+  &lt;/HTML&gt;
+    </code></pre>
+
+    <p> NOFRAMES may be used, for example, in a document that is the source of a frame and that uses the transitional DTD. This allows authors to explain the document's purpose in cases when it is viewed out of the frameset or with a user agent that doesn't support frames.</p>
+  </body>
+</html>
