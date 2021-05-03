@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>PRE</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/text.html#edef-PRE">9.3.4 Preformatted text: The PRE element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % pre.exclusion "IMG|OBJECT|BIG|SMALL|SUB|SUP"&gt;
+
+&lt;!ELEMENT PRE - - (%inline;)* -(%pre.exclusion;) -- preformatted text --&gt;
+&lt;!ATTLIST PRE
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>width=number [CN]</dt>
+      <dd>    Deprecated. This attribute provides a hint to visual user agents about the desired width of the formatted block. The user agent can use this information to select an appropriate font size or to indent the content appropriately. The desired width is expressed in number of characters. This attribute is not widely supported currently.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The PRE element tells visual user agents that the enclosed text is "preformatted". When handling preformatted text, visual user agents:</p>
+
+    <ul>
+      <li>May leave white space intact.</li>
+      <li>May render text with a fixed-pitch font.</li>
+      <li>May disable automatic word wrap.</li>
+      <li>Must not disable bidirectional processing.</li>
+    </ul>
+
+    <p>Non-visual user agents are not required to respect extra white space in the content of a PRE element.</p>
+
+    <p>For more information about SGML's specification of line breaks, please consult the notes on line breaks in the appendix.</p>
+
+    <p>The DTD fragment above indicates which elements may not appear within a PRE declaration. This is the same as in HTML 3.2, and is intended to preserve constant line spacing and column alignment for text rendered in a fixed pitch font. Authors are discouraged from altering this behavior through style sheets.</p>
+
+    <p>The following example shows a preformatted verse from Shelly's poem To a Skylark:</p>
+
+    <pre><code>
+&lt;PRE&gt;    
+       Higher still and higher
+         From the earth thou springest
+       Like a cloud of fire;
+         The blue deep thou wingest,
+And singing still dost soar, and soaring ever singest.    
+&lt;/PRE&gt;    
+    </code></pre>
+
+    <p>Here is how this is typically rendered:</p>
+
+    <pre><code>
+       Higher still and higher
+         From the earth thou springest
+       Like a cloud of fire;
+         The blue deep thou wingest,
+And singing still dost soar, and soaring ever singest.    
+    </code></pre>
+
+
+
+  </body>
+</html>
