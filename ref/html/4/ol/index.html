@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .deprecated-example{
+        border: solid 4px orange;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>OL</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/lists.html#edef-OL">10.2 Unordered lists (UL), ordered lists (OL), and list items (LI)</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT UL - - (LI)+                 -- unordered list --&gt;
+&lt;!ATTLIST UL
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;
+&lt;!ELEMENT OL - - (LI)+                 -- ordered list --&gt;
+&lt;!ATTLIST OL
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <pre><code>
+&lt;!ELEMENT LI - O (%flow;)*             -- list item --&gt;
+&lt;!ATTLIST LI
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+
+    <p>Start tag: required, End tag: optional</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>type=style-information [CI]</dt>
+      <dd>    Deprecated. This attribute sets the style of a list item. Currently available values are intended for visual user agents. Possible values are described below (along with case information).</dd>
+
+      <dt>start=number [CN]</dt>
+      <dd>    Deprecated. For OL only. This attribute specifies the starting number of the first item in an ordered list. The default starting number is "1". Note that while the value of this attribute is an integer, the corresponding label may be non-numeric. Thus, when the list item style is uppercase latin letters (A, B, C, ...), start=3 means "C". When the style is lowercase roman numerals, start=3 means "iii", etc.</dd>
+
+      <dt>value=number [CN]</dt>
+      <dd>    Deprecated. For LI only. This attribute sets the number of the current list item. Note that while the value of this attribute is an integer, the corresponding label may be non-numeric (see the start attribute).</dd>
+
+      <dt>compact [CI]</dt>
+      <dd>    Deprecated. When set, this boolean attribute gives a hint to visual user agents to render the list in a more compact way. The interpretation of this attribute depends on the user agent.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Ordered and unordered lists are rendered in an identical manner except that visual user agents number ordered list items. User agents may present those numbers in a variety of ways. Unordered list items are not numbered.</p>
+
+    <p>Both types of lists are made up of sequences of list items defined by the LI element (whose end tag may be omitted).</p>
+
+    <p>This example illustrates the basic structure of a list.</p>
+
+    <pre><code>
+&lt;UL&gt;
+   &lt;LI&gt; ... first list item...
+   &lt;LI&gt; ... second list item...
+   ...
+&lt;/UL&gt;    
+    </code></pre>
+
+    <p>Lists may also be nested:</p>
+
+    <section class="deprecated-example">
+      <h3>Deprecated Example</h3>
+
+      <pre><code>
+&lt;UL&gt;
+     &lt;LI&gt; ... Level one, number one...
+     &lt;OL&gt; 
+        &lt;LI&gt; ... Level two, number one...
+        &lt;LI&gt; ... Level two, number two...
+        &lt;OL start="10"&gt; 
+           &lt;LI&gt; ... Level three, number one...
+        &lt;/OL&gt; 
+        &lt;LI&gt; ... Level two, number three...
+     &lt;/OL&gt; 
+     &lt;LI&gt; ... Level one, number two...
+&lt;/UL&gt;      
+      </code></pre>
+    </section>
+
+    <p>Details about number order. In ordered lists, it is not possible to continue list numbering automatically from a previous list or to hide numbering of some list items. However, authors can reset the number of a list item by setting its value attribute. Numbering continues from the new value for subsequent list items. For example:</p>
+
+    <pre><code>
+&lt;ol&gt;
+&lt;li value="30"&gt; makes this list item number 30.
+&lt;li value="40"&gt; makes this list item number 40.
+&lt;li&gt; makes this list item number 41.
+&lt;/ol&gt;    
+    </code></pre>
+
+  </body>
+</html>
