@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>A</h1>
+    <h2><a href="https://www.w3.org/TR/html52/textlevel-semantics.html#elementdef-a">4.5.1. The a element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 5.02 Specification, published December 2017, <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a>]</p>
+  
+    <dl>
+      <dt>Content attributes</dt>
+      <dd>
+        <p>Global attributes</p>
+        <ul>
+          <li>      href - Address of the hyperlink </li>
+          <li>      target - Default browsing context for hyperlink navigation and §4.10.21 Form submission </li>
+          <li>      download - Whether to download the resource instead of navigating to it, and its file name if so </li>
+          <li>      rel — Relationship of this document (or subsection/topic) to the destination resource </li>
+          <li>      rev — Reverse link relationship of the destination resource to this document (or subsection/topic) </li>
+          <li>      hreflang - Language of the linked resource </li>
+          <li>      type - Hint for the type of the referenced resource </li>
+          <li>      referrerpolicy - Referrer policy for fetches initiated by the element </li>
+        </ul>
+      </dd>
+
+      <dt>Allowed ARIA role attribute values</dt>
+      <dd>
+        <ul>
+          <li>     link (default - do not set), button, checkbox, radio, switch, tab or treeitem </li>
+        </ul>
+      </dd>
+
+      <dt>Allowed ARIA state and property attributes</dt>
+      <dd>
+        <p>Global aria-* attributes</p>
+        <ul>
+          <li>      Any aria-* attributes applicable to the allowed roles. </li>
+        </ul>
+      </dd>
+    </dl>
+
+    <p>
+If the a element has an href attribute, then it represents a hyperlink (a hypertext anchor) labeled by its contents.
+    </p>
+
+    <p>If the a element has no href attribute, then the element represents a placeholder for where a link might otherwise have been placed, if it had been relevant, consisting of just the element’s contents.</p>
+
+    <p>The target, download, rel, rev, hreflang, type, and referrerpolicy attributes must be omitted if the href attribute is not present.</p>
+
+    <h3>Example 1</h3>
+    <p>If a site uses a consistent navigation toolbar on every page, then the link that would normally link to the page itself could be marked up using an a element:</p>
+
+    <pre><code>
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt; &lt;a href="/"&gt;Home&lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; &lt;a href="/news"&gt;News&lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; &lt;a&gt;Examples&lt;/a&gt; &lt;/li&gt;
+    &lt;li&gt; &lt;a href="/legal"&gt;Legal&lt;/a&gt; &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;    
+    </code></pre>
+  </body>
+</html>
