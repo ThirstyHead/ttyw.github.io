@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ADDRESS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
     <meta name="description" content="">
@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <h1></h1>
-    <h2><a href=""></a></h2>
+    <h1>ADDRESS</h1>
+    <h2><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-address">4.4.2. The address element</a></h2>
     <p>[since: HTML 2.x]</p>
     <p>[source: HTML 5.02 Specification, published December 2017, <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a>]</p>
   
@@ -27,7 +27,7 @@
       <dt>Allowed ARIA role attribute values</dt>
       <dd>
         <ul>
-          <li>Any role value.</li>
+          <li>    group role (default - do not set) </li>
         </ul>
       </dd>
 
@@ -40,12 +40,27 @@
       </dd>
     </dl>
 
-    <p></p>
+    <p>The address element represents contact information for a person, people or organization. It should include physical and/or digital location/contact information and a means of identifying a person(s) or organization the information pertains to.</p>
 
-    <h3>Example</h3>
-    <p></p>
+    <h3>Example 6</h3>
+    <p>
+For example, the W3C twitter account: </p>
     <pre><code>
-    
+&lt;address&gt;
+&lt;p&gt;W3C on Twitter:
+&lt;p&gt;&lt;a href="https://twitter.com/w3c"&gt;@w3c&lt;/a&gt;
+&lt;/address&gt;     
     </code></pre>
+
+    <p>Address, telephone and fax numbers for an organization: </p>
+
+    <pre><code>
+&lt;address&gt;      
+UNIVERSITY INTERSCHOLASTIC LEAGUE&lt;br&gt;
+1701 Manor Road, Austin, TX 78722&lt;br&gt;
+Tel: (512) 471-5883 | Fax: (512) 471-5908
+&lt;/address&gt;    
+    </code></pre>
+
   </body>
 </html>
