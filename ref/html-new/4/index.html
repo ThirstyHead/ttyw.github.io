@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML 4.x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .deprecated{
+        color: red;
+        font-style: italic;
+      }
+
+      .new{
+        color: green;
+        font-style: italic;
+      }
+
+      dl > dl{
+        margin-left: 60px; 
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>HTML 4.x Specification</h1>
+      <h2><a href="https://www.w3.org/TR/html4/">Abstract</a></h2>
+      <p>
+      This specification defines the HyperText Markup Language (HTML), the publishing language of the World Wide Web. This specification defines HTML 4.01, which is a subversion of HTML 4. In addition to the text, multimedia, and hyperlink features of the previous versions of HTML (HTML 3.2 <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">[HTML32]</a> and HTML 2.0 <a href="https://www.ietf.org/rfc/rfc1866.txt">[RFC1866]</a>), HTML 4 supports more multimedia options, scripting languages, style sheets, better printing facilities, and documents that are more accessible to users with disabilities. HTML 4 also takes great strides towards the internationalization of documents, with the goal of making the Web truly World Wide.
+      </p>
+      <p>[source: HTML 4.01 Specification, published December 1999, <a href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+
+      <p>NOTE: <span class="deprecated">deprecated elements</span> are shown in red and italic. These elements should be not be used, since browser support for them will be removed in future releases.</p>
+
+      <p>NOTE: <span class="new">new elements</span> are shown in green and italic. When using these elements, be mindful of the need to polyfill support for these elements in older browsers.</p>  
+
+
+      <h2>Elements</h2>
+      <p>HTML Elements are the basic building blocks of any web page. There are 91 elements defined in the HTML 4.x Specification, with 24 new elements and 10 deprecated elements.</p>
+
+        <h3>Document</h3> 
+        <p>Document elements describe the high-level parts of the page. The <code>&lt;html&gt;</code> element is the root element of the page. The <code>&lt;head&gt;</code> element is for hidden, browser-focused metadata. All viewable content is defined in the <code>&lt;body&gt;</code> section.</p>
+
+        <ul class="elements">
+          <li><a href="html/">html</a></li>
+          <li><a href="head/">head</a></li>
+          <li><a href="title/">title</a></li>
+          <li><a href="link/">link</a></li>
+          <li><a href="meta/">meta</a></li>
+          <li><a href="style/">style</a></li>
+          <li><a href="script/">script</a></li>
+          <li><a href="noscript/" class="new">noscript</a></li>
+          <li><a href="body/">body</a></li>
+          <li><a href="base/">base</a></li>
+          <li><a href="frame/" class="new">frame</a></li>
+          <li><a href="frameset/" class="new">frameset</a></li>
+          <li><a href="noframes/" class="new">noframes</a></li>
+          <li><a href="isindex/" class="deprecated">isindex</a></li>
+          <!--
+          -->
+          <!--
+          <li><a href="nextid/" class="deprecated">nextid</a></li>
+          -->
+        </ul>
+
+
+        <h3>Content</h3> 
+        <p>Content elements describe the basic hierarchy of the page. Each heading (<code>&lt;h1&gt;</code>..<code>&lt;h6&gt;</code>) creates its own implicit section. Think of headings as entries in a table of contents.</p>
+        <p><code>&lt;h1&gt;</code> is the primary heading/section. There should only be one per page. <code>&lt;h2&gt;</code> sections are subtopics. If you need to further subdivide the sections, use <code>&lt;h3&gt;</code> - <code>&lt;h6&gt;</code>.</p>
+
+        <ul class="elements">
+          <li><a href="br/">br</a></li>
+          <li><a href="div/">div</a></li>
+          <li><a href="span/" class="new">span</a></li>
+          <li><a href="h1/">h1</a></li>
+          <li><a href="h2/">h2</a></li>
+          <li><a href="h3/">h3</a></li>
+          <li><a href="h4/">h4</a></li>
+          <li><a href="h5/">h5</a></li>
+          <li><a href="h6/">h6</a></li>
+          <li><a href="hr/">hr</a></li>
+          <li><a href="p/">p</a></li>
+          <li><a href="iframe/" class="new">iframe</a></li>
+          <li><a href="center/" class="deprecated">center</a></li>
+        </ul>
+
+        <h3>Action</h3>
+        <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks to <i>other web pages</i>.
+        </p>  
+
+        <ul class="elements">
+          <li><a href="a/">a</a></li>
+          <li><a href="button/" class="new">button</a></li>
+          <li><a href="object/" class="new">object</a></li>
+          <li><a href="applet/" class="deprecated">applet</a></li>
+          <li><a href="param/" class="deprecated">param</a></li>
+          <li><a href="map/">map</a></li>
+          <li><a href="area/">area</a></li>
+        </ul>
+
+        <h3>List</h3>
+        <p>List elements allow you to present the user with a collection of <code>&lt;li&gt;</code> list items. <code>&lt;ul&gt;</code> is an unordered list, or a list of bulleted items. <code>&lt;ol&gt;</code> is an ordered list, or a list of numbered items.</p>
+
+        <ul class="elements">
+          <li><a href="ul/">ul</a></li>
+          <li><a href="ol/">ol</a></li>
+          <li><a href="li/">li</a></li>
+          <li><a href="dl/">dl</a></li>
+          <li><a href="dt/">dt</a></li>
+          <li><a href="dd/">dd</a></li>
+          <li><a href="dir/" class="deprecated">dir</a></li>
+          <li><a href="menu/" class="deprecated">menu</a></li>
+        </ul>
+
+
+        <h3>Form</h3>
+        <p>Form elements allow the user to submit information.</p>
+
+        <ul class="elements">
+          <li><a href="form/">form</a></li>
+          <li><a href="label/" class="new">label</a></li>
+          <li><a href="input/">input</a></li>
+          <li><a href="textarea/">textarea</a></li>
+          <li><a href="select/">select</a></li>
+          <li><a href="option/">option</a></li>
+          <li><a href="optgroup/" class="new">optgroup</a></li>
+          <li><a href="fieldset/" class="new">fieldset</a></li>
+          <li><a href="legend/" class="new">legend</a></li>
+        </ul>
+
+
+
+        <h3>Table</h3>
+        <p>Table elements are ideal for displaying spreadsheet-like information. If your data can be logically grouped by columns, rows, or both, use a &lt;table&gt;.</p>
+
+        <ul class="elements">
+          <li><a href="table/">table</a></li>
+          <li><a href="tr/">tr</a></li>
+          <li><a href="td/">td</a></li>
+          <li><a href="th/">th</a></li>
+          <li><a href="caption/">caption</a></li>
+          <li><a href="col/" class="new">col</a></li>
+          <li><a href="colgroup/" class="new">colgroup</a></li>
+          <li><a href="tbody/" class="new">tbody</a></li>
+          <li><a href="thead/" class="new">thead</a></li>
+          <li><a href="tfoot/" class="new">tfoot</a></li>
+        </ul>
+
+
+        <h3>Semantics</h3> 
+        <p>Semantic elements should be used to <i>describe</i> or <i>clarify</i> the meaning of the text. The way the text appears is far less important than providing the meaning or significance of the text.</p>
+
+        <ul class="elements">
+          <li><a href="abbr/" class="new">abbr</a></li>
+          <li><a href="acronym/" class="new">acronym</a></li>
+          <li><a href="em/">em</a></li>
+          <li><a href="strong/">strong</a></li>
+          <li><a href="dfn/">dfn</a></li>
+          <li><a href="code/">code</a></li>
+          <li><a href="samp/">samp</a></li>
+          <li><a href="kbd/">kbd</a></li>
+          <li><a href="var/">var</a></li>
+          <li><a href="cite/">cite</a></li>
+          <li><a href="address/">address</a></li>
+          <li><a href="b/">b</a></li>
+          <li><a href="i/">i</a></li>
+          <li><a href="tt/">tt</a></li>
+          <li><a href="big/">big</a></li>
+          <li><a href="small/">small</a></li>
+          <li><a href="strike/" class="deprecated">strike</a></li>
+          <li><a href="s/" class="deprecated">s</a></li>
+          <li><a href="u/" class="deprecated">u</a></li>
+          <li><a href="font/" class="deprecated">font</a></li>
+          <li><a href="basefont/" class="deprecated">basefont</a></li>
+          <li><a href="bdo/" class="new">bdo</a></li>
+          <li><a href="blockquote/">blockquote</a></li>
+          <li><a href="q/" class="new">q</a></li>
+          <li><a href="pre/">pre</a></li>
+          <li><a href="sub/">sub</a></li>
+          <li><a href="sup/">sup</a></li>
+          <!--
+          <li><a href="xmp/" class="deprecated">xmp</a></li>
+          <li><a href="listing/" class="deprecated">listing</a></li>
+          <li><a href="plaintext/" class="deprecated">plaintext</a></li>
+          -->
+        </ul>
+
+        <h3>Editing</h3>
+        <p>
+Editing elements provide visual indicators for the changes made to the document. Use &lt;ins&gt; to indicate inserted text. Use &lt;del&gt; to indicate deleted text.
+        </p>
+
+        <ul class="elements">
+          <li><a href="del/" class="new">del</a></li>
+          <li><a href="ins/" class="new">ins</a></li>
+        </ul>
+
+        <h3>Graphics</h3> 
+        <p>Graphic elements show non-text information. Use <code>&lt;img&gt;</code> to display <i>raster</i> or photographic images.<p>
+
+        <ul class="elements">
+          <li><a href="img/">img</a></li>
+        </ul>
+
+  </body>
+</html>

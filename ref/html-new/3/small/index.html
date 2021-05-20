@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SMALL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      dl.compact dt{
+        display: inline-block;
+        min-width: 4em;
+      }
+
+      dl.compact dd{
+        display: inline;
+      }
+
+      dl.compact dd:after{
+        display: block;
+        content: '';
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>SMALL</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#font-style">Font style elements</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>These all require start and end tags, e.g. </p>
+
+    <pre><code>
+      This has some &lt;B&gt;bold text&lt;/B&gt;.
+    </code></pre>
+
+    <p>Text level elements must be properly nested - the following is in error: </p>
+
+    <pre><code>
+      This has some &lt;B&gt;bold and &lt;I&gt;&lt;/B&gt;italic text&lt;/I&gt;.
+    </code></pre>
+
+    <p> User agents should do their best to respect nested emphasis, e.g. </p>
+
+    <pre><code>
+      This has some &lt;B&gt;bold and &lt;I&gt;italic text&lt;/I&gt;&lt;/B&gt;.
+    </code></pre>
+
+    <p>Where the available fonts are restricted or for speech output, alternative means should be used for rendering differences in emphasis. </p>
+
+
+    <dl class="compact">
+      <dt>TT</dt>
+      <dd>teletype or monospaced text</dd>
+
+      <dt>I</dt>
+      <dd>italic text style</dd>
+
+      <dt>B</dt>
+      <dd>bold text style</dd>
+
+      <dt>U</dt>
+      <dd>underlined text style</dd>
+
+      <dt>STRIKE</dt>
+      <dd>strike-through text style</dd>
+
+      <dt>BIG</dt>
+      <dd>places text in a large font</dd>
+
+      <dt>SMALL</dt>
+      <dd>places text in a small font</dd>
+
+      <dt>SUB</dt>
+      <dd>places text in a subscript style</dd>
+
+      <dt>SUP</dt>
+      <dd>places text in a superscript style</dd>
+    </dl>
+
+    <p>Note: future revisions to HTML may be phase out STRIKE in favor of the more concise "S" tag from HTML 3.0. </p>
+  </body>
+</html>

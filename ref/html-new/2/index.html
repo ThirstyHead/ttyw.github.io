@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML 2.x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .deprecated{
+        color: red;
+        font-style: italic;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>HTML 2.x Specification</h1>
+      <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5. Document Structure</a></h2>
+      <p>An HTML document is a tree of elements, including a head and body,
+   headings, paragraphs, lists, etc.</p>
+      <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+      <p>NOTE: <span class="deprecated">deprecated elements</span> are shown in red and italic. These elements should be not be used, since browser support for them will be removed in future releases.</p>
+
+
+      <h2>Elements</h2>
+      <p>HTML Elements are the basic building blocks of any web page. There are 40 elements defined in the HTML 2.0 RFC, and 3 deprecated elements.</p>
+
+        <h3>Document</h3> 
+        <p>Document elements describe the high-level parts of the page. The <code>&lt;html&gt;</code> element is the root element of the page. The <code>&lt;head&gt;</code> element is for hidden, browser-focused metadata. All viewable content is defined in the <code>&lt;body&gt;</code> section.</p>
+
+        <ul class="elements">
+          <li><a href="html/">html</a></li>
+          <li><a href="head/">head</a></li>
+          <li><a href="title/">title</a></li>
+          <li><a href="base/">base</a></li>
+          <li><a href="isindex/">isindex</a></li>
+          <li><a href="link/">link</a></li>
+          <li><a href="meta/">meta</a></li>
+          <li><a href="nextid/" class="deprecated">nextid</a></li>
+          <li><a href="body/">body</a></li>
+        </ul>
+
+
+        <h3>Content</h3> 
+        <p>Content elements describe the basic hierarchy of the page. Each heading (<code>&lt;h1&gt;</code>..<code>&lt;h6&gt;</code>) creates its own implicit section. Think of headings as entries in a table of contents.</p>
+        <p><code>&lt;h1&gt;</code> is the primary heading/section. There should only be one per page. <code>&lt;h2&gt;</code> sections are subtopics. If you need to further subdivide the sections, use <code>&lt;h3&gt;</code> - <code>&lt;h6&gt;</code>.</p>
+
+        <ul class="elements">
+          <li><a href="h1/">h1</a></li>
+          <li><a href="h2/">h2</a></li>
+          <li><a href="h3/">h3</a></li>
+          <li><a href="h4/">h4</a></li>
+          <li><a href="h5/">h5</a></li>
+          <li><a href="h6/">h6</a></li>
+          <li><a href="p/">p</a></li>
+          <li><a href="br/">br</a></li>
+          <li><a href="hr/">hr</a></li>
+        </ul>
+
+        <h3>Action</h3>
+        <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks to <i>other web pages</i>.
+        </p>  
+
+        <ul class="elements">
+          <li><a href="a/">a</a></li>
+        </ul>
+
+        <h3>List</h3>
+        <p>List elements allow you to present the user with a collection of <code>&lt;li&gt;</code> list items. <code>&lt;ul&gt;</code> is an unordered list, or a list of bulleted items. <code>&lt;ol&gt;</code> is an ordered list, or a list of numbered items.</p>
+
+        <ul class="elements">
+          <li><a href="ul/">ul</a></li>
+          <li><a href="li/">li</a></li>
+          <li><a href="ol/">ol</a></li>
+          <li><a href="dir/">dir</a></li>
+          <li><a href="dir/">menu</a></li>
+          <li><a href="dl/">dl</a></li>
+          <li><a href="dt/">dt</a></li>
+          <li><a href="dd/">dd</a></li>
+        </ul>
+
+
+        <h3>Semantics</h3> 
+        <p>Semantic elements should be used to <i>describe</i> or <i>clarify</i> the meaning of the text. The way the text appears is far less important than providing the meaning or significance of the text.</p>
+
+        <ul class="elements">
+          <li><a href="pre/">pre</a></li>
+          <li><a href="xmp/" class="deprecated">xmp</a></li>
+          <li><a href="listing/" class="deprecated">listing</a></li>
+          <li><a href="address/">address</a></li>
+          <li><a href="blockquote/">blockquote</a></li>
+          <li><a href="cite/">cite</a></li>
+          <li><a href="code/">code</a></li>
+          <li><a href="em/">em</a></li>
+          <li><a href="kbd/">kbd</a></li>
+          <li><a href="samp/">samp</a></li>
+          <li><a href="strong/">strong</a></li>
+          <li><a href="var/">var</a></li>
+          <li><a href="b/">b</a></li>
+          <li><a href="i/">i</a></li>
+          <li><a href="tt/">tt</a></li>
+        </ul>
+
+
+        <h3>Graphics</h3> 
+        <p>Graphic elements show non-text information. Use <code>&lt;img&gt;</code> to display <i>raster</i> or photographic images.<p>
+
+        <ul class="elements">
+          <li><a href="img/">img</a></li>
+        </ul>
+
+  </body>
+</html>

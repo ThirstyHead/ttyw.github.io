@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Img</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Img</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.10. Image: IMG
+</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+The &lt;IMG&gt; element refers to an image or icon via a hyperlink (see
+   7.3, "Simultaneous Presentation of Image Resources").
+    </p>
+
+    <p>
+HTML user agents may process the value of the ALT attribute as an
+   alternative to processing the image resource indicated by the SRC
+   attribute.
+    </p>
+
+    <p>
+NOTE - Some HTML user agents can process graphics linked via
+      anchors, but not &lt;IMG&gt; graphics. If a graphic is essential, it
+      should be referenced from an &lt;A&gt; element rather than an &lt;IMG&gt;
+      element. If the graphic is not essential, then the &lt;IMG&gt; element
+      is appropriate.
+    </p>
+
+    <p>
+Attributes of the &lt;IMG&gt; element:
+    </p>
+
+    <dl>
+      <dt>ALIGN</dt>
+      <dd>alignment of the image with respect to the text
+            baseline.
+            <ul>
+              <li>`TOP' specifies that the top of the image aligns
+                with the tallest item on the line containing the
+                image.</li>
+
+              <li>`MIDDLE' specifies that the center of the image
+                aligns with the baseline of the line containing the
+                image.</li>
+
+              <li>`BOTTOM' specifies that the bottom of the image
+                aligns with the baseline of the line containing the
+                image.</li>
+            </ul>
+        </dd>
+
+        <dt>ALT</dt>
+        <dd>text to use in place of the referenced image resource,
+            for example due to processing constraints or user
+            preference.</dd>
+
+        <dt>ISMAP</dt>
+        <dd>indicates an image map (see 7.6, "Image Maps").</dd>
+
+        <dt>SRC</dt>
+        <dd>specifies the URI of the image resource.
+            <p>NOTE - In practice, the media types of image
+                resources are limited to a few raster graphic
+                formats: typically `image/gif', `image/jpeg'. In
+                particular, `text/html' resources are not
+                intended to be used as image resources.</p>
+        </dd>
+    </dl>
+
+    <p>Examples of use:</p>
+
+    <pre><code>
+    &lt;IMG SRC="triangle.xbm" ALT="Warning:"&gt; Be sure
+    to read these instructions.
+
+    &lt;a href="http://machine/htbin/imagemap/sample"&gt;
+    &lt;IMG SRC="sample.xbm" ISMAP&gt;
+    </a>
+    </code></pre>
+  </body>
+</html>

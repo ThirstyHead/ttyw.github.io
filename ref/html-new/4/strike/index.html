@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>STRIKE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>STRIKE</h1>
+    <h2><a href="https://www.w3.org/TR/html4/present/graphics.html#edef-B">15.2.1 Font style elements: the TT, I, B, BIG, SMALL, STRIKE, S, and U elements</a></h2>
+    <p>[DEPRECATED]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % fontstyle
+ "TT | I | B | BIG | SMALL"&gt;
+&lt;!ELEMENT (%fontstyle;|%phrase;) - - (%inline;)*&gt;
+&lt;!ATTLIST (%fontstyle;|%phrase;)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Rendering of font style elements depends on the user agent. The following is an informative description only.</p>
+
+    <dl>
+      <dt>TT</dt>
+      <dd>Renders as teletype or monospaced text</dd>
+
+      <dt>I</dt>
+      <dd>Renders as italic text style</dd>
+
+      <dt>B</dt>
+      <dd>Renders as bold text style</dd>
+
+      <dt>BIG</dt>
+      <dd>Renders text in a "large" font</dd>
+
+      <dt>SMALL</dt>
+      <dd>Renders text in a "small" font</dd>
+
+      <dt>STRIKE and S</dt>
+      <dd>DEPRECATED: Render strike-through style text</dd>
+
+      <dt>U</dt>
+      <dd>DEPRECATED: Renders underlined text</dd>
+    </dl>
+
+    <p>The following sentence shows several types of text:</p>
+
+<pre><code>
+&lt;P&gt;&lt;b&gt;bold&lt;/b&gt;,
+&lt;i&gt;italic&lt;/i&gt;, &lt;b&gt;&lt;i&gt;bold italic&lt;/i&gt;&lt;/b&gt;, &lt;tt&gt;teletype text&lt;/tt&gt;, and
+&lt;big&gt;big&lt;/big&gt; and &lt;small&gt;small&lt;/small&gt; text.
+</code></pre>
+
+    <p>These words might be rendered as follows:</p>
+
+    <pre><code>
+    bold, italic, bold italic, teletype text, and big and small text.
+    </code></pre>
+
+    <p>It is possible to achieve a much richer variety of font effects using style sheets. To specify blue, italic text in a paragraph with CSS:</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+&lt;STYLE type="text/css"&gt;
+P#mypar {font-style: italic; color: blue}
+&lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;P id="mypar"&gt;...Lots of blue italic text...      
+    </code></pre>
+
+    <p>Font style elements must be properly nested. Rendering of nested font style elements depends on the user agent.</p>
+  </body>
+</html>

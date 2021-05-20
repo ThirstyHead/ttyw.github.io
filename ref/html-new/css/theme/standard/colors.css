@@ -1,0 +1,20 @@
+:root {
+  /* Primary Palette */
+  --primary-palette-red: #c8102e;
+  --primary-palette-white: #000;
+  --primary-palette-black: #fff;
+
+  /* Secondary Palette */
+  --secondary-palette-dark-red: #98191a;
+  --secondary-palette-orange: #ff731e;
+  --secondary-palette-green: #19792f;
+  --secondary-palette-blue: #00739e;
+  --secondary-palette-light-blue: #10acd2;
+
+  /* Neutral Palette */
+  --neutral-palette-slate: #29333b;
+  --neutral-palette-grey: #72777d;
+  --neutral-palette-aluminum: #abb0b6;
+  --neutral-palette-alto: #d8d8d8;
+  --neutral-palette-light-grey: #eee;
+}

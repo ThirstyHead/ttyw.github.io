@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>PRE</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#pre">Preformatted Text</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+    &lt;!ELEMENT PRE - - (%text)* -(%pre.exclusion)&gt;
+    &lt;!ATTLIST PRE
+        width NUMBER #implied
+        &gt;
+    </code></pre>
+
+    <p>The PRE element can be used to include preformatted text. User agents render this in a fixed pitch font, preserving spacing associated with white space characters such as space and newline characters. Automatic word-wrap should be disabled within PRE elements. </p>
+
+    <p>Note that the SGML standard requires that the parser remove a newline immediately following the start tag or immediately preceding the end tag. </p>
+
+    <p>PRE has the same content model as paragraphs, excluding images and elements that produce changes in font size, e.g. IMG, BIG, SMALL, SUB, SUP and FONT. </p>
+
+    <p>A few user agents support the WIDTH attribute. It provides a hint to the user agent of the required width in characters. The user agent can use this to select an appropriate font size or to indent the content appropriately. </p>
+
+    <p>Here is an example of a PRE element; a verse from Shelley (To a Skylark): </p>
+
+    <pre><code>
+    &lt;PRE&gt;
+       Higher still and higher
+         From the earth thou springest
+       Like a cloud of fire;
+         The blue deep thou wingest,
+    And singing still dost soar, and soaring ever singest.
+    &lt;/PRE&gt;
+    </code></pre>
+
+    <p>which is rendered as:</p>
+
+    <pre>
+       Higher still and higher
+         From the earth thou springest
+       Like a cloud of fire;
+         The blue deep thou wingest,
+    And singing still dost soar, and soaring ever singest.
+    </pre>
+
+    <p>The horizontal tab character (encoded in Unicode, US ASCII and ISO 8859-1 as decimal 9) should be interpreted as the smallest non-zero number of spaces which will leave the number of characters so far on the line as a multiple of 8. Its use is strongly discouraged since it is common practice when editing to set the tab-spacing to other values, leading to misaligned documents. </p>
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGEND</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>LEGEND</h1>
+    <h2><a href="https://www.w3.org/TR/html4/interact/forms.html#edef-LEGEND">17.10 Adding structure to forms: the FIELDSET and LEGEND elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!--
+  #PCDATA is to solve the mixed content problem,
+  per specification only whitespace is allowed there!
+ --&gt;
+&lt;!ELEMENT FIELDSET - - (#PCDATA,LEGEND,(%flow;)*) -- form control group --&gt;
+&lt;!ATTLIST FIELDSET
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;
+
+&lt;!ELEMENT LEGEND - - (%inline;)*       -- fieldset legend --&gt;
+
+&lt;!ATTLIST LEGEND
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  accesskey   %Character;    #IMPLIED  -- accessibility key character --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>LEGEND Attribute definitions</p>
+
+    <dl>
+      <dt>align=top|bottom|left|right [CI]</dt>
+      <dd>Deprecated. This attribute specifies the position of the legend with respect to the fieldset. Possible values: 
+      <ul>
+        <li>top: The legend is at the top of the fieldset. This is the default value.</li>
+        <li>bottom: The legend is at the bottom of the fieldset.</li>
+        <li>left: The legend is at the left side of the fieldset.</li>
+        <li>right: The legends is at the right side of the fieldset.</li>
+      </ul>   
+      </dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>accesskey (access keys)</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The FIELDSET element allows authors to group thematically related controls and labels. Grouping controls makes it easier for users to understand their purpose while simultaneously facilitating tabbing navigation for visual user agents and speech navigation for speech-oriented user agents. The proper use of this element makes documents more accessible.</p>
+
+    <p>The LEGEND element allows authors to assign a caption to a FIELDSET. The legend improves accessibility when the FIELDSET is rendered non-visually.</p>
+
+    <p>In this example, we create a form that one might fill out at the doctor's office. It is divided into three sections: personal information, medical history, and current medication. Each section contains controls for inputting the appropriate information.</p>
+
+    <pre><code>
+&lt;FORM action="..." method="post"&gt;
+ &lt;P&gt;
+ &lt;FIELDSET&gt;
+  &lt;LEGEND&gt;Personal Information&lt;/LEGEND&gt;
+  Last Name: &lt;INPUT name="personal_lastname" type="text" tabindex="1"&gt;
+  First Name: &lt;INPUT name="personal_firstname" type="text" tabindex="2"&gt;
+  Address: &lt;INPUT name="personal_address" type="text" tabindex="3"&gt;
+  ...more personal information...
+ &lt;/FIELDSET&gt;
+ &lt;FIELDSET&gt;
+  &lt;LEGEND&gt;Medical History&lt;/LEGEND&gt;
+  &lt;INPUT name="history_illness" 
+         type="checkbox" 
+         value="Smallpox" tabindex="20"&gt; Smallpox
+  &lt;INPUT name="history_illness" 
+         type="checkbox" 
+         value="Mumps" tabindex="21"&gt; Mumps
+  &lt;INPUT name="history_illness" 
+         type="checkbox" 
+         value="Dizziness" tabindex="22"&gt; Dizziness
+  &lt;INPUT name="history_illness" 
+         type="checkbox" 
+         value="Sneezing" tabindex="23"&gt; Sneezing
+  ...more medical history...
+ &lt;/FIELDSET&gt;
+ &lt;FIELDSET&gt;
+  &lt;LEGEND&gt;Current Medication&lt;/LEGEND&gt;
+  Are you currently taking any medication? 
+  &lt;INPUT name="medication_now" 
+         type="radio" 
+         value="Yes" tabindex="35"&gt;Yes
+  &lt;INPUT name="medication_now" 
+         type="radio" 
+         value="No" tabindex="35"&gt;No
+
+  If you are currently taking medication, please indicate
+  it in the space below:
+  &lt;TEXTAREA name="current_medication" 
+            rows="20" cols="50"
+            tabindex="40"&gt;
+  &lt;/TEXTAREA&gt;
+ &lt;/FIELDSET&gt;
+&lt;/FORM&gt;    
+    </code></pre>
+
+    <p>Note that in this example, we might improve the visual presentation of the form by aligning elements within each FIELDSET (with style sheets), adding color and font information (with style sheets), adding scripting (say, to only open the "current medication" text area if the user indicates he or she is currently on medication), etc.</p>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FORM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>FORM</h1>
+    <h2><a href="https://www.w3.org/TR/html4/interact/forms.html#edef-FORM">17.3 The FORM element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT FORM - - (%block;|SCRIPT)+ -(FORM) -- interactive form --&gt;
+&lt;!ATTLIST FORM
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  action      %URI;          #REQUIRED -- server-side form handler --
+  method      (GET|POST)     GET       -- HTTP method used to submit the form--
+  enctype     %ContentType;  "application/x-www-form-urlencoded"
+  accept      %ContentTypes; #IMPLIED  -- list of MIME types for file upload --
+  name        CDATA          #IMPLIED  -- name of form for scripting --
+  onsubmit    %Script;       #IMPLIED  -- the form was submitted --
+  onreset     %Script;       #IMPLIED  -- the form was reset --
+  accept-charset %Charsets;  #IMPLIED  -- list of supported charsets --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>action=uri [CT]</dt>
+      <dd>    This attribute specifies a form processing agent. User agent behavior for a value other than an HTTP URI is undefined.</dd>
+
+      <dt>method=get|post [CI]</dt>
+      <dd>    This attribute specifies which HTTP method will be used to submit the form data set. Possible (case-insensitive) values are "get" (the default) and "post". See the section on form submission for usage information.</dd>
+
+      <dt>enctype=content-type [CI]</dt>
+      <dd>    This attribute specifies the content type used to submit the form to the server (when the value of method is "post"). The default value for this attribute is "application/x-www-form-urlencoded". The value "multipart/form-data" should be used in combination with the INPUT element, type="file".</dd>
+
+      <dt>accept-charset=charset list [CI]</dt>
+      <dd>This attribute specifies the list of character encodings for input data that is accepted by the server processing this form. The value is a space- and/or comma-delimited list of charset values. The client must interpret this list as an exclusive-or list, i.e., the server is able to accept any single character encoding per entity received. 
+      <p>The default value for this attribute is the reserved string "UNKNOWN". User agents may interpret this value as the character encoding that was used to transmit the document containing this FORM element.</p>
+      </dd>
+
+      <dt>accept=content-type-list [CI]</dt>
+      <dd>    This attribute specifies a comma-separated list of content types that a server processing this form will handle correctly. User agents may use this information to filter out non-conforming files when prompting a user to select files to be sent to the server (cf. the INPUT element when type="file").</dd>
+
+      <dt>name=cdata [CI]</dt>   
+      <dd>    This attribute names the element so that it may be referred to from style sheets or scripts. Note. This attribute has been included for backwards compatibility. Applications should use the id attribute to identify elements.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>target (target frame information )</li>
+      <li>onsubmit, onreset, onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The FORM element acts as a container for controls. It specifies:</p>
+
+    <ul>
+      <li>The layout of the form (given by the contents of the element).</li>
+      <li>The program that will handle the completed and submitted form (the action attribute). The receiving program must be able to parse name/value pairs in order to make use of them.</li>
+      <li>The method by which user data will be sent to the server (the method attribute).</li>
+      <li>A character encoding that must be accepted by the server in order to handle this form (the accept-charset attribute). User agents may advise the user of the value of the accept-charset attribute and/or restrict the user's ability to enter unrecognized characters.</li>
+    </ul>
+
+    <p>A form can contain text and markup (paragraphs, lists, etc.) in addition to form controls.</p>
+
+    <p>The following example shows a form that is to be processed by the "adduser" program when submitted. The form will be sent to the program using the HTTP "post" method.</p>
+
+    <pre><code>
+    &lt;FORM action="http://somesite.com/prog/adduser" method="post"&gt;
+     ...form contents...
+    &lt;/FORM&gt;
+    </code></pre>
+
+    <p>Please consult the section on form submission for information about how user agents must prepare form data for servers and how user agents should handle expected responses.</p>
+
+    <p>
+
+Note. Further discussion on the behavior of servers that receive form data is beyond the scope of this specification.
+</p>
+
+  </body>
+</html>

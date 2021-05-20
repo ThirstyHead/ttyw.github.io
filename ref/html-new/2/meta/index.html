@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Meta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Meta</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.2.5. Associated Meta-information: META</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+The &lt;META&gt; element is an extensible container for use in identifying
+   specialized document meta-information.  Meta-information has two main
+   functions:
+    </p>
+
+    <ul>
+      <li>to provide a means to discover that the data set exists
+        and how it might be obtained or accessed; and</li>
+      <li>to document the content, quality, and features of a data
+        set, indicating its fitness for use.</li>
+    </ul>
+
+    <p>
+   Each &lt;META&gt; element specifies a name/value pair. If multiple META
+   elements are provided with the same name, their combined contents--
+   concatenated as a comma-separated list--is the value associated with
+   that name.
+    </p>
+
+    <p>
+NOTE - The &lt;META&gt; element should not be used where a
+        specific element, such as &lt;TITLE&gt;, would be more
+        appropriate. Rather than a &lt;META&gt; element with a URI as
+        the value of the CONTENT attribute, use a &lt;LINK&gt;
+        element.
+    </p>
+
+    <p>
+HTTP servers may read the content of the document &lt;HEAD&gt; to generate
+   header fields corresponding to any elements defining a value for the
+   attribute HTTP-EQUIV.
+    </p>
+
+    <p>
+NOTE - The method by which the server extracts document
+        meta-information is unspecified and not mandatory. The
+        &lt;META&gt; element only provides an extensible mechanism for
+        identifying and embedding document meta-information --
+        how it may be used is up to the individual server
+        implementation and the HTML user agent.
+    </p>
+
+    <p>Attributes of the META element:</p>
+
+    <dl>
+      <dt>HTTP-EQUIV</dt>
+      <dd>binds the element to an HTTP header field. An HTTP
+            server may use this information to process the document.
+            In particular, it may include a header field in the
+            responses to requests for this document: the header name
+            is taken from the HTTP-EQUIV attribute value, and the
+            header value is taken from the value of the CONTENT
+            attribute. HTTP header names are not case sensitive.
+      </dd>
+
+      <dt>NAME</dt>
+      <dd>specifies the name of the name/value pair. If not
+            present, HTTP-EQUIV gives the name.
+      </dd>
+
+      <dt>CONTENT</dt>
+      <dd>specifies the value of the name/value pair.
+      </dd>
+    </dl>
+
+    <h3>Examples</h3>
+    <p>If the document contains:</p>
+
+    <pre><code>
+    &lt;META HTTP-EQUIV="Expires"
+          CONTENT="Tue, 04 Dec 1993 21:29:02 GMT"&gt;
+    &lt;meta http-equiv="Keywords" CONTENT="Fred"&gt;
+    &lt;META HTTP-EQUIV="Reply-to"
+          content="fielding@ics.uci.edu (Roy Fielding)"&gt;
+    &lt;Meta Http-equiv="Keywords" CONTENT="Barney"&gt;    
+    </code></pre>
+
+    <p>then the server may include the following header fields:</p>
+
+    <pre><code>
+    Expires: Tue, 04 Dec 1993 21:29:02 GMT
+    Keywords: Fred, Barney
+    Reply-to: fielding@ics.uci.edu (Roy Fielding)
+    </code></pre>
+
+    <p>as part of the HTTP response to a `GET' or `HEAD' request for
+    that document.</p>
+
+    <p>An HTTP server must not use the <META> element to form an HTTP
+    response header unless the HTTP-EQUIV attribute is present.</p>
+
+    <p>
+An HTTP server may disregard any &lt;META&gt; elements that specify
+    information controlled by the HTTP server, for example `Server',
+    `Date', and `Last-modified'.
+    </p>
+
+  </body>
+</html>

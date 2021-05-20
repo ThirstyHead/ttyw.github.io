@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>XMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>XPM</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#xmp">XMP, LISTING, and PLAINTEXT</a></h2>
+    <p>[DEPRECATED]</p>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;![ %HTML.Deprecated [
+
+&lt;!ENTITY % literal "CDATA"
+        -- historical, non-conforming parsing mode where
+           the only markup signal is the end tag
+           in full
+        --&gt;
+
+&lt;!ELEMENT (XMP|LISTING) - -  %literal&gt;
+&lt;!ELEMENT PLAINTEXT - O %literal&gt;
+
+]]>
+    </code></pre>
+
+
+    <p>These are obsolete tags for preformatted text that predate the introduction of PRE. User agents may support these for backwards compatibility. Authors should avoid using them in new documents! </p>
+  </body>
+</html>

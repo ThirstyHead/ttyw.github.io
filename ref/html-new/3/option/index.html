@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OPTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>OPTION</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#select">Select menus</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT SELECT - - (OPTION+)&gt;
+&lt;!ATTLIST SELECT
+        name CDATA #REQUIRED
+        size NUMBER #IMPLIED
+        multiple (multiple) #IMPLIED
+        &gt;
+
+&lt;!ELEMENT OPTION - O (#PCDATA)*&gt;
+&lt;!ATTLIST OPTION
+        selected (selected) #IMPLIED
+        value  CDATA  #IMPLIED -- defaults to element content --
+        &gt;    
+    </code></pre>
+
+    <p>SELECT is used to define select one from many or many from many menus. SELECT elements require start and end tags and contain one or more OPTION elements that define menu items. One from many menus are generally rendered as drop-down menus while many from many menus are generally shown as list boxes. </p>
+
+    <p>Example:</p>
+
+    <pre><code>
+    &lt;SELECT NAME="flavor"&gt;
+    &lt;OPTION VALUE=a&gt;Vanilla
+    &lt;OPTION VALUE=b&gt;Strawberry
+    &lt;OPTION VALUE=c&gt;Rum and Raisin
+    &lt;OPTION VALUE=d&gt;Peach and Orange
+    &lt;/SELECT&gt;    
+    </code></pre>
+
+    <p>SELECT attributes:</p>
+
+    <dl>
+      <dt>name</dt>
+      <dd>    This specifies a property name that is used to identify the menu choice when the form is submitted to the server. Each selected option results in a property name/value pair being included as part of the form's contents. </dd>
+
+      <dt>size</dt>
+      <dd>    This sets the number of visible choices for many from many menus. </dd>
+
+      <dt>multiple</dt>
+      <dd>    The presence of this attribute signifies that the users can make multiple selections. By default only one selection is allowed. </dd>
+    </dl>
+
+    <p>OPTION attributes:</p>
+
+    <dl>
+      <dt>selected</dt>
+      <dd>    When this attribute is present, the option is selected when the document is initially loaded. It is an error for more than one option to be so selected for one from many menus. </dd>
+
+      <dt>value</dt>
+      <dd>    Specifies the property value to be used when submitting the form's content. This is combined with the property name as given by the name attribute of the parent SELECT element. </dd>
+    </dl>
+
+
+
+  </body>
+</html>

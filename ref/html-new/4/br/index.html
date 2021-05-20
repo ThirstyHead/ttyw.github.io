@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>BR</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/text.html#edef-BR">Forcing a line break: the BR element </a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT BR - O EMPTY                 -- forced line break --&gt;
+&lt;!ATTLIST BR
+  %coreattrs;                          -- id, class, style, title --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>clear (alignment and floating objects )</li>
+    </ul>
+
+    <p>The BR element forcibly breaks (ends) the current line of text.</p>
+
+    <p>For visual user agents, the clear attribute can be used to determine whether markup following the BR element flows around images and other objects floated to the left or right margin, or whether it starts after the bottom of such objects. Further details are given in the section on alignment and floating objects. Authors are advised to use style sheets to control text flow around floating images and other objects.</p>
+
+    <p>With respect to bidirectional formatting, the BR element should behave the same way the [ISO10646] LINE SEPARATOR character behaves in the bidirectional algorithm.</p>
+  </body>
+</html>

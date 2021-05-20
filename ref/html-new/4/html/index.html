@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>HTML</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/global.html#edef-HTML">7.3 The HTML element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % html.content "HEAD, BODY"&gt;
+
+&lt;!ELEMENT HTML O O (%html.content;)    -- document root element --&gt;
+&lt;!ATTLIST HTML
+  %i18n;                               -- lang, dir --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: optional, End tag: optional</p>
+
+    <p>Attribute definitions</p>
+    <dl>
+      <dt>version=cdata [CN]</dt>
+      <dd>    Deprecated. The value of this attribute specifies which HTML DTD version governs the current document. This attribute has been deprecated because it is redundant with version information provided by the document type declaration.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+    </ul>
+
+    <p>After document type declaration, the remainder of an HTML document is contained by the HTML element. Thus, a typical HTML document has this structure:</p>
+
+    <pre><code>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+...The head, body, etc. goes here...
+&lt;/HTML&gt;    
+    </code></pre>
+  </body>
+</html>

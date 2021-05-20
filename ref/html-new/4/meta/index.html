@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>META</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>META</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/global.html#edef-META">7.4.4 Meta data</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT META - O EMPTY               -- generic metainformation --&gt;
+&lt;!ATTLIST META
+  %i18n;                               -- lang, dir, for use with content --
+  http-equiv  NAME           #IMPLIED  -- HTTP response header name  --
+  name        NAME           #IMPLIED  -- metainformation name --
+  content     CDATA          #REQUIRED -- associated information --
+  scheme      CDATA          #IMPLIED  -- select form of content --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attribute definitions</p>
+
+    <p>For the following attributes, the permitted values and their interpretation are profile dependent:</p>
+
+    <dl>
+      <dt>name=name [CS]</dt>
+      <dd>    This attribute identifies a property name. This specification does not list legal values for this attribute.</dd>
+
+      <dt>content=cdata [CS]</dt>
+      <dd>    This attribute specifies a property's value. This specification does not list legal values for this attribute.</dd>
+
+      <dt>scheme=cdata [CS]</dt>
+      <dd>    This attribute names a scheme to be used to interpret the property's value (see the section on profiles for details).</dd>
+
+      <dt>http-equiv=name [CI]</dt>
+      <dd>    This attribute may be used in place of the name attribute. HTTP servers use this attribute to gather information for HTTP response message headers.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+    </ul>
+
+    <p>The META element can be used to identify properties of a document (e.g., author, expiration date, a list of key words, etc.) and assign values to those properties. This specification does not define a normative set of properties.</p>
+
+    <p>Each META element specifies a property/value pair. The name attribute identifies the property and the content attribute specifies the property's value.</p>
+
+    <p>For example, the following declaration sets a value for the Author property:</p>
+
+    <pre><code>
+&lt;META name="Author" content="Dave Raggett"&gt;
+    </code></pre>
+
+    <p>The lang attribute can be used with META to specify the language for the value of the content attribute. This enables speech synthesizers to apply language dependent pronunciation rules.</p>
+
+    <p>In this example, the author's name is declared to be French:</p>
+
+    <pre><code>
+&lt;META name="Author" lang="fr" content="Arnaud Le Hors"&gt;    
+    </code></pre>
+
+    <p>
+
+Note. The META element is a generic mechanism for specifying meta data. However, some HTML elements and attributes already handle certain pieces of meta data and may be used by authors instead of META to specify those pieces: the TITLE element, the ADDRESS element, the INS and DEL elements, the title attribute, and the cite attribute.
+</p>
+
+<p>Note. When a property specified by a META element takes a value that is a URI, some authors prefer to specify the meta data via the LINK element. Thus, the following meta data declaration:</p>
+
+<pre><code>
+&lt;META name="DC.identifier"
+      content="http://www.ietf.org/rfc/rfc1866.txt"&gt;
+</code></pre>
+
+<p>might also be written:</p>
+
+<pre><code>
+&lt;LINK rel="DC.identifier"
+         type="text/plain"
+         href="http://www.ietf.org/rfc/rfc1866.txt"&gt;
+</code></pre>
+  </body>
+</html>

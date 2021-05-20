@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>Dd</h1>
+    <h2><a href="https://www.ietf.org/rfc/rfc1866.txt">5.6.5. Definition List: DL, DT, DD</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: RFC 1866, published November 1995, <a href="https://www.ietf.org/rfc/rfc1866.txt">https://www.ietf.org/rfc/rfc1866.txt</a>]</p>
+
+    <p>
+A definition list is a list of terms and corresponding definitions.
+   Definition lists are typically formatted with the term flush-left and
+   the definition, formatted paragraph style, indented after the term.
+    </p>
+
+    <p>
+The content of a &lt;DL&gt; element is a sequence of &lt;DT&gt; elements and/or
+   &lt;DD&gt; elements, usually in pairs. Multiple &lt;DT&gt; may be paired with a
+   single &lt;DD&gt; element. Documents should not contain multiple
+   consecutive &lt;DD&gt; elements.
+    </p>
+
+    <p>
+Example of use:
+    </p>
+
+    <pre><code>
+    &lt;DL&gt;
+    &lt;DT&gt;Term&lt;DD&gt;This is the definition of the first term.
+    &lt;DT&gt;Term&lt;DD&gt;This is the definition of the second term.
+    &lt;/DL&gt;
+    </code></pre>
+
+    <p>
+If the DT term does not fit in the DT column (typically one third of
+   the display area), it may be extended across the page with the DD
+   section moved to the next line, or it may be wrapped onto successive
+   lines of the left hand column.
+    </p>
+
+    <p>
+The optional COMPACT attribute suggests that a compact rendering be
+   used, because the list items are small and/or the entire list is
+   large.
+    </p>
+
+    <p>
+Unless the COMPACT attribute is present, an HTML user agent may leave
+   white space between successive DT, DD pairs. The COMPACT attribute
+   may also reduce the width of the left-hand (DT) column.
+    </p>
+
+    <pre><code>
+    &lt;DL COMPACT&gt;
+    &lt;DT&gt;Term&lt;DD&gt;This is the first definition in compact format.
+    &lt;DT&gt;Term&lt;DD&gt;This is the second definition in compact format.
+    &lt;/DL&gt;
+    </code></pre>
+
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>INPUT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>INPUT</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#input">INPUT text fields, radio buttons, checkboxes, ...</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>INPUT elements are not containers and so the end tag is forbidden. </p>
+
+    <pre><code>
+&lt;!ENTITY % IAlign "(top|middle|bottom|left|right)"&gt;
+
+&lt;!ENTITY % InputType
+        "(TEXT | PASSWORD | CHECKBOX | RADIO | SUBMIT
+            | RESET | FILE | HIDDEN | IMAGE)"&gt;
+
+&lt;!ELEMENT INPUT - O EMPTY&gt;
+&lt;!ATTLIST INPUT
+        type %InputType TEXT     -- what kind of widget is needed --
+        name  CDATA #IMPLIED     -- required for all but submit and reset --
+        value CDATA #IMPLIED     -- required for radio and checkboxes --
+        checked (checked) #IMPLIED -- for radio buttons and check boxes --
+        size CDATA  #IMPLIED     -- specific to each type of field --
+        maxlength NUMBER #IMPLIED
+        src   %URL  #IMPLIED     -- for fields with background images --
+        align %IAlign #IMPLIED   -- vertical or horizontal alignment --
+        &gt;    
+    </code></pre>
+
+    <dl>
+      <dt>type</dt>
+      <dd>Used to set the type of input field:
+
+        <dl>
+          <dt>type=text (the default)</dt>
+          <dd>A single line text field whose visible size can be set using the size attribute, e.g. size=40 for a 40 character wide field. Users should be able to type more than this limit though with the text scrolling through the field to keep the input cursor in view. You can enforce an upper limit on the number of characters that can be entered with the maxlength attribute. The name attribute is used to name the field, while the value attribute can be used to initialize the text string shown in the field when the document is first loaded. 
+          <pre><code>
+&lt;input type=text size=40 name=user value="your name"&gt;        
+          </code></pre>
+          </dd>
+
+          <dt>type=password</dt>
+          <dd>Used for simple Boolean attributes, or for attributes that can take multiple values at the same time. The latter is represented by several checkbox fields with the same name and a different value attribute. Each checked checkbox generates a separate name/value pair in the submitted data, even if this results in duplicate names. Use the checked attribute to initialize the checkbox to its checked state.
+          <pre><code>
+&lt;input type=checkbox checked name=uscitizen value=yes&gt;          
+          </code></pre>
+          </dd>
+
+          <dt>type=radio</dt>
+          <dd>
+Used for attributes which can take a single value from a set of alternatives. Each radio button field in the group should be given the same name. Radio buttons require an explicit value attribute. Only the checked radio button in the group generates a name/value pair in the submitted data. One radio button in each group should be initially checked using the checked attribute. 
+
+          <pre><code>
+&lt;input type=radio name=age value="0-12"&gt;
+&lt;input type=radio name=age value="13-17"&gt;
+&lt;input type=radio name=age value="18-25"&gt;
+&lt;input type=radio name=age value="26-35" checked&gt;
+&lt;input type=radio name=age value="36-"&gt;          
+          </code></pre>
+          </dd>
+
+          <dt>type=submit</dt>
+          <dd>
+This defines a button that users can click to submit the form's contents to the server. The button's label is set from the value attribute. If the name attribute is given then the submit button's name/value pair will be included in the submitted data. You can include several submit buttons in the form. See type=image for graphical submit buttons. 
+
+          <pre><code>
+&lt;input type=submit value="Party on ..."&gt;          
+          </code></pre>
+          </dd>
+
+          <dt>type=image</dt>
+          <dd>
+This is used for graphical submit buttons rendered by an image rather than a text string. The URL for the image is specified with the src attribute. The image alignment can be specified with the align attribute. In this respect, graphical submit buttons are treated identically to IMG elements, so you can set align to left, right, top, middle or bottom. The x and y values of the location clicked are passed to the server: In the submitted data, image fields are included as two name/value pairs. The names are derived by taking the name of the field and appending ".x" for the x value, and ".y" for the y value. 
+
+          <pre><code>
+&lt;p&gt;Now choose a point on the map:
+&lt;input type=image name=point src="map.gif"&gt;          
+          </code></pre>
+
+          <p>Note: image fields typically cause problems for text-only and speech-based user agents!</p>
+          </dd>
+
+          <dt>type=reset</dt>
+          <dd>
+This defines a button that users can click to reset form fields to their initial state when the document was first loaded. You can set the label by providing a value attribute. Reset buttons are never sent as part of the form's contents. 
+
+          <pre><code>
+&lt;input type=reset value="Start over ..."&gt;          
+          </code></pre>
+          </dd>
+
+          <dt>type=file</dt>
+          <dd>
+This provides a means for users to attach a file to the form's contents. It is generally rendered by text field and an associated button which when clicked invokes a file browser to select a file name. The file name can also be entered directly in the text field. Just like type=text you can use the size attribute to set the visible width of this field in average character widths. You can set an upper limit to the length of file names using the maxlength attribute. Some user agents support the ability to restrict the kinds of files to those matching a comma separated list of MIME content types given with the ACCEPT attribute e.g. accept="image/*" restricts files to images. Further information can be found in RFC 1867. 
+
+          <pre><code>
+&lt;input type=file name=photo size=20 accept="image/*"&gt;          
+          </code></pre>
+          </dd>
+
+          <dt>type=hidden</dt>
+          <dd>
+These fields should not be rendered and provide a means for servers to store state information with a form. This will be passed back to the server when the form is submitted, using the name/value pair defined by the corresponding attributes. This is a work around for the statelessness of HTTP. Another approach is to use HTTP "Cookies". 
+
+          <pre><code>
+&lt;input type=hidden name=customerid value="c2415-345-8563"&gt;          
+          </code></pre>
+          </dd>
+        </dl>
+      </dd>
+
+
+      <dt>name</dt>
+      <dd>    Used to define the property name that will be used to identify this field's content when it is submitted to the server. </dd>
+
+      <dt>value</dt>
+      <dd>    Used to initialize the field, or to provide a textual label for submit and reset buttons. </dd>
+
+      <dt>checked</dt>
+      <dd>    The presence of this attribute is used to initialize checkboxes and radio buttons to their checked state. </dd>
+
+      <dt>size</dt>
+      <dd>    Used to set the visible size of text fields to a given number of average character widths, e.g. size=20 </dd>
+
+      <dt>maxlength</dt>
+      <dd>    Sets the maximum number of characters permitted in a text field. </dd>
+
+      <dt>src</dt>
+      <dd>    Specifies a URL for the image to use with a graphical submit button. </dd>
+
+      <dt>align</dt>
+      <dd>    Used to specify image alignment for graphical submit buttons. It is defined just like the IMG align attribute and takes one of the values: top, middle, bottom, left or right, defaulting to bottom. </dd>
+
+    </dl>
+  </body>
+</html>

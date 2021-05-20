@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HEAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>HEAD</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/global.html#edef-HEAD">7.4.1 The HEAD element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!-- %head.misc; defined earlier on as "SCRIPT|STYLE|META|LINK|OBJECT" --&gt;
+&lt;!ENTITY % head.content "TITLE &amp; BASE?"&gt;
+
+&lt;!ELEMENT HEAD O O (%head.content;) +(%head.misc;) -- document head --&gt;
+&lt;!ATTLIST HEAD
+  %i18n;                               -- lang, dir --
+  profile     %URI;          #IMPLIED  -- named dictionary of meta info --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: optional, End tag: optional</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>profile=uri [CT]</dt>
+      <dd>    This attribute specifies the location of one or more meta data profiles, separated by white space. For future extensions, user agents should consider the value to be a list even though this specification only considers the first URI to be significant. Profiles are discussed below in the section on meta data.</dd>
+    </dl>
+    
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+    </ul>
+
+    <p>The HEAD element contains information about the current document, such as its title, keywords that may be useful to search engines, and other data that is not considered document content. User agents do not generally render elements that appear in the HEAD as content. They may, however, make information in the HEAD available to users through other mechanisms.</p>
+  </body>
+</html>

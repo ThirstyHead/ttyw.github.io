@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>AREA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>AREA</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#map">MAP</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>The MAP element provides a mechanism for client-side image maps. These can be placed in the same document or grouped in a separate document although this isn't yet widely supported. The MAP element requires start and end tags. It contains one or more AREA elements that specify hotzones on the associated image and bind these hotzones to URLs. </p>
+
+    <pre><code>
+&lt;!ENTITY % SHAPE "(rect|circle|poly)"&gt;
+&lt;!ENTITY % COORDS "CDATA" -- comma separated list of numbers --&gt;
+
+&lt;!ELEMENT MAP - - (AREA)+&gt;
+&lt;!ATTLIST MAP
+    name    CDATA   #REQUIRED
+    &gt;
+
+&lt;!ELEMENT AREA - O EMPTY&gt;
+&lt;!ATTLIST AREA
+    shape   %SHAPE  rect
+    coords  %COORDS #IMPLIED  -- defines coordinates for shape --
+    href    %URL    #IMPLIED  -- this region acts as hypertext link --
+    nohref (nohref) #IMPLIED  -- this region has no action --
+    alt     CDATA   #REQUIRED -- needed for non-graphical user agents --
+    &gt;    
+    </code></pre>
+
+    <p>Here is a simple example for a graphical navigational toolbar: </p>
+
+    <pre><code>
+&lt;img src="navbar.gif" border=0 usemap="#map1"&gt;
+&lt;map name="map1"&gt;
+ &lt;area href=guide.html alt="Access Guide" shape=rect coords="0,0,118,28"&gt;
+ &lt;area href=search.html alt="Search" shape=rect coords="184,0,276,28"&gt;
+ &lt;area href=shortcut.html alt="Go" shape=rect coords="118,0,184,28"&gt;
+ &lt;area href=top10.html alt="Top Ten" shape=rect coords="276,0,373,28"&gt;
+&lt;/map&gt;
+    </code></pre>
+
+    <p>The MAP element has one attribute NAME which is used to associate a name with a map. This is then used by the USEMAP attribute on the IMG element to reference the map via a URL fragment identifier. Note that the value of the NAME attribute is case sensitive. </p>
+
+    <p>The AREA element is an empty element and so the end tag is forbidden. It takes the following attributes: SHAPE, COORDS, HREF, NOHREF and ALT. The SHAPE and COORDS attributes define a region on the image. If the SHAPE attribute is omitted, SHAPE="RECT" is assumed. </p>
+
+    <pre><code>
+    shape=rect coords="left-x, top-y, right-x, bottom-y"
+    shape=circle coords="center-x, center-y, radius"
+    shape=poly coords="x1,y1, x2,y2, x3,y3, ..."     
+    </code></pre>
+
+    <p>Where x and y are measured in pixels from the left/top of the associated image. If x and y values are given with a percent sign as a suffix, the values should be interpreted as percentages of the image's width and height, respectively. For example: </p>
+
+    <pre><code>
+       SHAPE=RECT COORDS="0, 0, 50%, 100%"
+    </code></pre>
+
+    <p>The HREF attribute gives a URL for the target of the hypertext link. The NOHREF attribute is used when you want to define a region that doesn't act as a hotzone. This is useful when you want to cut a hole in an underlying region acting as a hotzone. </p>
+
+    <p>If two or more regions overlap, the region defined first in the map definition takes precedence over subsequent regions. This means that AREA elements with NOHREF should generally be placed before ones with the HREF attribute. </p>
+
+    <p>The ALT attribute is used to provide text labels which can be displayed in the status line as the mouse or other pointing device is moved over hotzones, or for constructing a textual menu for non-graphical user agents. Authors are strongly recommended to provide meaningful ALT attributes to support interoperability with speech-based or text-only user agents. </p>
+
+  </body>
+</html>

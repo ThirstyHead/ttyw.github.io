@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ISINDEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>ISINDEX</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#isindex">ISINDEX</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <pre><code>
+    &lt;!ELEMENT ISINDEX - O EMPTY&gt;
+    &lt;!ATTLIST ISINDEX
+        prompt CDATA #IMPLIED -- prompt message -->
+    </code></pre>
+
+    <p>
+The ISINDEX element indicates that the user agent should provide a single line text input field for entering a query string. There are no restrictions on the number of characters that can be entered. The PROMPT attribute can be used to specify a prompt string for the input field, e.g. 
+    </p>
+
+    <pre><code>
+    &lt;ISINDEX PROMPT="Search Phrase"&gt;
+    </code></pre>
+
+    <p>
+The semantics for ISINDEX are currently well defined only when the base URL for the enclosing document is an HTTP URL. Typically, when the user presses the enter (return) key, the query string is sent to the server identified by the base URL for this document. For example, if the query string entered is "ten green apples" and the base URL is: 
+    </p>
+
+    <pre><code>
+    http://www.acme.com/
+    </code></pre>
+
+    <p>
+then the query generated is: 
+    </p>
+
+    <pre><code>
+    http://www.acme.com/?ten+green+apples
+    </code></pre>
+
+    <p>
+Note that space characters are mapped to "+" characters and that normal URL character escaping mechanisms apply. For further details see the HTTP specification. 
+    </p>
+
+    <p>
+Note in practice, the query string is resticted to Latin-1 as there is no current mechanism for the URL to specify a character set for the query. 
+    </p>
+  </body>
+</html>

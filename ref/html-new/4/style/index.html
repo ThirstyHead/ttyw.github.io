@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>STYLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>STYLE</h1>
+    <h2><a href="https://www.w3.org/TR/html401/present/styles.html#edef-STYLE">14.2.3 Header style information: the STYLE element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT STYLE - - %StyleSheet        -- style info --&gt;
+&lt;!ATTLIST STYLE
+  %i18n;                               -- lang, dir, for use with title --
+  type        %ContentType;  #REQUIRED -- content type of style language --
+  media       %MediaDesc;    #IMPLIED  -- designed for use with these media --
+  title       %Text;         #IMPLIED  -- advisory title --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>type=content-type [CI]</dt>
+      <dd>    This attribute specifies the style sheet language of the element's contents and overrides the default style sheet language. The style sheet language is specified as a content type (e.g., "text/css"). Authors must supply a value for this attribute; there is no default value for this attribute.</dd>
+
+      <dt>media=media-descriptors [CI]</dt>
+      <dd>    This attribute specifies the intended destination medium for style information. It may be a single media descriptor or a comma-separated list. The default value for this attribute is "screen".</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+    </ul>
+
+    <p>The STYLE element allows authors to put style sheet rules in the head of the document. HTML permits any number of STYLE elements in the HEAD section of a document.</p>
+
+    <p>User agents that don't support style sheets, or don't support the specific style sheet language used by a STYLE element, must hide the contents of the STYLE element. It is an error to render the content as part of the document's text. Some style sheet languages support syntax for hiding the content from non-conforming user agents.</p>
+
+    <p>The syntax of style data depends on the style sheet language.</p>
+
+    <p>Some style sheet implementations may allow a wider variety of rules in the STYLE element than in the style attribute. For example, with CSS, rules may be declared within a STYLE element for:</p>
+
+    <ul>
+      <li>All instances of a specific HTML element (e.g., all P elements, all H1 elements, etc.)</li>
+      <li>All instances of an HTML element belonging to a specific class (i.e., whose class attribute is set to some value).</li>
+      <li>Single instances of an HTML element (i.e., whose id attribute is set to some value).</li>
+    </ul>
+
+    <p>Rules for style rule precedences and inheritance depend on the style sheet language.</p>
+
+    <p>The following CSS STYLE declaration puts a border around every H1 element in the document and centers it on the page.</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+ &lt;STYLE type="text/css"&gt;
+   H1 {border-width: 1; border: solid; text-align: center}
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;    
+    </code></pre>
+
+    <p>To specify that this style information should only apply to H1 elements of a specific class, we modify it as follows:</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+ &lt;STYLE type="text/css"&gt;
+   H1.myclass {border-width: 1; border: solid; text-align: center}
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+ &lt;H1 class="myclass"&gt; This H1 is affected by our style &lt;/H1&gt;
+ &lt;H1&gt; This one is not affected by our style &lt;/H1&gt;
+&lt;/BODY&gt;
+    </code></pre>
+
+    <p>Finally, to limit the scope of the style information to a single instance of H1, set the id attribute:</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+ &lt;STYLE type="text/css"&gt;
+   #myid {border-width: 1; border: solid; text-align: center}
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+ &lt;H1 class="myclass"&gt; This H1 is not affected &lt;/H1&gt;
+ &lt;H1 id="myid"&gt; This H1 is affected by style &lt;/H1&gt;
+ &lt;H1&gt; This H1 is not affected &lt;/H1&gt;
+&lt;/BODY&gt;    
+    </code></pre>
+
+    <p>Although style information may be set for almost every HTML element, two elements, DIV and SPAN, are particularly useful in that they do not impose any presentation semantics (besides block-level vs. inline). When combined with style sheets, these elements allow users to extend HTML indefinitely, particularly when used with the class and id attributes.</p>
+
+    <p>In the following example, we use the SPAN element to set the font style of the first few words of a paragraph to small caps.</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+ &lt;STYLE type="text/css"&gt;
+  SPAN.sc-ex { font-variant: small-caps }
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+  &lt;P&gt;&lt;SPAN class="sc-ex"&gt;The first&lt;/SPAN&gt; few words of
+  this paragraph are in small-caps.
+&lt;/BODY&gt;
+    </code></pre>
+
+    <p>In the following example, we use DIV and the class attribute to set the text justification for a series of paragraphs that make up the abstract section of a scientific article. This style information could be reused for other abstract sections by setting the class attribute elsewhere in the document.</p>
+
+    <pre><code>
+&lt;HEAD&gt;
+ &lt;STYLE type="text/css"&gt;
+   DIV.Abstract { text-align: justify }
+ &lt;/STYLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+ &lt;DIV class="Abstract"&gt;
+   &lt;P&gt;The Chieftain product range is our market winner for
+     the coming year. This report sets out how to position
+     Chieftain against competing products.
+
+   &lt;P&gt;Chieftain replaces the Commander range, which will
+     remain on the price list until further notice.
+ &lt;/DIV&gt;
+&lt;/BODY&gt;    
+    </code></pre>
+
+
+
+
+
+
+
+  </body>
+</html>

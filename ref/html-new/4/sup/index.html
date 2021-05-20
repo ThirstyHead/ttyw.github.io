@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SUP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>SUP</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/text.html#edef-SUP">9.2.3 Subscripts and superscripts: the SUB and SUP elements</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT (SUB|SUP) - - (%inline;)*    -- subscript, superscript --&gt;
+&lt;!ATTLIST (SUB|SUP)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Many scripts (e.g., French) require superscripts or subscripts for proper rendering. The SUB and SUP elements should be used to markup text in these cases.</p>
+
+    <pre><code>
+      H&lt;sub&gt;2&lt;/sub&gt;O
+      E = mc&lt;sup&gt;2&lt;/sup&gt;
+      &lt;SPAN lang="fr"&gt;M&lt;sup&gt;lle&lt;/sup&gt; Dupont&lt;/SPAN&gt;    
+    </code></pre>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OBJECT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>OBJECT</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/objects.html#edef-OBJECT">13.3 Generic inclusion: the OBJECT element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT OBJECT - - (PARAM | %flow;)*
+ -- generic embedded object --&gt;
+&lt;!ATTLIST OBJECT
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  declare     (declare)      #IMPLIED  -- declare but don't instantiate flag --
+  classid     %URI;          #IMPLIED  -- identifies an implementation --
+  codebase    %URI;          #IMPLIED  -- base URI for classid, data, archive--
+  data        %URI;          #IMPLIED  -- reference to object's data --
+  type        %ContentType;  #IMPLIED  -- content type for data --
+  codetype    %ContentType;  #IMPLIED  -- content type for code --
+  archive     CDATA          #IMPLIED  -- space-separated list of URIs --
+  standby     %Text;         #IMPLIED  -- message to show while loading --
+  height      %Length;       #IMPLIED  -- override height --
+  width       %Length;       #IMPLIED  -- override width --
+  usemap      %URI;          #IMPLIED  -- use client-side image map --
+  name        CDATA          #IMPLIED  -- submit as part of form --
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>classid=uri [CT]</dt>
+      <dd>    This attribute may be used to specify the location of an object's implementation via a URI. It may be used together with, or as an alternative to the data attribute, depending on the type of object involved.</dd>
+
+      <dt>codebase=uri [CT]</dt>
+      <dd>    This attribute specifies the base path used to resolve relative URIs specified by the classid, data, and archive attributes. When absent, its default value is the base URI of the current document.</dd>
+
+      <dt>codetype=content-type [CI]</dt>
+      <dd>    This attribute specifies the content type of data expected when downloading the object specified by classid. This attribute is optional but recommended when classid is specified since it allows the user agent to avoid loading information for unsupported content types. When absent, it defaults to the value of the type attribute.</dd>
+
+      <dt>data=uri [CT]</dt>
+      <dd>    This attribute may be used to specify the location of the object's data, for instance image data for objects defining images, or more generally, a serialized form of an object which can be used to recreate it. If given as a relative URI, it should be interpreted relative to the codebase attribute.</dd>
+
+      <dt>type=content-type [CI]</dt>
+      <dd>    This attribute specifies the content type for the data specified by data. This attribute is optional but recommended when data is specified since it allows the user agent to avoid loading information for unsupported content types. If the value of this attribute differs from the HTTP Content-Type returned by the server when the object is retrieved, the HTTP Content-Type takes precedence.</dd>
+
+      <dt>archive=uri-list [CT]</dt>
+      <dd>    This attribute may be used to specify a space-separated list of URIs for archives containing resources relevant to the object, which may include the resources specified by the classid and data attributes. Preloading archives will generally result in reduced load times for objects. Archives specified as relative URIs should be interpreted relative to the codebase attribute.</dd>
+
+      <dt>declare [CI]</dt>
+      <dd>    When present, this boolean attribute makes the current OBJECT definition a declaration only. The object must be instantiated by a subsequent OBJECT definition referring to this declaration.</dd>
+
+      <dt>standby=text [CS]</dt>
+      <dd>    This attribute specifies a message that a user agent may render while loading the object's implementation and data.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>usemap (client side image maps)</li>
+      <li>name (form submission)</li>
+      <li>align, width, height, border, hspace, vspace (visual presentation of objects, images, and applets)</li>
+    </ul>
+
+    <p>Most user agents have built-in mechanisms for rendering common data types such as text, GIF images, colors, fonts, and a handful of graphic elements. To render data types they don't support natively, user agents generally run external applications. The OBJECT element allows authors to control whether data should be rendered externally or by some program, specified by the author, that renders the data within the user agent.</p>
+
+    <p>In the most general case, an author may need to specify three types of information:</p>
+
+    <ul>
+      <li>The implementation of the included object. For instance, if the included object is a clock applet, the author must indicate the location of the applet's executable code.</li>
+      <li>The data to be rendered. For instance, if the included object is a program that renders font data, the author must indicate the location of that data.</li>
+      <li>Additional values required by the object at run-time. For example, some applets may require initial values for parameters.</li>
+    </ul>
+
+    <p>The OBJECT element allows authors to specify all three types of data, but authors may not have to specify all three at once. For example, some objects may not require data (e.g., a self-contained applet that performs a small animation). Others may not require run-time initialization. Still others may not require additional implementation information, i.e., the user agent itself may already know how to render that type of data (e.g., GIF images).</p>
+
+    <p>Authors specify an object's implementation and the location of the data to be rendered via the OBJECT element. To specify run-time values, however, authors use the PARAM element, which is discussed in the section on object initialization.</p>
+
+    <p>The OBJECT element may also appear in the content of the HEAD element. Since user agents generally do not render elements in the HEAD, authors should ensure that any OBJECT elements in the HEAD do not specify content that may be rendered. Please consult the section on sharing frame data for an example of including the OBJECT element in the HEAD element.</p>
+
+    <p>Please consult the section on form controls for information about OBJECT elements in forms.</p>
+
+    <p>This document does not specify the behavior of OBJECT elements that use both the classid attribute to identify an implementation and the data attribute to specify data for that implementation. In order to ensure portability, authors should use the PARAM element to tell implementations where to retrieve additional data.</p>
+
+  </body>
+</html>

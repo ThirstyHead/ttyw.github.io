@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ACRONYM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>ACRONYM</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/text.html#edef-ABBR">9.2.1 Phrase elements: EM, STRONG, DFN, CODE, SAMP, KBD, VAR, CITE, ABBR, and ACRONYM</a></h2>
+    <p>[new: HTML 4.x]</p>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % phrase "EM | STRONG | DFN | CODE |
+                   SAMP | KBD | VAR | CITE | ABBR | ACRONYM" &gt;
+&lt;!ELEMENT (%fontstyle;|%phrase;) - - (%inline;)*&gt;
+&lt;!ATTLIST (%fontstyle;|%phrase;)
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;
+    </code></pre>
+
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>Phrase elements add structural information to text fragments. The usual meanings of phrase elements are following:</p>
+
+    <dl>
+      <dt>EM</dt>
+      <dd>Indicates emphasis</dd>
+
+      <dt>STRONG</dt>
+      <dd>Indicates stronger emphasis</dd>
+
+      <dt>CITE</dt>
+      <dd>Contains a citation or a reference to other sources</dd>
+
+      <dt>DFN</dt>
+      <dd>Indicates that this is the defining instance of the enclosed term</dd>
+
+      <dt>CODE</dt>
+      <dd>Designates a fragment of computer code</dd>
+
+      <dt>SAMP</dt>
+      <dd>Designates sample output from programs, scripts, etc.</dd>
+
+      <dt>KBD</dt>
+      <dd>Indicates text to be entered by the user</dd>
+
+      <dt>VAR</dt>
+      <dd>Indicates a instance of a variable or program argument</dd>
+
+      <dt>ABBR</dt>
+      <dd>Indicates an abbreviated form (e.g. WWW, HTTP, URI, Mass., etc.)</dd>
+
+      <dt>ACRONYM</dt>
+      <dd>Indicates an acronym (e.g. WAC, radar, etc.)</dd>
+    </dl>
+
+    <p>EM and STRONG are used to indicate emphasis. The other phrase elements have particular significance in technical documents. These examples illustrate some of the phrase elements:</p>
+
+    <pre><code>
+As &lt;CITE&gt;Harry S. Truman&lt;/CITE&gt; said,
+&lt;Q lang="en-us"&gt;The buck stops here.&lt;/Q&gt;
+
+More information can be found in &lt;CITE&gt;[ISO-0000]&lt;/CITE&gt;.
+
+Please refer to the following reference number in future
+correspondence: &lt;STRONG&gt;1-234-55&lt;/STRONG&gt;    
+    </code></pre>
+
+    <p>The presentation of phrase elements depends on the user agent. Generally, visual user agents present EM text in italics and STRONG text in bold font. Speech synthesizer user agents may change the synthesis parameters, such as volume, pitch and rate accordingly.</p>
+
+    <p>The ABBR and ACRONYM elements allow authors to clearly indicate occurrences of abbreviations and acronyms. Western languages make extensive use of acronyms such as "GmbH", "NATO", and "F.B.I.", as well as abbreviations like "M.", "Inc.", "et al.", "etc.". Both Chinese and Japanese use analogous abbreviation mechanisms, wherein a long name is referred to subsequently with a subset of the Han characters from the original occurrence. Marking up these constructs provides useful information to user agents and tools such as spell checkers, speech synthesizers, translation systems and search-engine indexers.</p>
+
+    <p>The content of the ABBR and ACRONYM elements specifies the abbreviated expression itself, as it would normally appear in running text. The title attribute of these elements may be used to provide the full or expanded form of the expression.</p>
+
+    <p>Here are some sample uses of ABBR:</p>
+
+    <pre><code>
+  &lt;P&gt;
+  &lt;ABBR title="World Wide Web"&gt;WWW&lt;/ABBR&gt;
+  &lt;ABBR lang="fr" 
+        title="Soci&amp;eacute;t&amp;eacute; Nationale des Chemins de Fer"&gt;
+     SNCF
+  &lt;/ABBR&gt;
+  &lt;ABBR lang="es" title="Do&amp;ntilde;a"&gt;Do&amp;ntilde;a&lt;/ABBR&gt;
+  &lt;ABBR title="Abbreviation"&gt;abbr.&lt;/ABBR&gt;    
+    </code></pre>
+
+    <p>Note that abbreviations and acronyms often have idiosyncratic pronunciations. For example, while "IRS" and "BBC" are typically pronounced letter by letter, "NATO" and "UNESCO" are pronounced phonetically. Still other abbreviated forms (e.g., "URI" and "SQL") are spelled out by some people and pronounced as words by other people. When necessary, authors should use style sheets to specify the pronunciation of an abbreviated form.</p>
+
+
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ABBR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>ABBR</h1>
+    <h2><a href="https://www.w3.org/TR/html52/textlevel-semantics.html#elementdef-abbr">4.5.9. The abbr element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 5.02 Specification, published December 2017, <a href="https://www.w3.org/TR/html52/">https://www.w3.org/TR/html52/</a>]</p>
+  
+    <dl>
+      <dt>Content attributes</dt>
+      <dd>
+        <p>Global attributes</p>
+        <ul>
+          <li>          Also, the title attribute has special semantics on this element. </li>
+        </ul>
+      </dd>
+
+      <dt>Allowed ARIA role attribute values</dt>
+      <dd>
+        <ul>
+          <li>Any role value.</li>
+        </ul>
+      </dd>
+
+      <dt>Allowed ARIA state and property attributes</dt>
+      <dd>
+        <p>Global aria-* attributes</p>
+        <ul>
+          <li>Any aria-* attributes applicable to the allowed roles.</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <p>The abbr element represents an abbreviation or acronym, optionally with its expansion. The title attribute may be used to provide an expansion of the abbreviation. The attribute, if specified, must contain an expansion of the abbreviation, and nothing else.</p>
+
+    <h3>Example 25</h3>
+    <p>
+The paragraph below contains an abbreviation marked up with the abbr element. This paragraph defines the term "Web Hypertext Application Technology Working Group". </p>
+    <pre><code>
+&lt;p&gt;The &lt;dfn id=whatwg&gt;&lt;abbr
+title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;&lt;/dfn&gt;
+is a loose unofficial collaboration of Web browser manufacturers and
+interested parties who wish to develop new technologies designed to
+allow authors to write and deploy Applications over the World Wide
+Web.&lt;/p&gt;    
+    </code></pre>
+
+    <p>An alternative way to write this would be:</p>
+
+    <pre><code>
+&lt;p&gt;The &lt;dfn id=whatwg&gt;Web Hypertext Application Technology
+Working Group&lt;/dfn&gt; (&lt;abbr
+title="Web Hypertext Application Technology Working Group"&gt;WHATWG&lt;/abbr&gt;)
+is a loose unofficial collaboration of Web browser manufacturers and
+interested parties who wish to develop new technologies designed to
+allow authors to write and deploy Applications over the World Wide
+Web.&lt;/p&gt;    
+    </code></pre>
+
+
+  </body>
+</html>

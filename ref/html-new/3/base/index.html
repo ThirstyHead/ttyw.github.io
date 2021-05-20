@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BASE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>BASE</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#base">BASE</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <pre><code>
+    &lt;!ELEMENT BASE - O EMPTY&gt;
+    &lt;!ATTLIST BASE
+        href %URL  #REQUIRED
+        &gt;
+    </code></pre>
+
+    <p>
+The BASE element gives the base URL for dereferencing relative URLs, using the rules given by the URL specification, e.g. 
+    </p>
+
+    <pre><code>
+    &lt;BASE href="http://www.acme.com/intro.html"&gt;
+     ...
+    &lt;IMG SRC="../../icons/logo.gif"&gt;
+    </code></pre>
+
+    <p>The image is deferenced to </p>
+
+    <pre><code>
+    http://www.acme.com/icons/logo.gif
+    </code></pre>
+
+    <p>
+In the absence of a BASE element the document URL should be used. Note that this is not necessarily the same as the URL used to request the document, as the base URL may be overridden by an HTTP header accompanying the document. 
+    </p>
+  </body>
+</html>

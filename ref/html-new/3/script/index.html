@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SCRIPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>SCRIPT</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#style">STYLE and SCRIPT</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+    &lt;!ELEMENT STYLE  - - CDATA -- placeholder for style info --&gt;
+    &lt;!ELEMENT SCRIPT - - CDATA -- placeholder for script statements --&gt;
+    </code></pre>
+
+    <p>
+These are place holders for the introduction of style sheets and client-side scripts in future versions of HTML. User agents should hide the contents of these elements. 
+    </p>
+
+    <p>
+These elements are defined with CDATA as the content type. As a result they may contain only SGML characters. All markup characters or delimiters are ignored and passed as data to the application, except for ETAGO ("&lt;/") delimiters followed immediately by a name character [a-zA-Z]. This means that the element's end-tag (or that of an element in which it is nested) is recognized, while an error occurs if the ETAGO is invalid. 
+    </p>
+  </body>
+</html>

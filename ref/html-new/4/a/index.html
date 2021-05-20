@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>A</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/links.html#edef-A">12.2 The A element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+    
+    <pre><code>
+&lt;!ELEMENT A - - (%inline;)* -(A)       -- anchor --&gt;
+&lt;!ATTLIST A
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  charset     %Charset;      #IMPLIED  -- char encoding of linked resource --
+  type        %ContentType;  #IMPLIED  -- advisory content type --
+  name        CDATA          #IMPLIED  -- named link end --
+  href        %URI;          #IMPLIED  -- URI for linked resource --
+  hreflang    %LanguageCode; #IMPLIED  -- language code --
+  rel         %LinkTypes;    #IMPLIED  -- forward link types --
+  rev         %LinkTypes;    #IMPLIED  -- reverse link types --
+  accesskey   %Character;    #IMPLIED  -- accessibility key character --
+  shape       %Shape;        rect      -- for use with client-side image maps --
+  coords      %Coords;       #IMPLIED  -- for use with client-side image maps --
+  tabindex    NUMBER         #IMPLIED  -- position in tabbing order --
+  onfocus     %Script;       #IMPLIED  -- the element got the focus --
+  onblur      %Script;       #IMPLIED  -- the element lost the focus --
+  &gt;    
+    </code></pre>
+
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>name=cdata [CS]</dt>
+      <dd>    This attribute names the current anchor so that it may be the destination of another link. The value of this attribute must be a unique anchor name. The scope of this name is the current document. Note that this attribute shares the same name space as the id attribute.</dd>
+
+      <dt>href=uri [CT]</dt>
+      <dd>    This attribute specifies the location of a Web resource, thus defining a link between the current element (the source anchor) and the destination anchor defined by this attribute.</dd>
+
+      <dt>hreflang=langcode [CI]</dt>
+      <dd>    This attribute specifies the base language of the resource designated by href and may only be used when href is specified.</dd>
+
+      <dt>type=content-type [CI]</dt>
+      <dd>    This attribute gives an advisory hint as to the content type of the content available at the link target address. It allows user agents to opt to use a fallback mechanism rather than fetch the content if they are advised that they will get content in a content type they do not support.
+    Authors who use this attribute take responsibility to manage the risk that it may become inconsistent with the content available at the link target address.
+    For the current list of registered content types, please consult [MIMETYPES].</dd>
+
+      <dt>rel=link-types [CI]</dt>
+      <dd>    This attribute describes the relationship from the current document to the anchor specified by the href attribute. The value of this attribute is a space-separated list of link types.</dd>
+
+      <dt>rev=link-types [CI]</dt>
+      <dd>    This attribute is used to describe a reverse link from the anchor specified by the href attribute to the current document. The value of this attribute is a space-separated list of link types.</dd>
+
+      <dt>charset=charset [CI]</dt>
+      <dd>    This attribute specifies the character encoding of the resource designated by the link. Please consult the section on character encodings for more details.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>shape and coords (image maps)</li>
+      <li>onfocus, onblur, onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>target (target frame information)</li>
+      <li>tabindex (tabbing navigation)</li>
+      <li>accesskey (access keys)</li>
+    </ul>
+
+    <p>Each A element defines an anchor</p>
+
+    <ol>
+      <li>The A element's content defines the position of the anchor.</li>
+      <li>The name attribute names the anchor so that it may be the destination of zero or more links (see also anchors with id).</li>
+      <li>The href attribute makes this anchor the source anchor of exactly one link.</li>
+    </ol>
+
+    <p>Authors may also create an A element that specifies no anchors, i.e., that doesn't specify href, name, or id. Values for these attributes may be set at a later time through scripts.</p>
+
+    <p>In the example that follows, the A element defines a link. The source anchor is the text "W3C Web site" and the destination anchor is "http://www.w3.org/":</p>
+
+    <pre><code>
+    For more information about W3C, please consult the 
+    &lt;A href="http://www.w3.org/"&gt;W3C Web site&lt;/A&gt;.
+    </code></pre>
+
+    <p>This link designates the home page of the World Wide Web Consortium. When a user activates this link in a user agent, the user agent will retrieve the resource, in this case, an HTML document.</p>
+
+    <p> User agents generally render links in such a way as to make them obvious to users (underlining, reverse video, etc.). The exact rendering depends on the user agent. Rendering may vary according to whether the user has already visited the link or not. A possible visual rendering of the previous link might be:</p>
+
+    <pre><code>
+    For more information about W3C, please consult the W3C Web site.
+                                                       ~~~~~~~~~~~~
+    </code></pre>
+
+    <p>To tell user agents explicitly what the character encoding of the destination page is, set the charset attribute:</p>
+
+    <pre><code>
+    For more information about W3C, please consult the 
+    &lt;A href="http://www.w3.org/" charset="ISO-8859-1"&gt;W3C Web site&lt;/A&gt;
+    </code></pre>
+
+    <p>Suppose we define an anchor named "anchor-one" in the file "one.html".</p>
+
+    <pre><code>
+    ...text before the anchor...
+    &lt;A name="anchor-one"&gt;This is the location of anchor one.&lt;/A&gt;
+    ...text after the anchor...
+    </code></pre>
+
+    <p>This creates an anchor around the text "This is the location of anchor one.". Usually, the contents of A are not rendered in any special way when A defines an anchor only.</p>
+
+    <p>Having defined the anchor, we may link to it from the same or another document. URIs that designate anchors contain a "#" character followed by the anchor name (the fragment identifier). Here are some examples of such URIs:</p>
+
+    <ul>
+      <li>An absolute URI: http://www.mycompany.com/one.html#anchor-one</li>
+      <li>A relative URI: ./one.html#anchor-one or one.html#anchor-one</li>
+      <li>When the link is defined in the same document: #anchor-one</li>
+    </ul>
+
+    <p>Thus, a link defined in the file "two.html" in the same directory as "one.html" would refer to the anchor as follows:</p>
+
+    <pre><code>
+    ...text before the link...
+    For more information, please consult &lt;A href="./one.html#anchor-one"&gt; anchor one&lt;/A&gt;.
+    ...text after the link...
+    </code></pre>
+
+    <p>The A element in the following example specifies a link (with href) and creates a named anchor (with name) simultaneously:</p>
+
+    <pre><code>
+    I just returned from vacation! Here's a
+    &lt;A name="anchor-two" 
+          href="http://www.somecompany.com/People/Ian/vacation/family.png"&gt;
+    photo of my family at the lake.</A>.
+    </code></pre>
+
+    <p>This example contains a link to a different type of Web resource (a PNG image). Activating the link should cause the image resource to be retrieved from the Web (and possibly displayed if the system has been configured to do so).</p>
+
+    <p>Note. User agents should be able to find anchors created by empty A elements, but some fail to do so. For example, some user agents may not find the "empty-anchor" in the following HTML fragment:</p>
+
+    <pre><code>
+    &lt;A name="empty-anchor"&gt;&lt;/A&gt;
+    &lt;EM&gt;...some HTML...&lt;/EM&gt;
+    &lt;A href="#empty-anchor"&gt;Link to empty anchor&lt;/A&gt;
+    </code></pre>
+
+
+
+
+  </body>
+</html>

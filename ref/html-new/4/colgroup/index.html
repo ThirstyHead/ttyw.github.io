@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>COLGROUP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>COLGROUP</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/tables.html#edef-COLGROUP">The COLGROUP element </a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT COLGROUP - O (COL)*          -- table column group --&gt;
+&lt;!ATTLIST COLGROUP
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  span        NUMBER         1         -- default number of columns in group --
+  width       %MultiLength;  #IMPLIED  -- default width for enclosed COLs --
+  %cellhalign;                         -- horizontal alignment in cells --
+  %cellvalign;                         -- vertical alignment in cells --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: optional</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>span=number [CN]</dt>
+      <dd>
+This attribute, which must be an integer &gt; 0, specifies the number of columns in a column group. Values mean the following: 
+        <ul>
+          <li>In the absence of a span attribute, each COLGROUP defines a column group containing one column.</li>
+          <li>
+            If the span attribute is set to N &gt; 0, the current COLGROUP element defines a column group containing N columns.
+          </li>
+        </ul>   
+
+        <p>User agents must ignore this attribute if the COLGROUP element contains one or more COL elements.</p>
+      </dd>
+
+      <dt>width=multi-length [CN]</dt>
+      <dd>This attribute specifies a default width for each column in the current column group. In addition to the standard pixel, percentage, and relative values, this attribute allows the special form "0*" (zero asterisk) which means that the width of the each column in the group should be the minimum width necessary to hold the column's contents. This implies that a column's entire contents must be known before its width may be correctly computed. Authors should be aware that specifying "0*" will prevent visual user agents from rendering a table incrementally.
+
+      <p>This attribute is overridden for any column in the column group whose width is specified via a COL element.</p>
+      </dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>align, char, charoff, valign (cell alignment)</li>
+    </ul>
+
+    <p>The COLGROUP element creates an explicit column group. The number of columns in the column group may be specified in two, mutually exclusive ways:</p>
+
+    <ol>
+      <li>The element's span attribute (default value 1) specifies the number of columns in the group.</li>
+      <li>Each COL element in the COLGROUP represents one or more columns in the group.</li>
+    </ol>
+
+    <p>The advantage of using the span attribute is that authors may group together information about column widths. Thus, if a table contains forty columns, all of which have a width of 20 pixels, it is easier to write:</p>
+
+    <pre><code>
+    &lt;COLGROUP span="40" width="20"&gt;
+    &lt;/COLGROUP&gt;    
+    </code></pre>
+
+    <p>than:</p>
+
+    <pre><code>
+    &lt;COLGROUP&gt;
+      &lt;COL width="20"&gt;
+      &lt;COL width="20"&gt;
+      ...a total of forty COL elements...
+    &lt;/COLGROUP&gt;
+    </code></pre>
+
+    <p>When it is necessary to single out a column (e.g., for style information, to specify width information, etc.) within a group, authors must identify that column with a COL element. Thus, to apply special style information to the last column of the previous table, we single it out as follows:</p>
+
+    <pre><code>
+    &lt;COLGROUP width="20"&gt;
+      &lt;COL span="39"&gt;
+      &lt;COL id="format-me-specially"&gt;
+    &lt;/COLGROUP&gt;
+    </code></pre>
+
+    <p>The width attribute of the COLGROUP element is inherited by all 40 columns. The first COL element refers to the first 39 columns (doing nothing special to them) and the second one assigns an id value to the fortieth column so that style sheets may refer to it.</p>
+
+    <p>The table in the following example contains two column groups. The first column group contains 10 columns and the second contains 5 columns. The default width for each column in the first column group is 50 pixels. The width of each column in the second column group will be the minimum required for that column.</p>
+
+    <pre><code>
+    &lt;TABLE&gt;
+    &lt;COLGROUP span="10" width="50"&gt;
+    &lt;COLGROUP span="5" width="0*"&gt;
+    &lt;THEAD&gt;
+    &lt;TR&gt;&lt;TD&gt; ...
+    &lt;/TABLE&gt;
+    </code></pre>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TBODY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TBODY</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/tables.html#edef-TBODY">11.2.3 Row groups: the THEAD, TFOOT, and TBODY elements</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT THEAD    - O (TR)+           -- table header --&gt;
+&lt;!ELEMENT TFOOT    - O (TR)+           -- table footer --&gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: optional</p>
+
+    <pre><code>
+&lt;!ELEMENT TBODY    O O (TR)+           -- table body --&gt;    
+    </code></pre>
+
+    <p>Start tag: optional, End tag: optional</p>
+
+    <pre><code>
+&lt;!ATTLIST (THEAD|TBODY|TFOOT)          -- table section --
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  %cellhalign;                         -- horizontal alignment in cells --
+  %cellvalign;                         -- vertical alignment in cells --
+  &gt;    
+    </code></pre>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>align, char, charoff, valign (cell alignment)</li>
+    </ul>
+
+    <p>Table rows may be grouped into a table head, table foot, and one or more table body sections, using the THEAD, TFOOT and TBODY elements, respectively. This division enables user agents to support scrolling of table bodies independently of the table head and foot. When long tables are printed, the table head and foot information may be repeated on each page that contains table data.</p>
+
+    <p>The table head and table foot should contain information about the table's columns. The table body should contain rows of table data.</p>
+
+    <p>When present, each THEAD, TFOOT, and TBODY contains a row group. Each row group must contain at least one row, defined by the TR element.</p>
+
+    <p>This example illustrates the order and structure of table heads, feet, and bodies.</p>
+
+    <pre><code>
+&lt;TABLE&gt;
+&lt;THEAD&gt;
+     &lt;TR&gt; ...header information...
+&lt;/THEAD&gt;
+&lt;TFOOT&gt;
+     &lt;TR&gt; ...footer information...
+&lt;/TFOOT&gt;
+&lt;TBODY&gt;
+     &lt;TR&gt; ...first row of block one data...
+     &lt;TR&gt; ...second row of block one data...
+&lt;/TBODY&gt;
+&lt;TBODY&gt;
+     &lt;TR&gt; ...first row of block two data...
+     &lt;TR&gt; ...second row of block two data...
+     &lt;TR&gt; ...third row of block two data...
+&lt;/TBODY&gt;
+&lt;/TABLE&gt;    
+    </code></pre>
+
+    <p> TFOOT must appear before TBODY within a TABLE definition so that user agents can render the foot before receiving all of the (potentially numerous) rows of data. The following summarizes which tags are required and which may be omitted:</p>
+
+    <ul>
+      <li>The TBODY start tag is always required except when the table contains only one table body and no table head or foot sections. The TBODY end tag may always be safely omitted.</li>
+      <li>The start tags for THEAD and TFOOT are required when the table head and foot sections are present respectively, but the corresponding end tags may always be safely omitted.</li>
+    </ul>
+
+    <p>Conforming user agent parsers must obey these rules for reasons of backward compatibility.</p>
+
+    <p>The table of the previous example could be shortened by removing certain end tags, as in:</p>
+
+    <pre><code>
+&lt;TABLE&gt;
+&lt;THEAD&gt;
+     &lt;TR&gt; ...header information...
+&lt;TFOOT&gt;
+     &lt;TR&gt; ...footer information...
+&lt;TBODY&gt;
+     &lt;TR&gt; ...first row of block one data...
+     &lt;TR&gt; ...second row of block one data...
+&lt;TBODY&gt;
+     &lt;TR&gt; ...first row of block two data...
+     &lt;TR&gt; ...second row of block two data...
+     &lt;TR&gt; ...third row of block two data...
+&lt;/TABLE&gt;    
+    </code></pre>
+
+    <p>The THEAD, TFOOT, and TBODY sections must contain the same number of columns.</p>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TITLE</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#title">TITLE</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <pre><code>
+    &lt;!ELEMENT TITLE - -  (#PCDATA)* -(%head.misc)&gt;
+    </code></pre>
+
+    <p>
+Every HTML 3.2 document must have exactly one TITLE element in the document's HEAD. It provides an advisory title which can be displayed in a user agent's window caption etc. The content model is PCDATA. As a result, character entities can be used for accented characters and to escape special characters such as &amp; and &lt;. Markup is not permitted in the content of a TITLE element. 
+    </p>
+
+    <p>Example TITLE element:</p>
+
+    <pre><code>
+    &lt;TITLE&gt;A study of population dynamics&lt;/TITLE&gt;
+    </code></pre>
+  </body>
+</html>

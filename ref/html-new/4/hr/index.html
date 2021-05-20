@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <style>
+      .deprecated-example{
+        border: solid 4px orange;
+        padding: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>HR</h1>
+    <h2><a href="https://www.w3.org/TR/html401/present/graphics.html#edef-HR">15.3 Rules: the HR element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT HR - O EMPTY -- horizontal rule --&gt;
+&lt;!ATTLIST HR
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: forbidden</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>align=left|center|right [CI]</dt>
+      <dd>Deprecated. This attribute specifies the horizontal alignment of the rule with respect to the surrounding context. Possible values: 
+
+      <ul>
+        <li>left: the rule is rendered flush left</li>
+        <li>center: the rule is centered (This is the default)</li>
+        <li>right: the rule is rendered flush right</li>
+      </ul>
+      </dd>
+
+      <dt>noshade</dt>
+      <dd>    Deprecated. When set, this boolean attribute requests that the user agent render the rule in a solid color rather than as the traditional two-color "groove".</dd>
+
+      <dt>size=pixels [CI]</dt>
+      <dd>    Deprecated. This attribute specifies the height of the rule. The default value for this attribute depends on the user agent.</dd>
+
+      <dt>width=length [CI]</dt>
+      <dd>    Deprecated. This attribute specifies the width of the rule. The default width is 100%, i.e., the rule extends across the entire canvas.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The HR element causes a horizontal rule to be rendered by visual user agents.</p>
+
+    <p>The amount of vertical space inserted between a rule and the content that surrounds it depends on the user agent.</p>
+
+    <section class="deprecated-example">
+      <h3>Deprecated Example</h3>
+      <p> This example centers the rules, sizing them to half the available width between the margins. The top rule has the default thickness while the bottom two are set to 5 pixels. The bottom rule should be rendered in a solid color without shading:</p>
+
+      <pre><code>
+&lt;HR width="50%" align="center"&gt;
+&lt;HR size="5" width="50%" align="center"&gt;
+&lt;HR noshade size="5" width="50%" align="center"&gt;
+      </code></pre>
+    </section>
+  </body>
+</html>

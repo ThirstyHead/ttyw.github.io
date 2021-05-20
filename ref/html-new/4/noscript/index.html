@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NOSCRIPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>NOSCRIPT</h1>
+    <h2><a href="https://www.w3.org/TR/html401/interact/scripts.html#edef-NOSCRIPT">18.3.1 The NOSCRIPT element</a></h2>
+    <p>[since: HTML 4.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT NOSCRIPT - - (%block;)+
+  -- alternate content container for non script-based rendering --&gt;
+&lt;!ATTLIST NOSCRIPT
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p> The NOSCRIPT element allows authors to provide alternate content when a script is not executed. The content of a NOSCRIPT element should only be rendered by a script-aware user agent in the following cases: </p>
+
+    <ul>
+      <li>The user agent is configured not to evaluate scripts.</li>
+      <li>The user agent doesn't support a scripting language invoked by a SCRIPT element earlier in the document.</li>
+    </ul>
+
+    <p>User agents that do not support client-side scripts must render this element's contents.</p>
+
+    <p>In the following example, a user agent that executes the SCRIPT will include some dynamically created data in the document. If the user agent doesn't support scripts, the user may still retrieve the data through a link.</p>
+
+    <pre><code>
+&lt;SCRIPT type="text/tcl"&gt;
+ ...some Tcl script to insert data...
+&lt;/SCRIPT&gt;
+&lt;NOSCRIPT&gt;
+ &lt;P&gt;Access the &lt;A href="http://someplace.com/data"&gt;data.&lt;/A&gt;
+&lt;/NOSCRIPT&gt;    
+    </code></pre>
+  </body>
+</html>

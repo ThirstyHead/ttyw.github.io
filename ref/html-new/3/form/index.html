@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FORM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>FORM</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#form">FORM</a></h2>
+    <p>[new: HTML 3.x]</p>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+&lt;!ENTITY % HTTP-Method "GET | POST"
+        -- as per HTTP specification
+        --&gt;
+
+&lt;!ELEMENT FORM - - %body.content -(FORM)&gt;
+&lt;!ATTLIST FORM
+        action %URL #IMPLIED  -- server-side form handler --
+        method (%HTTP-Method) GET -- see HTTP specification --
+        enctype %Content-Type; "application/x-www-form-urlencoded"
+        &gt;
+    </code></pre>
+
+    <p>This is used to define an HTML form, and you can have more than one form in the same document. Both the start and end tags are required. For very simple forms, you can also use the ISINDEX element. Forms can contain a wide range of HTML markup including several kinds of form fields such as single and multi-line text fields, radio button groups, checkboxes, and menus. </p>
+
+    <dl>
+      <dt>action</dt>
+      <dd>    This specifies a URL which is either used to post forms via email, e.g. action="mailto:foo@bar.com", or used to invoke a server-side forms handler via HTTP, e.g. action="http://www.acme.com/cgi-bin/register.pl" </dd>
+
+    <dt>method</dt>
+    <dd>    When the action attribute specifies an HTTP server, the method attribute determines which HTTP method will be used to send the form's contents to the server. It can be either GET or POST, and defaults to GET. </dd>
+
+    <dt>enctype</dt>
+    <dd>    This determines the mechanism used to encode the form's contents. It defaults to application/x-www-form-urlencoded. </dd>
+    </dl>
+
+    <p>Further details on handling forms are given in RFC 1867. </p>
+  </body>
+</html>

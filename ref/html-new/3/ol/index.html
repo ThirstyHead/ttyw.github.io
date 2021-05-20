@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>OL</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/#ol">Ordered (i.e. numbered) Lists</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+   
+    <pre><code>
+    &lt;!ELEMENT OL - -  (LI)+&gt;
+    &lt;!ATTLIST OL -- ordered lists --
+        type      CDATA      #IMPLIED   -- numbering style --
+        start     NUMBER     #IMPLIED   -- starting sequence number --
+        compact  (compact)   #IMPLIED   -- reduced interitem spacing --
+        &gt;
+
+    &lt;!ELEMENT LI - O %flow -- list item --&gt;
+    &lt;!ATTLIST LI
+        type      CDATA      #IMPLIED   -- list item style --
+        value     NUMBER     #IMPLIED   -- set sequence number --
+        &gt;
+    </code></pre>
+
+    <p>Ordered (i.e. numbered) lists take the form:</p>
+
+    <pre><code>
+    &lt;OL&gt;
+      &lt;LI&gt; ... first list item
+      &lt;LI&gt; ... second list item
+      ...
+    &lt;/OL&gt;
+    </code></pre>
+
+    <p>The OL START attribute can be used to initialize the sequence number (by default it is initialized to 1). You can set it later on with the VALUE attribute on LI elements. Both of these attributes expect integer values. You can't indicate that numbering should be continued from a previous list, or to skip missing values without giving an explicit number. </p>
+
+    <p>The COMPACT attribute can be used as a hint to the user agent to render lists in a more compact style. The OL TYPE attribute allows you to set the numbering style for list items:</p>
+
+<table width="80%" border="1" align="center">
+<tbody><tr><th>Type </th><th colspan="2">Numbering style<br></th></tr>
+<tr><td align="center">1 </td><td align="center">Arabic numbers</td><td align="center">1, 2, 3, ...<br></td></tr>
+<tr><td align="center">a </td><td align="center">lower alpha</td><td align="center">a, b, c, ...<br></td></tr>
+<tr><td align="center">A </td><td align="center">upper alpha</td><td align="center">A, B, C, ...<br></td></tr>
+<tr><td align="center">i </td><td align="center">lower roman</td><td align="center">i, ii, iii, ...<br></td></tr>
+<tr><td align="center">I </td><td align="center">upper roman</td><td align="center">I, II, III, ...<br></td></tr>
+</tbody></table>
+
+  </body>
+</html>

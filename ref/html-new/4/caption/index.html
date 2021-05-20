@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CAPTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>CAPTION</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/tables.html#edef-CAPTION">11.2.2 Table Captions: The CAPTION element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT CAPTION  - - (%inline;)*     -- table caption --&gt;
+
+&lt;!ATTLIST CAPTION
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>align=top|bottom|left|right [CI]</dt>
+      <dd>Deprecated. For visual user agents, this attribute specifies the position of the caption with respect to the table. Possible values: 
+      <ul>
+        <li>top: The caption is at the top of the table. This is the default value.</li>
+        <li>bottom: The caption is at the bottom of the table.</li>
+        <li>left: The caption is at the left of the table.</li>
+        <li>right: The caption is at the right of the table.</li>
+      </ul>
+      </dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>When present, the CAPTION element's text should describe the nature of the table. The CAPTION element is only permitted immediately after the TABLE start tag. A TABLE element may only contain one CAPTION element.</p>
+
+    <p>Visual user agents allow sighted people to quickly grasp the structure of the table from the headings as well as the caption. A consequence of this is that captions will often be inadequate as a summary of the purpose and structure of the table from the perspective of people relying on non-visual user agents.</p>
+
+    <p>Authors should therefore take care to provide additional information summarizing the purpose and structure of the table using the summary attribute of the TABLE element. This is especially important for tables without captions. Examples below illustrate the use of the summary attribute.</p>
+
+    <p>Visual user agents should avoid clipping any part of the table including the caption, unless a means is provided to access all parts, e.g., by horizontal or vertical scrolling. We recommend that the caption text be wrapped to the same width as the table. (See also the section on recommended layout algorithms.)</p>
+  </body>
+</html>

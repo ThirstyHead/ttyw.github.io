@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SCRIPT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>SCRIPT</h1>
+    <h2><a href="https://www.w3.org/TR/html401/interact/scripts.html#edef-SCRIPT">18.2.1 The SCRIPT element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT SCRIPT - - %Script;          -- script statements --&gt;
+&lt;!ATTLIST SCRIPT
+  charset     %Charset;      #IMPLIED  -- char encoding of linked resource --
+  type        %ContentType;  #REQUIRED -- content type of script language --
+  src         %URI;          #IMPLIED  -- URI for an external script --
+  defer       (defer)        #IMPLIED  -- UA may defer execution of script --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>src=uri [CT]</dt>
+      <dd>    This attribute specifies the location of an external script.</dd>
+
+      <dt>type=content-type [CI]</dt>
+      <dd>    This attribute specifies the scripting language of the element's contents and overrides the default scripting language. The scripting language is specified as a content type (e.g., "text/javascript"). Authors must supply a value for this attribute. There is no default value for this attribute.</dd>
+
+      <dt>language=cdata [CI]</dt>
+      <dd>    Deprecated. This attribute specifies the scripting language of the contents of this element. Its value is an identifier for the language, but since these identifiers are not standard, this attribute has been deprecated in favor of type.</dd>
+
+      <dt>defer [CI]</dt>
+      <dd>    When set, this boolean attribute provides a hint to the user agent that the script is not going to generate any document content (e.g., no "document.write" in javascript) and thus, the user agent can continue parsing and rendering.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>charset (character encodings)</li>
+    </ul>
+
+    <p>The SCRIPT element places a script within a document. This element may appear any number of times in the HEAD or BODY of an HTML document.</p>
+
+    <p>The script may be defined within the contents of the SCRIPT element or in an external file. If the src attribute is not set, user agents must interpret the contents of the element as the script. If the src has a URI value, user agents must ignore the element's contents and retrieve the script via the URI. Note that the charset attribute refers to the character encoding of the script designated by the src attribute; it does not concern the content of the SCRIPT element.</p>
+
+    <p>Scripts are evaluated by script engines that must be known to a user agent.</p>
+
+    <p>The syntax of script data depends on the scripting language.</p>
+  </body>
+</html>

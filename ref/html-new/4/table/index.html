@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TABLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TABLE</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/tables.html#edef-TABLE">11.2.1 The TABLE element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT TABLE - -
+     (CAPTION?, (COL*|COLGROUP*), THEAD?, TFOOT?, TBODY+)&gt;
+&lt;!ATTLIST TABLE                        -- table element --
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  summary     %Text;         #IMPLIED  -- purpose/structure for speech output--
+  width       %Length;       #IMPLIED  -- table width --
+  border      %Pixels;       #IMPLIED  -- controls frame width around table --
+  frame       %TFrame;       #IMPLIED  -- which parts of frame to render --
+  rules       %TRules;       #IMPLIED  -- rulings between rows and cols --
+  cellspacing %Length;       #IMPLIED  -- spacing between cells --
+  cellpadding %Length;       #IMPLIED  -- spacing within cells --
+  &gt;
+    </code></pre>
+    
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attribute definitions</p>
+
+    <dl>
+      <dt>summary=text [CS]</dt>
+      <dd>    This attribute provides a summary of the table's purpose and structure for user agents rendering to non-visual media such as speech and Braille.</dd>
+
+      <dt>align=left|center|right [CI]</dt>
+      <dd>Deprecated. This attribute specifies the position of the table with respect to the document. Permitted values: 
+      <ul>
+        <li>left: The table is to the left of the document</li>
+        <li>center: The table is to the center of the document</li>
+        <li>right: The table is to the right of the document</li>
+      </ul>
+      </dd>
+
+      <dt>width=length [CN]</dt>
+      <dd>    This attribute specifies the desired width of the entire table and is intended for visual user agents. When the value is a percentage value, the value is relative to the user agent's available horizontal space. In the absence of any width specification, table width is determined by the user agent.</dd>
+    </dl>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>bgcolor (background color)</li>
+      <li>frame, rules, border (borders and rules)</li>
+      <li>cellspacing, cellpadding (cell margins)</li>
+    </ul>
+
+    <p>The TABLE element contains all other elements that specify caption, rows, content, and formatting.</p>
+
+    <p>The following informative list describes what operations user agents may carry out when rendering a table:</p>
+
+    <ul>
+      <li>Make the table summary available to the user. Authors should provide a summary of a table's content and structure so that people using non-visual user agents may better understand it.</li>
+      <li>Render the caption, if one is defined.</li>
+      <li>Render the table header, if one is specified. Render the table footer, if one is specified. User agents must know where to render the header and footer. For instance, if the output medium is paged, user agents may put the header at the top of each page and the footer at the bottom. Similarly, if the user agent provides a mechanism to scroll the rows, the header may appear at the top of the scrolled area and the footer at the bottom.</li>
+      <li>Calculate the number of columns in the table. Note that the number of rows in a table is equal to the number of TR elements contained by the TABLE element.</li>
+      <li>Group the columns according to any column group specifications.</li>
+      <li>Render the cells, row by row and grouped in appropriate columns, between the header and footer. Visual user agents should format the table according to HTML attributes and style sheet specification.</li>
+    </ul>
+
+    <p>The HTML table model has been designed so that, with author assistance, user agents may render tables incrementally (i.e., as table rows arrive) rather than having to wait for all the data before beginning to render.</p>
+
+    <p>In order for a user agent to format a table in one pass, authors must tell the user agent:</p>
+
+    <ul>
+      <li>The number of columns in the table. Please consult the section on calculating the number of columns in a table for details on how to supply this information.</li>
+      <li>The widths of these columns. Please consult the section on calculating the width of columns for details on how to supply this information.</li>
+    </ul>
+
+    <p>More precisely, a user agent may render a table in a single pass when the column widths are specified using a combination of COLGROUP and COL elements. If any of the columns are specified in relative or percentage terms (see the section on calculating the width of columns), authors must also specify the width of the table itself.</p>
+  </body>
+</html>

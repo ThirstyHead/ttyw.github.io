@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HEAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>HEAD</h1>
+    <h2><a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">The HEAD element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 3.2 Reference Specification, published January 1997, <a         href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">https://www.w3.org/TR/2018/    SPSD-html32-20180315/</a>]</p>
+    
+    <p>
+This contains the document head, but you can always omit both the start and end tags for HEAD. The contents of the document head is an unordered collection of the following elements: 
+    </p>
+
+    <ul>
+      <li>The TITLE element</li>
+      <li>The STYLE element</li>
+      <li>The SCRIPT element</li>
+      <li>The ISINDEX element</li>
+      <li>The BASE element</li>
+      <li>The META element</li>
+      <li>The LINK element</li>
+    </ul>
+
+    <pre><code>
+    &lt;!ENTITY % head.content "TITLE &amp; ISINDEX? &amp; BASE?"&gt;
+    &lt;!ENTITY % head.misc "SCRIPT|STYLE|META|LINK"&gt;
+
+    &lt;!ELEMENT HEAD O O  (%head.content) +(%head.misc)&gt;
+    </code></pre>
+    
+    <p>
+The %head.misc entity is used to allow the associated elements to occur multiple times at arbitrary positions within the HEAD. The following elements can be part of the document head: 
+    </p>
+
+    <ul>
+      <li>TITLE defines the document title, and is always needed.</li>
+      <li>ISINDEX for simple keyword searches, see PROMPT attribute.</li>
+      <li>BASE defines base URL for resolving relative URLs.</li>
+      <li>SCRIPT reserved for future use with scripting languages.</li>
+      <li>STYLE reserved for future use with style sheets.</li>
+      <li>META used to supply meta info as name/value pairs. </li>
+      <li>LINK used to define relationships with other documents.</li>
+    </ul>
+
+    <p>
+TITLE, SCRIPT and STYLE are containers and require both start and end tags. The other elements are not containers so that end tags are forbidden. Note that conforming browsers won't render the contents of SCRIPT and STYLE elements. 
+    </p>
+  </body>
+</html>

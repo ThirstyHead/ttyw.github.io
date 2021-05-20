@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ADDRESS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>ADDRESS</h1>
+    <h2><a href="https://www.w3.org/TR/html4/struct/global.html#edef-ADDRESS">7.5.6 The ADDRESS element</a></h2>
+    <p>[since: HTML 2.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+    
+    <pre><code>
+&lt;!ELEMENT ADDRESS - - (%inline;)* -- information on author --&gt;
+&lt;!ATTLIST ADDRESS
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  &gt;    
+    </code></pre>
+
+    <p>Start tag: required, End tag: required</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+    </ul>
+
+    <p>The ADDRESS element may be used by authors to supply contact information for a document or a major part of a document such as a form. This element often appears at the beginning or end of a document.</p>
+
+    <p>For example, a page at the W3C Web site related to HTML might include the following contact information:</p>
+
+    <pre><code>
+&lt;ADDRESS&gt;
+&lt;A href="../People/Raggett/"&gt;Dave Raggett&lt;/A&gt;, 
+&lt;A href="../People/Arnaud/"&gt;Arnaud Le Hors&lt;/A&gt;, 
+contact persons for the &lt;A href="Activity"&gt;W3C HTML Activity&lt;/A&gt;&lt;BR&gt; 
+$Date: 2018/03/20 02:36:52 $
+&lt;/ADDRESS&gt;    
+    </code></pre>
+  </body>
+</html>

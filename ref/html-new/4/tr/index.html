@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Scott Davis <scott@thirstyhead.com>">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  </head>
+
+  <body>
+    <h1>TR</h1>
+    <h2><a href="https://www.w3.org/TR/html401/struct/tables.html#edef-TR">11.2.5 Table rows: The TR element</a></h2>
+    <p>[since: HTML 3.x]</p>
+    <p>[source: HTML 4.01 Specification, published December 1999, <a         href="https://www.w3.org/TR/html4/">https://www.w3.org/TR/html4/</a>]</p>
+   
+    <pre><code>
+&lt;!ELEMENT TR       - O (TH|TD)+        -- table row --&gt;
+&lt;!ATTLIST TR                           -- table row --
+  %attrs;                              -- %coreattrs, %i18n, %events --
+  %cellhalign;                         -- horizontal alignment in cells --
+  %cellvalign;                         -- vertical alignment in cells --
+  &gt;    
+    </code></pre>
+    
+    <p>Start tag: required, End tag: optional</p>
+
+    <p>Attributes defined elsewhere</p>
+
+    <ul>    
+      <li>id, class (document-wide identifiers)</li>
+      <li>lang (language information), dir (text direction)</li>
+      <li>title (element title)</li>
+      <li>style (inline style information )</li>
+      <li>onclick, ondblclick, onmousedown, onmouseup, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup (intrinsic events )</li>
+      <li>bgcolor (background color)</li>
+      <li>align, char, charoff, valign (cell alignment)</li>
+    </ul>
+
+    <p>The TR elements acts as a container for a row of table cells. The end tag may be omitted.</p>
+
+    <p>This sample table contains three rows, each begun by the TR element:</p>
+
+    <pre><code>
+&lt;TABLE summary="This table charts the number of cups
+                   of coffee consumed by each senator, the type 
+                   of coffee (decaf or regular), and whether 
+                   taken with sugar."&gt;
+&lt;CAPTION&gt;Cups of coffee consumed by each senator&lt;/CAPTION&gt;
+&lt;TR&gt; ...A header row...
+&lt;TR&gt; ...First row of data...
+&lt;TR&gt; ...Second row of data...
+...the rest of the table...
+&lt;/TABLE&gt;    
+    </code></pre>
+  </body>
+</html>
