@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elements | TTYW</title>
+    <meta name="name" content="Scott Davis <scott@thirstyhead.com">
+    <meta name="description" content="Documentation for HTML Elements">
+    <meta name="keywords" content="html,elements">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/theme/light/index.css">
+    <script src="/component/ttyw-header/index.js"></script>
+
+    <style media="screen">
+      .elements{
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .elements li{
+        list-style: none;
+        padding-right: 1em;
+      }
+
+      fieldset{
+        background-color: var(--accent);
+        margin-bottom: 1em;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <ttyw-header></ttyw-header>
+    <p class="breadcrumbs">
+      <a href="/">Home</a> &gt; html
+    </p>
+
+    <main>
+      <h1>HTML: HyperText Markup Language</h1>
+      <p><b>HyperText Markup Language (HTML)</b> is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</p>
+
+      <p>"Hypertext" refers to links that connect web pages to one another, either within a single website or between websites. Links are a fundamental aspect of the Web. By uploading content to the Internet and linking it to pages created by other people, you become an active participant in the World Wide Web.</p>
+        
+      <p><small>[Source: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">https://developer.mozilla.org/en-US/docs/Web/HTML</a>]</small></p> 
+      
+      <div class="sidebar">
+          <h2>Element Categories</h2>
+          <ul>
+            <li><a href="#document">Document</a></li>
+            <li><a href="#section">Section</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#action">Action</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#semantics">Semantics</a></li>
+            <li><a href="#editing">Editing</a></li>
+            <li><a href="#graphics">Graphics</a></li>
+            <li><a href="#media">Media</a></li>
+          </ul>
+        </div>
+
+        <div class="sections">
+          <section id="introduction">
+            <h2>Elements</h2>
+            <p>HTML Elements are the basic building blocks of any web page.</p> 
+          </section>
+
+          <section id="document">
+            <fieldset>
+              <legend>Document</legend>
+              <p>Document elements describe the high-level parts of the page. The <code>&lt;html&gt;</code> element is the root element of the page. Non-visible elements like <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> are defined in the <code>&lt;head&gt;</code> section. All viewable content is defined in the <code>&lt;body&gt;</code> section.</p>
+
+              <ul class="elements">
+                <li><a href="html/">html</a></li>
+                <li><a href="body/">body</a></li>
+                <li><a href="head/">head</a></li>
+                <li><a href="title/">title</a></li>
+                <li><a href="meta/">meta</a></li>
+                <li><a href="style/">style</a></li>
+                <li><a href="link/">link</a></li>
+                <li><a href="base/">base</a></li>
+                <li><a href="script/">script</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="section">
+            <fieldset>
+              <legend>Section</legend>
+
+              <p>Section elements were introduced in HTML5 to help the developer semantically describe the basic parts of a document. The <code>&lt;main&gt;</code> is where the <em>primary information</em> of the page should live. <code>&lt;main&gt;</code> can optionally be surrounded by <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code>.</p>
+
+              <ul class="elements">
+                <li><a href="main/">main</a></li>
+                <li><a href="header/">header</a></li>
+                <li><a href="footer/">footer</a></li>
+                <li><a href="nav/">nav</a></li>
+                <li><a href="section/">section</a></li>
+                <li><a href="article/">article</a></li>
+                <li><a href="aside/">aside</a></li>
+                <li><a href="div/">div</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="content">
+            <fieldset>
+              <legend>Content</legend>
+
+              <p>Content elements describe the basic hierarchy of the page. Think of them as elements that might appear in a Table of Contents.</p>
+
+              <p><code>&lt;h1&gt;</code> is the primary heading. There should only be one per page. <code>&lt;h2&gt;</code> sections are subtopics. If you need to further subdivide the sections, use <code>&lt;h3&gt;</code> - <code>&lt;h6&gt;</code>.</p>
+
+              <ul class="elements">
+                <li><a href="h1/">h1</a></li>
+                <li><a href="h2/">h2</a></li>
+                <li><a href="h3/">h3</a></li>
+                <li><a href="h4/">h4</a></li>
+                <li><a href="h5/">h5</a></li>
+                <li><a href="h6/">h6</a></li>
+                <li><a href="p/">p</a></li>
+                <li><a href="br/">br</a></li>
+                <li><a href="hr/">hr</a></li>
+                <li><a href="figure/">figure</a></li>
+                <li><a href="figcaption/">figcaption</a></li>
+                <li><a href="span/">span</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="action">
+            <fieldset>
+              <legend>Action</legend>
+
+              <p>Action elements are the primary way that users interact with the page. <code>&lt;a&gt;</code> is for creating hyperlinks. <code>&lt;button&gt;</code> provides a larger, more obvious enticement for the user to interact with the page.</p>
+
+              <ul class="elements">
+                <li><a href="a/">a</a></li>
+                <li><a href="button/">button</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="list">
+            <fieldset>
+              <legend>List</legend>
+
+              <p>List elements allow you to present the user with a collection of <code>&lt;li&gt;</code> <em>list items</em>. <code>&lt;ul&gt;</code> is an <em>unordered list</em>, or bullet list. <code>&lt;ol&gt;</code> is an <em>ordered list</em>, or numbered list.</p>
+
+              <ul class="elements">
+                <li><a href="ul/">ul</a></li>
+                <li><a href="ol/">ol</a></li>
+                <li><a href="li/">li</a></li>
+                <li><a href="dl/">dl</a></li>
+                <li><a href="dt/">dt</a></li>
+                <li><a href="dd/">dd</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="form">
+            <fieldset>
+              <legend>Form</legend>
+
+              <p>Form elements allow the user to submit information, upload files, and search. HTML5 introduced a number of new <code>&lt;input&gt;</code> types, like <code>&lt;type="email"&gt;</code>, <code>&lt;type="range"&gt;</code>, and <code>&lt;type="date"&gt;</code>.</p>
+
+              <p>Be sure to use the <code>&lt;label&gt;</code> element to associate the text with the <code>&lt;input&gt;</code> field. Similarly, use an associated <code>&lt;output&gt;</code> field to display calculated output.</p>
+
+              <ul class="elements">
+                <li><a href="form/">form</a></li>
+                <li><a href="label/">label</a></li>
+                <li><a href="input/">input</a></li>
+                <li><a href="output/">output</a></li>
+                <li><a href="textarea/">textarea</a></li>
+                <li><a href="fieldset/">fieldset</a></li>
+                <li><a href="legend/">legend</a></li>
+                <li><a href="select/">select</a></li>
+                <li><a href="option/">option</a></li>
+                <li><a href="optgroup/">optgroup</a></li>
+                <li><a href="datalist/">datalist</a></li>
+                <li><a href="progress/">progress</a></li>
+                <li><a href="meter/">meter</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="table">
+            <fieldset>
+              <legend>Table</legend>
+
+              <p>Table elements are ideal for displaying spreadsheet-like information. If your data can be logically grouped by columns, rows, or both, use a <code>&lt;table&gt;</code>.</p>
+
+              <ul class="elements">
+                <li><a href="table/">table</a></li>
+                <li><a href="caption/">caption</a></li>
+                <li><a href="tr/">tr</a></li>
+                <li><a href="thead/">thead</a></li>
+                <li><a href="th/">th</a></li>
+                <li><a href="tbody/">tbody</a></li>
+                <li><a href="td/">td</a></li>
+                <li><a href="tfoot/">tfoot</a></li>
+                <li><a href="col/">col</a></li>
+                <li><a href="colgroup/">colgroup</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="semantics">
+            <fieldset>
+              <legend>Semantics</legend>
+
+              <p>Semantic elements should be used to <em>describe</em> or <em>clarify</em> the meaning of the text. The way the text appears is far less important than providing the meaning or significance of the text.</p>
+
+              <ul class="elements">
+                <li><a href="b/">b</a></li>
+                <li><a href="strong/">strong</a></li>
+                <li><a href="i/">i</a></li>
+                <li><a href="em/">em</a></li>
+                <li><a href="u/">u</a></li>
+                <li><a href="abbr/">abbr</a></li>
+                <li><a href="dfn/">dfn</a></li>
+                <li><a href="address/">address</a></li>
+                <li><a href="sub/">sub</a></li>
+                <li><a href="sup/">sup</a></li>
+                <li><a href="small/">small</a></li>
+                <li><a href="q/">q</a></li>
+                <li><a href="blockquote/">blockquote</a></li>
+                <li><a href="cite/">cite</a></li>
+                <li><a href="code/">code</a></li>
+                <li><a href="var/">var</a></li>
+                <li><a href="kbd/">kbd</a></li>
+                <li><a href="samp/">samp</a></li>
+                <li><a href="pre/">pre</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="editing">
+            <fieldset>
+              <legend>Editing</legend>
+
+              <p>Editing elements provide visual indicators for the changes made to the document. Use <code>&lt;mark&gt;</code> to highlight changes. Use <code>&lt;del&gt;</code> to indicate deleted text.</p>
+
+              <ul class="elements">
+                <li><a href="mark/">mark</a></li>
+                <li><a href="s/">s</a></li>
+                <li><a href="del/">del</a></li>
+                <li><a href="ins/">ins</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="graphics">
+            <fieldset>
+              <legend>Graphics</legend>
+
+              <p>Graphic elements show non-text information. Use <code>&lt;img&gt;</code> to display <em>raster</em> or photographic images. <code>&lt;picture&gt;</code> and <code>&lt;source&gt;</code> are modern additions to HTML that give the developer fine-grained control for providing a list of potential images, each one optimized for a specific viewport size and resolution.</p>
+
+              <p>Use <code>&lt;svg&gt;</code> to display (as the name implies) Scalable <em>Vector</em> Graphics &ndash; things like icons and charts that automatically scale to the proper size for the device they are being viewed on.</p>
+
+              <ul class="elements">
+                <li><a href="img/">img</a></li>
+                <li><a href="picture/">picture</a></li>
+                <li><a href="source/">source</a></li>
+                <li><a href="svg/">svg</a></li>
+              </ul>
+            </fieldset>
+          </section>
+
+          <section id="media">
+            <fieldset>
+              <legend>Media</legend>
+
+              <p>Media elements allow you to add <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> to the page.</p>
+
+              <ul class="elements">
+                <li><a href="audio/">audio</a></li>
+                <li><a href="video/">video</a></li>
+                <li><a href="track/">track</a></li>
+              </ul>
+            </fieldset>
+          </section>
+        </div>
+    </main>
+
+  </body>
+</html>
